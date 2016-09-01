@@ -108,7 +108,7 @@ px4-niu: $(BUILDROOT)/make.flags CHECK_MODULES $(PX4_ROOT)/Archives/px4fmu-niu.e
 	$(PX4_MAKE) px4fmu-niu_APM
 	$(v) /bin/rm -f $(SKETCH)-niu.px4
 	$(v) cp $(PX4_ROOT)/Images/px4fmu-niu_APM.px4 $(SKETCH)-niu.px4
-	$(v) $(SKETCHBOOK)/Tools/scripts/add_git_hashes.py $(HASHADDER_FLAGS) "$(SKETCH)-niu.px4" "$(SKETCH)-niu.px4"
+#	$(v) $(SKETCHBOOK)/Tools/scripts/add_git_hashes.py $(HASHADDER_FLAGS) "$(SKETCH)-niu.px4" "$(SKETCH)-niu.px4"
 	$(v) echo "PX4 $(SKETCH) Firmware is in $(SKETCH)-niu.px4"
 
 px4: px4-v1 px4-v2
