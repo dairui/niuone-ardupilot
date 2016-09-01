@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <errno.h>
-#include <apps/nsh.h>
+#include <apps/nshlib/nshlib.h>
 #include <fcntl.h>
 #include "UARTDriver.h"
 #include <uORB/uORB.h>

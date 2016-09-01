@@ -1,0 +1,81 @@
+nsh/defconfig:
+	CONFIG_C99_BOOL8=y
+
+nuttx/include/stdlib.h
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wshadow"
+...mallinfo...
+#pragma GCC diagnostic pop
+
+nuttx/include/sys/stat.h
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wshadow"
+...int stat...
+#pragma GCC diagnostic pop
+
+nuttx/include/sys/statfs.h
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wshadow"
+...int statfs...
+#pragma GCC diagnostic pop
+
+nuttx/include/signal.h
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wshadow"
+...struct sigaction...
+#pragma GCC diagnostic pop
+
+/home/qing/sw/ardupilot/modules/PX4Nuttx/nuttx/include/nuttx/fs/ioctl.h
+line 378 * inside /* ... */
+/home/qing/sw/ardupilot/modules/PX4Nuttx/nuttx/include/stddef.h
+typedef uint32_t wint_t;
+
+
+libraries/AP_Math/definitions.h
+//#define NSEC_PER_SEC    1000000000ULL
+//#define NSEC_PER_USEC   1000ULL
+//#define USEC_PER_SEC    1000000ULL
+//#define USEC_PER_MSEC   1000ULL
+
+libraries/AP_Math/AP_Math.h
+#include <nuttx/clock.h>
+
+cp from arch/arm/src/stm32 to arch/arm/src/stm32f7
+stm32.h  -- remve #include "stm32_ltdc.h"; #include "stm32_getc.h"
+stm32_can.h  .c
+stm32_flash.h  .c
+stm32_fsmc.h
+????stm32_ltdc.h  .c
+stm32_sdio.h  .c
+stm32_usbdev.h  .c
+stm32_wdg.h
+inside stm32.h, rename stm32_eth.h to stm32_ethernet.h
+
+
+
+cp from arch/arm/src/stm32/chip to arch/arm/src/stm32f7/chip
+stm32_can.h
+stm32_sdio.h
+stm32_usbdev.h
+stm32_wdg.h
+
+chip/stm32_ethernet.h
+line50: syntax error
+
+????cp from nuttx-old/include/nuttx/i2c.h nuttx/include/nuttx/i2c.h
+
+px4-i2c.h
+change nuttx/i2c.h to nuttx/i2c/i2c_master.h
+
+/home/qing/sw/ardupilot/libraries/AP_HAL_PX4/NSHShellStream.cpp
+#incldue <apps/nshlib/nshlib.h>
+
+/home/qing/sw/ardupilot/modules/PX4Firmware/src/drivers/airspeed/airspeed.cpp
+irqsave() --> up_irq_save()
+
+/home/qing/sw/ardupilot/modules/PX4Firmware/src/drivers/airspeed/airspeed.cpp
+irqrestore() --> up_irq_restore()
+
+CONFIG_ARCH_DMA=y
+
+

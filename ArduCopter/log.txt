@@ -1,0 +1,1827 @@
+// BUILDROOT=/home/qing/sw/nap/Build.ArduCopter HAL_BOARD=HAL_BOARD_PX4 HAL_BOARD_SUBTYPE= TOOLCHAIN=NATIVE EXTRAFLAGS=-DGIT_VERSION="acf2e10c" -DNUTTX_GIT_VERSION="7c5ef883" -DPX4_GIT_VERSION="34e1d543" -DUAVCAN=1
+Checking modules
+make[1]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware'
+Skipping submodules. NUTTX_SRC is set to /home/qing/sw/nap/modules/PX4NuttX/nuttx/
+%% Configuring NuttX for px4fmu-niu
+make[4]: Nothing to be done for 'clean'.
+%% Exporting NuttX for px4fmu-niu
+LN: include/arch to arch/arm/include
+LN: include/arch/board to /home/qing/sw/nap/modules/PX4NuttX/nuttx/configs/px4fmu-niu/include
+LN: include/arch/chip to arch/arm/include/stm32f7
+LN: arch/arm/src/board to /home/qing/sw/nap/modules/PX4NuttX/nuttx/configs/px4fmu-niu/src
+LN: arch/arm/src/chip to arch/arm/src/stm32f7
+LN: include/apps to ../apps/include
+make[5]: Nothing to be done for 'context'.
+make[5]: Nothing to be done for 'context'.
+make[6]: Nothing to be done for 'context'.
+make[5]: Nothing to be done for 'context'.
+Register: sercon
+Register: serdis
+LN: platform/board to /home/qing/sw/nap/modules/PX4NuttX/apps/platform/dummy
+make[5]: Nothing to be done for 'context'.
+make[5]: Nothing to be done for 'context'.
+make[5]: Nothing to be done for 'context'.
+make[6]: Nothing to be done for 'context'.
+make[5]: Nothing to be done for 'context'.
+make[5]: Nothing to be done for 'context'.
+LN: platform/board to /home/qing/sw/nap/modules/PX4NuttX/apps/platform/dummy
+LN: platform/board to /home/qing/sw/nap/modules/PX4NuttX/apps/platform/dummy
+CC:  clock/clock_initialize.c
+CC:  clock/clock_settime.c
+CC:  clock/clock_gettime.c
+CC:  clock/clock_getres.c
+CC:  clock/clock_time2ticks.c
+CC:  clock/clock_abstime2ticks.c
+CC:  clock/clock_ticks2time.c
+CC:  clock/clock_systimer.c
+CC:  clock/clock_systimespec.c
+CC:  clock/clock_timespec_add.c
+CC:  clock/clock_timespec_subtract.c
+CC:  errno/errno_getptr.c
+CC:  environ/env_getenvironptr.c
+CC:  environ/env_dup.c
+CC:  environ/env_release.c
+CC:  environ/env_findvar.c
+CC:  environ/env_removevar.c
+CC:  environ/env_clearenv.c
+CC:  environ/env_getenv.c
+CC:  environ/env_putenv.c
+CC:  environ/env_setenv.c
+CC:  environ/env_unsetenv.c
+CC:  group/group_create.c
+CC:  group/group_join.c
+CC:  group/group_leave.c
+CC:  group/group_find.c
+CC:  group/group_setupstreams.c
+CC:  group/group_setupidlefiles.c
+CC:  group/group_setuptaskfiles.c
+CC:  group/group_foreachchild.c
+CC:  group/group_killchildren.c
+CC:  group/group_waiter.c
+CC:  group/group_signal.c
+CC:  init/os_start.c
+CC:  init/os_bringup.c
+CC:  irq/irq_initialize.c
+CC:  irq/irq_attach.c
+CC:  irq/irq_dispatch.c
+CC:  irq/irq_unexpectedisr.c
+CC:  mqueue/mq_send.c
+CC:  mqueue/mq_timedsend.c
+CC:  mqueue/mq_sndinternal.c
+CC:  mqueue/mq_receive.c
+CC:  mqueue/mq_timedreceive.c
+CC:  mqueue/mq_rcvinternal.c
+CC:  mqueue/mq_initialize.c
+CC:  mqueue/mq_descreate.c
+CC:  mqueue/mq_desclose.c
+CC:  mqueue/mq_msgfree.c
+CC:  mqueue/mq_msgqalloc.c
+CC:  mqueue/mq_msgqfree.c
+CC:  mqueue/mq_release.c
+CC:  mqueue/mq_recover.c
+CC:  mqueue/mq_setattr.c
+CC:  mqueue/mq_getattr.c
+CC:  mqueue/mq_waitirq.c
+CC:  mqueue/mq_notify.c
+CC:  paging/pg_miss.c
+CC:  paging/pg_worker.c
+CC:  pthread/pthread_create.c
+CC:  pthread/pthread_exit.c
+CC:  pthread/pthread_join.c
+CC:  pthread/pthread_detach.c
+CC:  pthread/pthread_yield.c
+CC:  pthread/pthread_getschedparam.c
+CC:  pthread/pthread_setschedparam.c
+CC:  pthread/pthread_mutexinit.c
+CC:  pthread/pthread_mutexdestroy.c
+CC:  pthread/pthread_mutexlock.c
+CC:  pthread/pthread_mutextrylock.c
+CC:  pthread/pthread_mutexunlock.c
+CC:  pthread/pthread_condinit.c
+CC:  pthread/pthread_conddestroy.c
+CC:  pthread/pthread_condwait.c
+CC:  pthread/pthread_condsignal.c
+CC:  pthread/pthread_condbroadcast.c
+CC:  pthread/pthread_barrierinit.c
+CC:  pthread/pthread_barrierdestroy.c
+CC:  pthread/pthread_barrierwait.c
+CC:  pthread/pthread_cancel.c
+CC:  pthread/pthread_setcancelstate.c
+CC:  pthread/pthread_keycreate.c
+CC:  pthread/pthread_setspecific.c
+CC:  pthread/pthread_getspecific.c
+CC:  pthread/pthread_keydelete.c
+CC:  pthread/pthread_initialize.c
+CC:  pthread/pthread_completejoin.c
+CC:  pthread/pthread_findjoininfo.c
+CC:  pthread/pthread_once.c
+CC:  pthread/pthread_release.c
+CC:  pthread/pthread_setschedprio.c
+CC:  pthread/pthread_condtimedwait.c
+CC:  pthread/pthread_kill.c
+CC:  pthread/pthread_sigmask.c
+CC:  sched/sched_garbage.c
+CC:  sched/sched_getfiles.c
+CC:  sched/sched_addreadytorun.c
+CC:  sched/sched_removereadytorun.c
+CC:  sched/sched_addprioritized.c
+CC:  sched/sched_mergeprioritized.c
+CC:  sched/sched_mergepending.c
+CC:  sched/sched_addblocked.c
+CC:  sched/sched_removeblocked.c
+CC:  sched/sched_free.c
+CC:  sched/sched_gettcb.c
+CC:  sched/sched_verifytcb.c
+CC:  sched/sched_releasetcb.c
+CC:  sched/sched_getsockets.c
+CC:  sched/sched_getstreams.c
+CC:  sched/sched_setparam.c
+CC:  sched/sched_setpriority.c
+CC:  sched/sched_getparam.c
+CC:  sched/sched_setscheduler.c
+CC:  sched/sched_getscheduler.c
+CC:  sched/sched_yield.c
+CC:  sched/sched_rrgetinterval.c
+CC:  sched/sched_foreach.c
+CC:  sched/sched_lock.c
+CC:  sched/sched_unlock.c
+CC:  sched/sched_lockcount.c
+CC:  sched/sched_idletask.c
+CC:  sched/sched_self.c
+CC:  sched/sched_reprioritize.c
+CC:  sched/sched_waitpid.c
+CC:  sched/sched_roundrobin.c
+CC:  sched/sched_suspendscheduler.c
+CC:  sched/sched_resumescheduler.c
+CC:  sched/sched_processtimer.c
+CC:  sched/sched_note.c
+CC:  semaphore/sem_destroy.c
+CC:  semaphore/sem_wait.c
+CC:  semaphore/sem_trywait.c
+CC:  semaphore/sem_tickwait.c
+CC:  semaphore/sem_timedwait.c
+CC:  semaphore/sem_timeout.c
+CC:  semaphore/sem_post.c
+CC:  semaphore/sem_recover.c
+CC:  semaphore/sem_reset.c
+CC:  semaphore/sem_waitirq.c
+CC:  semaphore/sem_initialize.c
+CC:  semaphore/sem_holder.c
+CC:  signal/sig_initialize.c
+CC:  signal/sig_action.c
+CC:  signal/sig_procmask.c
+CC:  signal/sig_pending.c
+CC:  signal/sig_suspend.c
+CC:  signal/sig_kill.c
+CC:  signal/sig_queue.c
+CC:  signal/sig_waitinfo.c
+CC:  signal/sig_timedwait.c
+CC:  signal/sig_findaction.c
+CC:  signal/sig_allocatependingsigaction.c
+CC:  signal/sig_releasependingsigaction.c
+CC:  signal/sig_unmaskpendingsignal.c
+CC:  signal/sig_removependingsignal.c
+CC:  signal/sig_releasependingsignal.c
+CC:  signal/sig_lowest.c
+CC:  signal/sig_mqnotempty.c
+CC:  signal/sig_cleanup.c
+CC:  signal/sig_dispatch.c
+CC:  signal/sig_deliver.c
+CC:  signal/sig_pause.c
+CC:  signal/sig_nanosleep.c
+CC:  task/task_create.c
+CC:  task/task_init.c
+CC:  task/task_setup.c
+CC:  task/task_activate.c
+CC:  task/task_start.c
+CC:  task/task_delete.c
+CC:  task/task_exit.c
+CC:  task/task_exithook.c
+CC:  task/task_recover.c
+CC:  task/task_restart.c
+CC:  task/task_spawnparms.c
+CC:  task/task_terminate.c
+CC:  task/task_getgroup.c
+CC:  task/task_prctl.c
+CC:  task/task_getpid.c
+CC:  task/exit.c
+CC:  task/task_vfork.c
+CC:  task/task_spawn.c
+CC:  timer/timer_initialize.c
+CC:  timer/timer_create.c
+CC:  timer/timer_delete.c
+CC:  timer/timer_getoverrun.c
+CC:  timer/timer_gettime.c
+CC:  timer/timer_settime.c
+CC:  timer/timer_release.c
+CC:  wdog/wd_initialize.c
+CC:  wdog/wd_create.c
+CC:  wdog/wd_start.c
+CC:  wdog/wd_cancel.c
+CC:  wdog/wd_delete.c
+CC:  wdog/wd_gettime.c
+CC:  wdog/wd_recover.c
+CC:  wqueue/kwork_queue.c
+CC:  wqueue/kwork_process.c
+CC:  wqueue/kwork_cancel.c
+CC:  wqueue/kwork_signal.c
+AR:   clock_initialize.o clock_settime.o clock_gettime.o clock_getres.o clock_time2ticks.o clock_abstime2ticks.o clock_ticks2time.o clock_systimer.o clock_systimespec.o clock_timespec_add.o clock_timespec_subtract.o errno_getptr.o env_getenvironptr.o env_dup.o env_release.o env_findvar.o env_removevar.o env_clearenv.o env_getenv.o env_putenv.o env_setenv.o env_unsetenv.o group_create.o group_join.o group_leave.o group_find.o group_setupstreams.o group_setupidlefiles.o group_setuptaskfiles.o group_foreachchild.o group_killchildren.o group_waiter.o group_signal.o os_start.o os_bringup.o irq_initialize.o irq_attach.o irq_dispatch.o irq_unexpectedisr.o mq_send.o mq_timedsend.o mq_sndinternal.o mq_receive.o mq_timedreceive.o mq_rcvinternal.o mq_initialize.o mq_descreate.o mq_desclose.o mq_msgfree.o mq_msgqalloc.o mq_msgqfree.o mq_release.o mq_recover.o mq_setattr.o mq_getattr.o mq_waitirq.o mq_notify.o pg_miss.o pg_worker.o pthread_create.o pthread_exit.o pthread_join.o pthread_detach.o pthread_yield.o pthread_getschedparam.o pthread_setschedparam.o pthread_mutexinit.o pthread_mutexdestroy.o pthread_mutexlock.o pthread_mutextrylock.o pthread_mutexunlock.o pthread_condinit.o pthread_conddestroy.o pthread_condwait.o pthread_condsignal.o pthread_condbroadcast.o pthread_barrierinit.o pthread_barrierdestroy.o pthread_barrierwait.o pthread_cancel.o pthread_setcancelstate.o pthread_keycreate.o pthread_setspecific.o pthread_getspecific.o pthread_keydelete.o pthread_initialize.o pthread_completejoin.o pthread_findjoininfo.o pthread_once.o pthread_release.o pthread_setschedprio.o pthread_condtimedwait.o pthread_kill.o pthread_sigmask.o sched_garbage.o sched_getfiles.o sched_addreadytorun.o sched_removereadytorun.o sched_addprioritized.o sched_mergeprioritized.o sched_mergepending.o sched_addblocked.o sched_removeblocked.o sched_free.o sched_gettcb.o sched_verifytcb.o sched_releasetcb.o sched_getsockets.o sched_getstreams.o sched_setparam.o sched_setpriority.o sched_getparam.o sched_setscheduler.o sched_getscheduler.o sched_yield.o sched_rrgetinterval.o sched_foreach.o sched_lock.o sched_unlock.o sched_lockcount.o sched_idletask.o sched_self.o sched_reprioritize.o sched_waitpid.o sched_roundrobin.o sched_suspendscheduler.o sched_resumescheduler.o sched_processtimer.o sched_note.o sem_destroy.o sem_wait.o sem_trywait.o sem_tickwait.o sem_timedwait.o sem_timeout.o sem_post.o sem_recover.o sem_reset.o sem_waitirq.o sem_initialize.o sem_holder.o sig_initialize.o sig_action.o sig_procmask.o sig_pending.o sig_suspend.o sig_kill.o sig_queue.o sig_waitinfo.o sig_timedwait.o sig_findaction.o sig_allocatependingsigaction.o sig_releasependingsigaction.o sig_unmaskpendingsignal.o sig_removependingsignal.o sig_releasependingsignal.o sig_lowest.o sig_mqnotempty.o sig_cleanup.o sig_dispatch.o sig_deliver.o sig_pause.o sig_nanosleep.o task_create.o task_init.o task_setup.o task_activate.o task_start.o task_delete.o task_exit.o task_exithook.o task_recover.o task_restart.o task_spawnparms.o task_terminate.o task_getgroup.o task_prctl.o task_getpid.o exit.o task_vfork.o task_spawn.o timer_initialize.o timer_create.o timer_delete.o timer_getoverrun.o timer_gettime.o timer_settime.o timer_release.o wd_initialize.o wd_create.o wd_start.o wd_cancel.o wd_delete.o wd_gettime.o wd_recover.o kwork_queue.o kwork_process.o kwork_cancel.o kwork_signal.o
+CC:  dirent/lib_readdirr.c
+CC:  dirent/lib_telldir.c
+CC:  fixedmath/lib_fixedmath.c
+CC:  fixedmath/lib_b16sin.c
+CC:  fixedmath/lib_b16cos.c
+CC:  fixedmath/lib_b16atan2.c
+CC:  libgen/lib_basename.c
+CC:  libgen/lib_dirname.c
+CC:  misc/lib_stream.c
+CC:  misc/lib_filesem.c
+CC:  misc/lib_utsname.c
+CC:  misc/lib_tea_encrypt.c
+CC:  misc/lib_tea_decrypt.c
+CC:  misc/lib_umul32.c
+CC:  misc/lib_umul64.c
+CC:  misc/lib_umul32x64.c
+CC:  misc/lib_uadd32x64.c
+CC:  misc/lib_uadd64.c
+CC:  misc/lib_usub64x32.c
+CC:  misc/lib_usub64.c
+CC:  misc/lib_sendfile.c
+CC:  misc/lib_streamsem.c
+CC:  misc/lib_mkfifo.c
+CC:  misc/lib_crc64.c
+CC:  misc/lib_crc32.c
+CC:  misc/lib_crc16.c
+CC:  misc/lib_crc8.c
+CC:  misc/lib_dumpbuffer.c
+CC:  misc/lib_match.c
+CC:  net/lib_addrconfig.c
+CC:  net/lib_etherntoa.c
+CC:  net/lib_htons.c
+CC:  net/lib_htonl.c
+CC:  net/lib_inetaddr.c
+CC:  net/lib_inetntoa.c
+CC:  net/lib_inetntop.c
+CC:  net/lib_inetpton.c
+CC:  pthread/pthread_attrinit.c
+CC:  pthread/pthread_attrdestroy.c
+CC:  pthread/pthread_attrsetschedpolicy.c
+CC:  pthread/pthread_attrgetschedpolicy.c
+CC:  pthread/pthread_attrsetinheritsched.c
+CC:  pthread/pthread_attrgetinheritsched.c
+CC:  pthread/pthread_attrsetstacksize.c
+CC:  pthread/pthread_attrgetstacksize.c
+CC:  pthread/pthread_attrsetschedparam.c
+CC:  pthread/pthread_attrgetschedparam.c
+CC:  pthread/pthread_barrierattrinit.c
+CC:  pthread/pthread_barrierattrdestroy.c
+CC:  pthread/pthread_barrierattrgetpshared.c
+CC:  pthread/pthread_barrierattrsetpshared.c
+CC:  pthread/pthread_condattrinit.c
+CC:  pthread/pthread_condattrdestroy.c
+CC:  pthread/pthread_mutexattrinit.c
+CC:  pthread/pthread_mutexattrdestroy.c
+CC:  pthread/pthread_mutexattrgetpshared.c
+CC:  pthread/pthread_mutexattrsetpshared.c
+CC:  queue/sq_addlast.c
+CC:  queue/sq_addfirst.c
+CC:  queue/sq_addafter.c
+CC:  queue/sq_cat.c
+CC:  queue/sq_rem.c
+CC:  queue/sq_remlast.c
+CC:  queue/sq_remfirst.c
+CC:  queue/sq_remafter.c
+CC:  queue/sq_count.c
+CC:  queue/dq_addlast.c
+CC:  queue/dq_addfirst.c
+CC:  queue/dq_addafter.c
+CC:  queue/dq_addbefore.c
+CC:  queue/dq_cat.c
+CC:  queue/dq_rem.c
+CC:  queue/dq_remlast.c
+CC:  queue/dq_remfirst.c
+CC:  queue/dq_count.c
+CC:  sched/sched_getprioritymax.c
+CC:  sched/sched_getprioritymin.c
+CC:  semaphore/sem_init.c
+CC:  semaphore/sem_getvalue.c
+CC:  signal/sig_addset.c
+CC:  signal/sig_delset.c
+CC:  signal/sig_emptyset.c
+CC:  signal/sig_fillset.c
+CC:  signal/sig_hold.c
+CC:  signal/sig_ignore.c
+CC:  signal/sig_ismember.c
+CC:  signal/sig_pause.c
+CC:  signal/sig_raise.c
+CC:  signal/sig_relse.c
+CC:  signal/sig_set.c
+CC:  signal/signal.c
+CC:  spawn/lib_psfa_addaction.c
+CC:  spawn/lib_psfa_addclose.c
+CC:  spawn/lib_psfa_adddup2.c
+CC:  spawn/lib_psfa_addopen.c
+CC:  spawn/lib_psfa_destroy.c
+CC:  spawn/lib_psfa_init.c
+CC:  spawn/lib_psa_getflags.c
+CC:  spawn/lib_psa_getschedparam.c
+CC:  spawn/lib_psa_getschedpolicy.c
+CC:  spawn/lib_psa_init.c
+CC:  spawn/lib_psa_setflags.c
+CC:  spawn/lib_psa_setschedparam.c
+CC:  spawn/lib_psa_setschedpolicy.c
+CC:  spawn/lib_psa_getsigmask.c
+CC:  spawn/lib_psa_setsigmask.c
+CC:  spawn/lib_psa_getstacksize.c
+CC:  spawn/lib_psa_setstacksize.c
+CC:  stdio/lib_fileno.c
+CC:  stdio/lib_printf.c
+CC:  stdio/lib_sprintf.c
+CC:  stdio/lib_asprintf.c
+CC:  stdio/lib_snprintf.c
+CC:  stdio/lib_libsprintf.c
+CC:  stdio/lib_vsprintf.c
+CC:  stdio/lib_vasprintf.c
+CC:  stdio/lib_vsnprintf.c
+CC:  stdio/lib_libvsprintf.c
+CC:  stdio/lib_dprintf.c
+CC:  stdio/lib_vdprintf.c
+CC:  stdio/lib_meminstream.c
+CC:  stdio/lib_memoutstream.c
+CC:  stdio/lib_memsistream.c
+CC:  stdio/lib_memsostream.c
+CC:  stdio/lib_lowinstream.c
+CC:  stdio/lib_lowoutstream.c
+CC:  stdio/lib_zeroinstream.c
+CC:  stdio/lib_nullinstream.c
+CC:  stdio/lib_nulloutstream.c
+CC:  stdio/lib_sscanf.c
+CC:  stdio/lib_rawinstream.c
+CC:  stdio/lib_rawoutstream.c
+CC:  stdio/lib_rawsistream.c
+CC:  stdio/lib_rawsostream.c
+CC:  stdio/lib_fopen.c
+CC:  stdio/lib_freopen.c
+CC:  stdio/lib_fclose.c
+CC:  stdio/lib_fread.c
+CC:  stdio/lib_libfread.c
+CC:  stdio/lib_fseek.c
+CC:  stdio/lib_ftell.c
+CC:  stdio/lib_fsetpos.c
+CC:  stdio/lib_fgetpos.c
+CC:  stdio/lib_fgetc.c
+CC:  stdio/lib_fgets.c
+CC:  stdio/lib_gets_s.c
+CC:  stdio/lib_gets.c
+CC:  stdio/lib_libfgets.c
+CC:  stdio/lib_fwrite.c
+CC:  stdio/lib_libfwrite.c
+CC:  stdio/lib_fflush.c
+CC:  stdio/lib_libflushall.c
+CC:  stdio/lib_libfflush.c
+CC:  stdio/lib_rdflush.c
+CC:  stdio/lib_wrflush.c
+CC:  stdio/lib_fputc.c
+CC:  stdio/lib_puts.c
+CC:  stdio/lib_fputs.c
+CC:  stdio/lib_ungetc.c
+CC:  stdio/lib_vprintf.c
+CC:  stdio/lib_fprintf.c
+CC:  stdio/lib_vfprintf.c
+CC:  stdio/lib_stdinstream.c
+CC:  stdio/lib_stdoutstream.c
+CC:  stdio/lib_stdsistream.c
+CC:  stdio/lib_stdsostream.c
+CC:  stdio/lib_perror.c
+CC:  stdio/lib_feof.c
+CC:  stdio/lib_ferror.c
+CC:  stdio/lib_clearerr.c
+CC:  stdio/lib_libnoflush.c
+CC:  stdio/lib_libsnoflush.c
+CC:  stdlib/lib_abs.c
+CC:  stdlib/lib_abort.c
+CC:  stdlib/lib_div.c
+CC:  stdlib/lib_ldiv.c
+CC:  stdlib/lib_lldiv.c
+CC:  stdlib/lib_imaxabs.c
+CC:  stdlib/lib_itoa.c
+CC:  stdlib/lib_labs.c
+CC:  stdlib/lib_llabs.c
+CC:  stdlib/lib_bsearch.c
+CC:  stdlib/lib_rand.c
+CC:  stdlib/lib_qsort.c
+CC:  stdlib/lib_srand.c
+CC:  stdlib/lib_strtol.c
+CC:  stdlib/lib_strtoll.c
+CC:  stdlib/lib_strtoul.c
+CC:  stdlib/lib_strtoull.c
+CC:  stdlib/lib_strtod.c
+CC:  stdlib/lib_checkbase.c
+CC:  string/lib_isbasedigit.c
+CC:  string/lib_memset.c
+CC:  string/lib_memchr.c
+CC:  string/lib_memccpy.c
+CC:  string/lib_memcmp.c
+CC:  string/lib_memmove.c
+CC:  string/lib_skipspace.c
+CC:  string/lib_stpcpy.c
+CC:  string/lib_strcasecmp.c
+CC:  string/lib_strcat.c
+CC:  string/lib_strchr.c
+CC:  string/lib_strcpy.c
+CC:  string/lib_strcmp.c
+CC:  string/lib_strcspn.c
+CC:  string/lib_strdup.c
+CC:  string/lib_strerror.c
+CC:  string/lib_strlen.c
+CC:  string/lib_strnlen.c
+CC:  string/lib_strncasecmp.c
+CC:  string/lib_strncat.c
+CC:  string/lib_strncmp.c
+CC:  string/lib_strncpy.c
+CC:  string/lib_strndup.c
+CC:  string/lib_strcasestr.c
+CC:  string/lib_strpbrk.c
+CC:  string/lib_strrchr.c
+CC:  string/lib_strspn.c
+CC:  string/lib_strstr.c
+CC:  string/lib_strtok.c
+CC:  string/lib_strtokr.c
+CC:  string/lib_memcpy.c
+CC:  symtab/symtab_findbyname.c
+CC:  symtab/symtab_findbyvalue.c
+CC:  symtab/symtab_findorderedbyname.c
+CC:  symtab/symtab_findorderedbyvalue.c
+CC:  syslog/lib_syslog.c
+CC:  syslog/lib_setlogmask.c
+CC:  termios/lib_cfgetspeed.c
+CC:  termios/lib_cfsetspeed.c
+CC:  termios/lib_isatty.c
+CC:  termios/lib_tcflush.c
+CC:  termios/lib_tcgetattr.c
+CC:  termios/lib_tcsetattr.c
+CC:  time/lib_strftime.c
+CC:  time/lib_calendar2utc.c
+CC:  time/lib_daysbeforemonth.c
+CC:  time/lib_gettimeofday.c
+CC:  time/lib_isleapyear.c
+CC:  time/lib_settimeofday.c
+CC:  time/lib_time.c
+CC:  time/lib_mktime.c
+CC:  time/lib_gmtime.c
+CC:  time/lib_gmtimer.c
+CC:  unistd/lib_access.c
+CC:  unistd/lib_getopt.c
+CC:  unistd/lib_getoptargp.c
+CC:  unistd/lib_getoptindp.c
+CC:  unistd/lib_getoptoptp.c
+CC:  unistd/lib_chdir.c
+CC:  unistd/lib_getcwd.c
+CC:  unistd/lib_pipe.c
+CC:  unistd/lib_sleep.c
+CC:  unistd/lib_usleep.c
+AR:    bin/lib_readdirr.o  bin/lib_telldir.o  bin/lib_fixedmath.o  bin/lib_b16sin.o  bin/lib_b16cos.o  bin/lib_b16atan2.o  bin/lib_basename.o  bin/lib_dirname.o  bin/lib_stream.o  bin/lib_filesem.o  bin/lib_utsname.o  bin/lib_tea_encrypt.o  bin/lib_tea_decrypt.o  bin/lib_umul32.o  bin/lib_umul64.o  bin/lib_umul32x64.o  bin/lib_uadd32x64.o  bin/lib_uadd64.o  bin/lib_usub64x32.o  bin/lib_usub64.o  bin/lib_sendfile.o  bin/lib_streamsem.o  bin/lib_mkfifo.o  bin/lib_crc64.o  bin/lib_crc32.o  bin/lib_crc16.o  bin/lib_crc8.o  bin/lib_dumpbuffer.o  bin/lib_match.o  bin/lib_addrconfig.o  bin/lib_etherntoa.o  bin/lib_htons.o  bin/lib_htonl.o  bin/lib_inetaddr.o  bin/lib_inetntoa.o  bin/lib_inetntop.o  bin/lib_inetpton.o  bin/pthread_attrinit.o  bin/pthread_attrdestroy.o  bin/pthread_attrsetschedpolicy.o  bin/pthread_attrgetschedpolicy.o  bin/pthread_attrsetinheritsched.o  bin/pthread_attrgetinheritsched.o  bin/pthread_attrsetstacksize.o  bin/pthread_attrgetstacksize.o  bin/pthread_attrsetschedparam.o  bin/pthread_attrgetschedparam.o  bin/pthread_barrierattrinit.o  bin/pthread_barrierattrdestroy.o  bin/pthread_barrierattrgetpshared.o  bin/pthread_barrierattrsetpshared.o  bin/pthread_condattrinit.o  bin/pthread_condattrdestroy.o  bin/pthread_mutexattrinit.o  bin/pthread_mutexattrdestroy.o  bin/pthread_mutexattrgetpshared.o  bin/pthread_mutexattrsetpshared.o  bin/sq_addlast.o  bin/sq_addfirst.o  bin/sq_addafter.o  bin/sq_cat.o  bin/sq_rem.o  bin/sq_remlast.o  bin/sq_remfirst.o  bin/sq_remafter.o  bin/sq_count.o  bin/dq_addlast.o  bin/dq_addfirst.o  bin/dq_addafter.o  bin/dq_addbefore.o  bin/dq_cat.o  bin/dq_rem.o  bin/dq_remlast.o  bin/dq_remfirst.o  bin/dq_count.o  bin/sched_getprioritymax.o  bin/sched_getprioritymin.o  bin/sem_init.o  bin/sem_getvalue.o  bin/sig_addset.o  bin/sig_delset.o  bin/sig_emptyset.o  bin/sig_fillset.o  bin/sig_hold.o  bin/sig_ignore.o  bin/sig_ismember.o  bin/sig_pause.o  bin/sig_raise.o  bin/sig_relse.o  bin/sig_set.o  bin/signal.o  bin/lib_psfa_addaction.o  bin/lib_psfa_addclose.o  bin/lib_psfa_adddup2.o  bin/lib_psfa_addopen.o  bin/lib_psfa_destroy.o  bin/lib_psfa_init.o  bin/lib_psa_getflags.o  bin/lib_psa_getschedparam.o  bin/lib_psa_getschedpolicy.o  bin/lib_psa_init.o  bin/lib_psa_setflags.o  bin/lib_psa_setschedparam.o  bin/lib_psa_setschedpolicy.o  bin/lib_psa_getsigmask.o  bin/lib_psa_setsigmask.o  bin/lib_psa_getstacksize.o  bin/lib_psa_setstacksize.o  bin/lib_fileno.o  bin/lib_printf.o  bin/lib_sprintf.o  bin/lib_asprintf.o  bin/lib_snprintf.o  bin/lib_libsprintf.o  bin/lib_vsprintf.o  bin/lib_vasprintf.o  bin/lib_vsnprintf.o  bin/lib_libvsprintf.o  bin/lib_dprintf.o  bin/lib_vdprintf.o  bin/lib_meminstream.o  bin/lib_memoutstream.o  bin/lib_memsistream.o  bin/lib_memsostream.o  bin/lib_lowinstream.o  bin/lib_lowoutstream.o  bin/lib_zeroinstream.o  bin/lib_nullinstream.o  bin/lib_nulloutstream.o  bin/lib_sscanf.o  bin/lib_rawinstream.o  bin/lib_rawoutstream.o  bin/lib_rawsistream.o  bin/lib_rawsostream.o  bin/lib_fopen.o  bin/lib_freopen.o  bin/lib_fclose.o  bin/lib_fread.o  bin/lib_libfread.o  bin/lib_fseek.o  bin/lib_ftell.o  bin/lib_fsetpos.o  bin/lib_fgetpos.o  bin/lib_fgetc.o  bin/lib_fgets.o  bin/lib_gets_s.o  bin/lib_gets.o  bin/lib_libfgets.o  bin/lib_fwrite.o  bin/lib_libfwrite.o  bin/lib_fflush.o  bin/lib_libflushall.o  bin/lib_libfflush.o  bin/lib_rdflush.o  bin/lib_wrflush.o  bin/lib_fputc.o  bin/lib_puts.o  bin/lib_fputs.o  bin/lib_ungetc.o  bin/lib_vprintf.o  bin/lib_fprintf.o  bin/lib_vfprintf.o  bin/lib_stdinstream.o  bin/lib_stdoutstream.o  bin/lib_stdsistream.o  bin/lib_stdsostream.o  bin/lib_perror.o  bin/lib_feof.o  bin/lib_ferror.o  bin/lib_clearerr.o  bin/lib_libnoflush.o  bin/lib_libsnoflush.o  bin/lib_abs.o  bin/lib_abort.o  bin/lib_div.o  bin/lib_ldiv.o  bin/lib_lldiv.o  bin/lib_imaxabs.o  bin/lib_itoa.o  bin/lib_labs.o  bin/lib_llabs.o  bin/lib_bsearch.o  bin/lib_rand.o  bin/lib_qsort.o  bin/lib_srand.o  bin/lib_strtol.o  bin/lib_strtoll.o  bin/lib_strtoul.o  bin/lib_strtoull.o  bin/lib_strtod.o  bin/lib_checkbase.o  bin/lib_isbasedigit.o  bin/lib_memset.o  bin/lib_memchr.o  bin/lib_memccpy.o  bin/lib_memcmp.o  bin/lib_memmove.o  bin/lib_skipspace.o  bin/lib_stpcpy.o  bin/lib_strcasecmp.o  bin/lib_strcat.o  bin/lib_strchr.o  bin/lib_strcpy.o  bin/lib_strcmp.o  bin/lib_strcspn.o  bin/lib_strdup.o  bin/lib_strerror.o  bin/lib_strlen.o  bin/lib_strnlen.o  bin/lib_strncasecmp.o  bin/lib_strncat.o  bin/lib_strncmp.o  bin/lib_strncpy.o  bin/lib_strndup.o  bin/lib_strcasestr.o  bin/lib_strpbrk.o  bin/lib_strrchr.o  bin/lib_strspn.o  bin/lib_strstr.o  bin/lib_strtok.o  bin/lib_strtokr.o  bin/lib_memcpy.o  bin/symtab_findbyname.o  bin/symtab_findbyvalue.o  bin/symtab_findorderedbyname.o  bin/symtab_findorderedbyvalue.o  bin/lib_syslog.o  bin/lib_setlogmask.o  bin/lib_cfgetspeed.o  bin/lib_cfsetspeed.o  bin/lib_isatty.o  bin/lib_tcflush.o  bin/lib_tcgetattr.o  bin/lib_tcsetattr.o  bin/lib_strftime.o  bin/lib_calendar2utc.o  bin/lib_daysbeforemonth.o  bin/lib_gettimeofday.o  bin/lib_isleapyear.o  bin/lib_settimeofday.o  bin/lib_time.o  bin/lib_mktime.o  bin/lib_gmtime.o  bin/lib_gmtimer.o  bin/lib_access.o  bin/lib_getopt.o  bin/lib_getoptargp.o  bin/lib_getoptindp.o  bin/lib_getoptoptp.o  bin/lib_chdir.o  bin/lib_getcwd.o  bin/lib_pipe.o  bin/lib_sleep.o  bin/lib_usleep.o
+CC:  mm_heap/mm_initialize.c
+CC:  mm_heap/mm_sem.c
+CC:  mm_heap/mm_addfreechunk.c
+CC:  mm_heap/mm_size2ndx.c
+CC:  mm_heap/mm_shrinkchunk.c
+CC:  mm_heap/mm_brkaddr.c
+CC:  mm_heap/mm_calloc.c
+CC:  mm_heap/mm_extend.c
+CC:  mm_heap/mm_free.c
+CC:  mm_heap/mm_mallinfo.c
+CC:  mm_heap/mm_malloc.c
+CC:  mm_heap/mm_memalign.c
+CC:  mm_heap/mm_realloc.c
+CC:  mm_heap/mm_zalloc.c
+CC:  umm_heap/umm_initialize.c
+CC:  umm_heap/umm_addregion.c
+CC:  umm_heap/umm_sem.c
+CC:  umm_heap/umm_brkaddr.c
+CC:  umm_heap/umm_calloc.c
+CC:  umm_heap/umm_extend.c
+CC:  umm_heap/umm_free.c
+CC:  umm_heap/umm_mallinfo.c
+CC:  umm_heap/umm_malloc.c
+CC:  umm_heap/umm_memalign.c
+CC:  umm_heap/umm_realloc.c
+CC:  umm_heap/umm_zalloc.c
+CC:  umm_heap/umm_globals.c
+AR:    bin/mm_initialize.o  bin/mm_sem.o  bin/mm_addfreechunk.o  bin/mm_size2ndx.o  bin/mm_shrinkchunk.o  bin/mm_brkaddr.o  bin/mm_calloc.o  bin/mm_extend.o  bin/mm_free.o  bin/mm_mallinfo.o  bin/mm_malloc.o  bin/mm_memalign.o  bin/mm_realloc.o  bin/mm_zalloc.o  bin/umm_initialize.o  bin/umm_addregion.o  bin/umm_sem.o  bin/umm_brkaddr.o  bin/umm_calloc.o  bin/umm_extend.o  bin/umm_free.o  bin/umm_mallinfo.o  bin/umm_malloc.o  bin/umm_memalign.o  bin/umm_realloc.o  bin/umm_zalloc.o  bin/umm_globals.o
+AS:  armv7-m/gnu/up_saveusercontext.S
+AS:  armv7-m/gnu/up_fullcontextrestore.S
+AS:  armv7-m/gnu/up_switchcontext.S
+AS:  armv7-m/gnu/up_testset.S
+AS:  armv7-m/gnu/vfork.S
+AS:  armv7-m/gnu/up_exception.S
+CC:  chip/stm32_allocateheap.c
+CC:  chip/stm32_exti_gpio.c
+CC:  chip/stm32_gpio.c
+CC:  chip/stm32_irq.c
+CC:  chip/stm32_lowputc.c
+CC:  chip/stm32_rcc.c
+CC:  chip/stm32_serial.c
+CC:  chip/stm32_start.c
+CC:  chip/stm32_timerisr.c
+CC:  chip/stm32_dtcm.c
+CC:  chip/stm32_dma.c
+CC:  chip/stm32_pwr.c
+CC:  chip/stm32_exti_pwr.c
+CC:  chip/stm32_i2c.c
+CC:  chip/stm32_spi.c
+CC:  chip/stm32_otgdev.c
+CC:  armv7-m/up_assert.c
+CC:  armv7-m/up_blocktask.c
+CC:  armv7-m/up_copyfullstate.c
+CC:  common/up_createstack.c
+CC:  common/up_mdelay.c
+CC:  common/up_udelay.c
+CC:  common/up_exit.c
+CC:  common/up_idle.c
+CC:  common/up_initialize.c
+CC:  armv7-m/up_initialstate.c
+CC:  common/up_interruptcontext.c
+CC:  armv7-m/up_memfault.c
+CC:  common/up_modifyreg8.c
+CC:  common/up_modifyreg16.c
+CC:  common/up_modifyreg32.c
+CC:  armv7-m/up_releasepending.c
+CC:  common/up_releasestack.c
+CC:  armv7-m/up_reprioritizertr.c
+CC:  armv7-m/up_schedulesigaction.c
+CC:  armv7-m/up_sigdeliver.c
+CC:  common/up_stackframe.c
+CC:  armv7-m/up_systemreset.c
+CC:  armv7-m/up_unblocktask.c
+CC:  common/up_usestack.c
+CC:  armv7-m/up_doirq.c
+CC:  armv7-m/up_hardfault.c
+CC:  armv7-m/up_svcall.c
+CC:  common/up_vfork.c
+CC:  armv7-m/up_vectors.c
+CC:  armv7-m/arch_enable_dcache.c
+CC:  armv7-m/arch_disable_dcache.c
+CC:  armv7-m/arch_invalidate_dcache.c
+CC:  armv7-m/arch_invalidate_dcache_all.c
+AR:  up_saveusercontext.o up_fullcontextrestore.o up_switchcontext.o up_testset.o vfork.o up_exception.o stm32_allocateheap.o stm32_exti_gpio.o stm32_gpio.o stm32_irq.o stm32_lowputc.o stm32_rcc.o stm32_serial.o stm32_start.o stm32_timerisr.o stm32_dtcm.o stm32_dma.o stm32_pwr.o stm32_exti_pwr.o stm32_i2c.o stm32_spi.o stm32_otgdev.o up_assert.o up_blocktask.o up_copyfullstate.o up_createstack.o up_mdelay.o up_udelay.o up_exit.o up_idle.o up_initialize.o up_initialstate.o up_interruptcontext.o up_memfault.o up_modifyreg8.o up_modifyreg16.o up_modifyreg32.o up_releasepending.o up_releasestack.o up_reprioritizertr.o up_schedulesigaction.o up_sigdeliver.o up_stackframe.o up_systemreset.o up_unblocktask.o up_usestack.o up_doirq.o up_hardfault.o up_svcall.o up_vfork.o up_vectors.o arch_enable_dcache.o arch_disable_dcache.o arch_invalidate_dcache.o arch_invalidate_dcache_all.o
+CXX:  libxx_cxapurevirtual.cxx
+CXX:  libxx_eabi_atexit.cxx
+CXX:  libxx_cxa_atexit.cxx
+CXX:  libxx_delete.cxx
+CXX:  libxx_deletea.cxx
+CXX:  libxx_new.cxx
+CXX:  libxx_newa.cxx
+CXX:  libxx_stdthrow.cxx
+CXX:  libxx_cxa_guard.cxx
+AR:    libxx_cxapurevirtual.o libxx_eabi_atexit.o libxx_cxa_atexit.o libxx_delete.o libxx_deletea.o libxx_new.o libxx_newa.o libxx_stdthrow.o libxx_cxa_guard.o
+CC:  nsh_main.c
+AR:     nsh_main.o
+CC:  nsh_init.c
+CC:  nsh_parse.c
+CC:  nsh_console.c
+CC:  nsh_script.c
+CC:  nsh_command.c
+CC:  nsh_fscmds.c
+CC:  nsh_ddcmd.c
+CC:  nsh_proccmds.c
+CC:  nsh_mmcmds.c
+CC:  nsh_timcmds.c
+CC:  nsh_envcmds.c
+CC:  nsh_syscmds.c
+CC:  nsh_dbgcmds.c
+CC:  nsh_session.c
+CC:  nsh_fsutils.c
+CC:  nsh_builtin.c
+CC:  nsh_mntcmds.c
+CC:  nsh_consolemain.c
+CC:  nsh_test.c
+CC:  nsh_usbconsole.c
+AR:   nsh_init.o nsh_parse.o nsh_console.o nsh_script.o nsh_command.o nsh_fscmds.o nsh_ddcmd.o nsh_proccmds.o nsh_mmcmds.o nsh_timcmds.o nsh_envcmds.o nsh_syscmds.o nsh_dbgcmds.o nsh_session.o nsh_fsutils.o nsh_builtin.o nsh_mntcmds.o nsh_consolemain.o nsh_test.o nsh_usbconsole.o
+CC:  builtin_forindex.c
+CC:  builtin_list.c
+CC:  exec_builtin.c
+AR:   builtin_forindex.o builtin_list.o exec_builtin.o
+CC:  readline_common.c
+CC:  readline.c
+AR:   readline_common.o readline.o
+CC:  cdcacm_main.c
+AR:    cdcacm_main.o
+AR:   
+CC:  fs_initialize.c
+CC:  inode/fs_files.c
+CC:  inode/fs_foreachinode.c
+CC:  inode/fs_inode.c
+CC:  inode/fs_inodeaddref.c
+CC:  inode/fs_inodebasename.c
+CC:  inode/fs_inodefind.c
+CC:  inode/fs_inoderelease.c
+CC:  inode/fs_inoderemove.c
+CC:  inode/fs_inodereserve.c
+CC:  inode/fs_filedetach.c
+CC:  vfs/fs_close.c
+CC:  vfs/fs_dup.c
+CC:  vfs/fs_dup2.c
+CC:  vfs/fs_fcntl.c
+CC:  vfs/fs_dupfd.c
+CC:  vfs/fs_dupfd2.c
+CC:  vfs/fs_epoll.c
+CC:  vfs/fs_getfilep.c
+CC:  vfs/fs_ioctl.c
+CC:  vfs/fs_lseek.c
+CC:  vfs/fs_mkdir.c
+CC:  vfs/fs_open.c
+CC:  vfs/fs_poll.c
+CC:  vfs/fs_read.c
+CC:  vfs/fs_rename.c
+CC:  vfs/fs_rmdir.c
+CC:  vfs/fs_stat.c
+CC:  vfs/fs_statfs.c
+CC:  vfs/fs_select.c
+CC:  vfs/fs_unlink.c
+CC:  vfs/fs_write.c
+CC:  vfs/fs_fsync.c
+CC:  vfs/fs_pread.c
+CC:  vfs/fs_pwrite.c
+CC:  vfs/fs_fdopen.c
+CC:  driver/fs_registerdriver.c
+CC:  driver/fs_unregisterdriver.c
+CC:  driver/fs_registerblockdriver.c
+CC:  driver/fs_unregisterblockdriver.c
+CC:  driver/fs_findblockdriver.c
+CC:  driver/fs_openblockdriver.c
+CC:  driver/fs_closeblockdriver.c
+CC:  driver/fs_blockproxy.c
+CC:  dirent/fs_closedir.c
+CC:  dirent/fs_opendir.c
+CC:  dirent/fs_readdir.c
+CC:  dirent/fs_rewinddir.c
+CC:  dirent/fs_seekdir.c
+CC:  mmap/fs_mmap.c
+CC:  mqueue/mq_open.c
+CC:  mqueue/mq_close.c
+CC:  mqueue/mq_unlink.c
+CC:  mount/fs_mount.c
+CC:  mount/fs_umount2.c
+CC:  mount/fs_foreachmountpoint.c
+AR:   fs_initialize.o fs_files.o fs_foreachinode.o fs_inode.o fs_inodeaddref.o fs_inodebasename.o fs_inodefind.o fs_inoderelease.o fs_inoderemove.o fs_inodereserve.o fs_filedetach.o fs_close.o fs_dup.o fs_dup2.o fs_fcntl.o fs_dupfd.o fs_dupfd2.o fs_epoll.o fs_getfilep.o fs_ioctl.o fs_lseek.o fs_mkdir.o fs_open.o fs_poll.o fs_read.o fs_rename.o fs_rmdir.o fs_stat.o fs_statfs.o fs_select.o fs_unlink.o fs_write.o fs_fsync.o fs_pread.o fs_pwrite.o fs_fdopen.o fs_registerdriver.o fs_unregisterdriver.o fs_registerblockdriver.o fs_unregisterblockdriver.o fs_findblockdriver.o fs_openblockdriver.o fs_closeblockdriver.o fs_blockproxy.o fs_closedir.o fs_opendir.o fs_readdir.o fs_rewinddir.o fs_seekdir.o fs_mmap.o mq_open.o mq_close.o mq_unlink.o fs_mount.o fs_umount2.o fs_foreachmountpoint.o
+CC:  bch/bchlib_setup.c
+CC:  bch/bchlib_teardown.c
+CC:  bch/bchlib_read.c
+CC:  bch/bchlib_write.c
+CC:  bch/bchlib_cache.c
+CC:  bch/bchlib_sem.c
+CC:  bch/bchdev_register.c
+CC:  bch/bchdev_unregister.c
+CC:  bch/bchdev_driver.c
+CC:  i2c/i2c_read.c
+CC:  i2c/i2c_write.c
+CC:  i2c/i2c_writeread.c
+CC:  loop/losetup.c
+CC:  pipes/pipe.c
+CC:  pipes/fifo.c
+CC:  pipes/pipe_common.c
+CC:  serial/serial.c
+CC:  serial/serial_io.c
+CC:  serial/lowconsole.c
+CC:  syslog/vsyslog.c
+CC:  syslog/syslog_stream.c
+CC:  syslog/syslog_emergstream.c
+CC:  syslog/syslog_channel.c
+CC:  syslog/syslog_putc.c
+CC:  syslog/syslog_force.c
+CC:  syslog/syslog_flush.c
+CC:  syslog/syslog_initialize.c
+CC:  syslog/syslog_device.c
+CC:  syslog/syslog_consolechannel.c
+CC:  usbdev/cdcacm.c
+CC:  usbdev/cdcacm_desc.c
+CC:  usbdev/usbdev_trace.c
+CC:  usbdev/usbdev_trprintf.c
+CC:  usbhost/hid_parser.c
+CC:  dev_null.c
+CC:  dev_zero.c
+CC:  ramdisk.c
+AR:   bchlib_setup.o bchlib_teardown.o bchlib_read.o bchlib_write.o bchlib_cache.o bchlib_sem.o bchdev_register.o bchdev_unregister.o bchdev_driver.o i2c_read.o i2c_write.o i2c_writeread.o losetup.o pipe.o fifo.o pipe_common.o serial.o serial_io.o lowconsole.o vsyslog.o syslog_stream.o syslog_emergstream.o syslog_channel.o syslog_putc.o syslog_force.o syslog_flush.o syslog_initialize.o syslog_device.o syslog_consolechannel.o cdcacm.o cdcacm_desc.o usbdev_trace.o usbdev_trprintf.o hid_parser.o dev_null.o dev_zero.o ramdisk.o
+CC:  binfmt_globals.c
+CC:  binfmt_register.c
+CC:  binfmt_unregister.c
+CC:  binfmt_loadmodule.c
+CC:  binfmt_unloadmodule.c
+CC:  binfmt_execmodule.c
+CC:  binfmt_exec.c
+CC:  binfmt_copyargv.c
+CC:  binfmt_dumpmodule.c
+CC:  builtin.c
+CC:  libbuiltin/libbuiltin_getname.c
+CC:  libbuiltin/libbuiltin_isavail.c
+AR:   binfmt_globals.o binfmt_register.o binfmt_unregister.o binfmt_loadmodule.o binfmt_unloadmodule.o binfmt_execmodule.o binfmt_exec.o binfmt_copyargv.o binfmt_dumpmodule.o builtin.o libbuiltin_getname.o libbuiltin_isavail.o
+CC:  boardctl.c
+AR:   boardctl.o
+CC:  stm32_boot.c
+CC:  stm32_autoleds.c
+CC:  stm32_buttons.c
+CC:  stm32_appinitialize.c
+AR:   stm32_boot.o stm32_autoleds.o stm32_buttons.o stm32_appinitialize.o
+make[1]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware'
+Building /home/qing/sw/nap/module.mk
+%% module_mk
+%% px4-niu
+make[1]: Entering directory '/home/qing/sw/nap'
+Skipping submodules. NUTTX_SRC is set to /home/qing/sw/nap/modules/PX4NuttX/nuttx/
+Generating uORB topic headers
+position_setpoint_triplet.h: new header file
+telemetry_status.h: new header file
+actuator_controls_2.h: new header file
+actuator_controls.h: new header file
+actuator_controls_0.h: new header file
+follow_target.h: new header file
+vehicle_command_ack.h: new header file
+servorail_status.h: new header file
+mission_result.h: new header file
+parameter_update.h: new header file
+battery_status.h: new header file
+control_state.h: new header file
+differential_pressure.h: new header file
+vehicle_status.h: new header file
+vehicle_command.h: new header file
+test_motor.h: new header file
+vehicle_local_position_setpoint.h: new header file
+vehicle_vicon_position.h: new header file
+vtol_vehicle_status.h: new header file
+camera_trigger.h: new header file
+distance_sensor.h: new header file
+manual_control_setpoint.h: new header file
+rc_channels.h: new header file
+offboard_control_mode.h: new header file
+sensor_accel.h: new header file
+estimator_status.h: new header file
+output_pwm.h: new header file
+fence_vertex.h: new header file
+qshell_req.h: new header file
+sensor_gyro.h: new header file
+input_rc.h: new header file
+system_power.h: new header file
+home_position.h: new header file
+pwm_input.h: new header file
+fw_virtual_rates_setpoint.h: new header file
+vehicle_global_velocity_setpoint.h: new header file
+actuator_controls_virtual_fw.h: new header file
+ekf2_replay.h: new header file
+actuator_controls_1.h: new header file
+tecs_status.h: new header file
+mc_virtual_rates_setpoint.h: new header file
+vehicle_rates_setpoint.h: new header file
+mc_att_ctrl_status.h: new header file
+wind_estimate.h: new header file
+navigation_capabilities.h: new header file
+fence.h: new header file
+vehicle_local_position.h: new header file
+vehicle_land_detected.h: new header file
+encoders.h: new header file
+multirotor_motor_limits.h: new header file
+uavcan_parameter_request.h: new header file
+geofence_result.h: new header file
+sensor_combined.h: new header file
+actuator_outputs.h: new header file
+actuator_controls_3.h: new header file
+mission.h: new header file
+sensor_baro.h: new header file
+actuator_armed.h: new header file
+vehicle_control_mode.h: new header file
+mc_virtual_attitude_setpoint.h: new header file
+optical_flow.h: new header file
+vehicle_attitude.h: new header file
+att_pos_mocap.h: new header file
+position_setpoint.h: new header file
+subsystem_info.h: new header file
+hil_sensor.h: new header file
+sensor_mag.h: new header file
+mavlink_log.h: new header file
+filtered_bottom_flow.h: new header file
+airspeed.h: new header file
+satellite_info.h: new header file
+ekf2_innovations.h: new header file
+esc_report.h: new header file
+uavcan_parameter_value.h: new header file
+vehicle_attitude_setpoint.h: new header file
+rc_parameter_map.h: new header file
+fw_virtual_attitude_setpoint.h: new header file
+debug_key_value.h: new header file
+actuator_direct.h: new header file
+vision_position_estimate.h: new header file
+vehicle_global_position.h: new header file
+time_offset.h: new header file
+safety.h: new header file
+esc_status.h: new header file
+vehicle_force_setpoint.h: new header file
+vehicle_gps_position.h: new header file
+actuator_controls_virtual_mc.h: new header file
+Generating multiplatform uORB topic wrapper headers
+position_setpoint_triplet.h: new header file
+telemetry_status.h: new header file
+actuator_controls_2.h: new header file
+actuator_controls.h: new header file
+actuator_controls_0.h: new header file
+follow_target.h: new header file
+vehicle_command_ack.h: new header file
+servorail_status.h: new header file
+mission_result.h: new header file
+parameter_update.h: new header file
+battery_status.h: new header file
+control_state.h: new header file
+differential_pressure.h: new header file
+vehicle_status.h: new header file
+vehicle_command.h: new header file
+test_motor.h: new header file
+vehicle_local_position_setpoint.h: new header file
+vehicle_vicon_position.h: new header file
+vtol_vehicle_status.h: new header file
+camera_trigger.h: new header file
+distance_sensor.h: new header file
+manual_control_setpoint.h: new header file
+rc_channels.h: new header file
+offboard_control_mode.h: new header file
+sensor_accel.h: new header file
+estimator_status.h: new header file
+output_pwm.h: new header file
+fence_vertex.h: new header file
+qshell_req.h: new header file
+sensor_gyro.h: new header file
+input_rc.h: new header file
+system_power.h: new header file
+home_position.h: new header file
+pwm_input.h: new header file
+fw_virtual_rates_setpoint.h: new header file
+vehicle_global_velocity_setpoint.h: new header file
+actuator_controls_virtual_fw.h: new header file
+ekf2_replay.h: new header file
+actuator_controls_1.h: new header file
+tecs_status.h: new header file
+mc_virtual_rates_setpoint.h: new header file
+vehicle_rates_setpoint.h: new header file
+mc_att_ctrl_status.h: new header file
+wind_estimate.h: new header file
+navigation_capabilities.h: new header file
+fence.h: new header file
+vehicle_local_position.h: new header file
+vehicle_land_detected.h: new header file
+encoders.h: new header file
+multirotor_motor_limits.h: new header file
+uavcan_parameter_request.h: new header file
+geofence_result.h: new header file
+sensor_combined.h: new header file
+actuator_outputs.h: new header file
+actuator_controls_3.h: new header file
+mission.h: new header file
+sensor_baro.h: new header file
+actuator_armed.h: new header file
+vehicle_control_mode.h: new header file
+mc_virtual_attitude_setpoint.h: new header file
+optical_flow.h: new header file
+vehicle_attitude.h: new header file
+att_pos_mocap.h: new header file
+position_setpoint.h: new header file
+subsystem_info.h: new header file
+hil_sensor.h: new header file
+sensor_mag.h: new header file
+mavlink_log.h: new header file
+filtered_bottom_flow.h: new header file
+airspeed.h: new header file
+satellite_info.h: new header file
+ekf2_innovations.h: new header file
+esc_report.h: new header file
+uavcan_parameter_value.h: new header file
+vehicle_attitude_setpoint.h: new header file
+rc_parameter_map.h: new header file
+fw_virtual_attitude_setpoint.h: new header file
+debug_key_value.h: new header file
+actuator_direct.h: new header file
+vision_position_estimate.h: new header file
+vehicle_global_position.h: new header file
+time_offset.h: new header file
+safety.h: new header file
+esc_status.h: new header file
+vehicle_force_setpoint.h: new header file
+vehicle_gps_position.h: new header file
+actuator_controls_virtual_mc.h: new header file
+%%%%
+%%%% Building px4fmu-niu_APM in /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/
+%%%%
+make[2]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build'
+%  PX4_BASE            = /home/qing/sw/nap/modules/PX4Firmware/
+%  GIT_DESC            = 
+%  CONFIG              = px4fmu-niu_APM
+%  BOARD               = px4fmu-niu
+%  WORK_DIR            = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/
+%  NUTTX_EXPORT_DIR    = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/nuttx-export/
+%  NUTTX_CONFIG_HEADER = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/nuttx-export/include/nuttx/config.h
+%% Unpacking /home/qing/sw/nap/modules/PX4Firmware/Archives/px4fmu-niu.export
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap'
+%% MODULE_MK           = /home/qing/sw/nap/module.mk
+%  MODULE_NAME         = nap
+%  MODULE_SRC          = /home/qing/sw/nap/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap
+CXX:     /home/qing/sw/nap/ArduCopter/control_rtl.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/control_poshold.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/motors.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/Attitude.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/GCS_Mavlink.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/Parameters.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/sensors.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/failsafe.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/control_autotune.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/land_detector.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/test.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/control_acro.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/heli.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/heli_control_acro.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/control_brake.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/control_sport.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/radio.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/leds.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/control_althold.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/events.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/AP_State.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/ekf_check.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/control_auto.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/commands.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/control_flip.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/flight_mode.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/control_drift.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/compat.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/UserCode.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/Copter.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/compassmot.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/inertia.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/setup.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/commands_logic.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/esc_calibration.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/position_vector.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/crash_check.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/perf_info.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/fence.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/takeoff.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/control_stabilize.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/tuning.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/heli_control_stabilize.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/navigation.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/system.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/switches.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/motor_test.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/control_guided.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/control_land.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/landing_gear.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/capabilities.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/control_circle.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/Log.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/control_loiter.cpp
+CXX:     /home/qing/sw/nap/ArduCopter/ArduCopter.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Common/AP_Common.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Common/c++.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Progmem/AP_Progmem_AVR.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Menu/AP_Menu.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Param/AP_Param.cpp
+CXX:     /home/qing/sw/nap/libraries/StorageManager/StorageManager.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL/UARTDriver.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL/Util.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/AnalogIn_ADC.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/GPIO.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/Scheduler.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/Semaphores.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/SPIDevice_SPI2.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/UARTDriver.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/Storage.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/memcheck.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/RCOutput_APM2.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/Scheduler_Timer.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/RCOutput_APM1.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/HAL_AVR_APM2_Class.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/I2CDriver.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/RCInput_APM2.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/HAL_AVR_APM1_Class.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/SPIDeviceManager_APM2.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/RCInput_APM1.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/SPIDevice_SPI0.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/SPIDevice_SPI3.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/AnalogIn_Common.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/SPIDeviceManager_APM1.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_SITL/SITL_State.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_SITL/UARTDriver.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_SITL/Storage.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_SITL/SITL_cmdline.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_SITL/HAL_SITL_Class.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_SITL/RCOutput.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_SITL/sitl_ins.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_SITL/Scheduler.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_SITL/sitl_gps.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_SITL/sitl_compass.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_SITL/AnalogIn.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_SITL/sitl_barometer.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_SITL/RCInput.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_SITL/sitl_optical_flow.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_PX4/GPIO.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_PX4/HAL_PX4_Class.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_PX4/RCOutput.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_PX4/UARTDriver.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_PX4/Storage.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_PX4/px4_param.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_PX4/NSHShellStream.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_PX4/Scheduler.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_PX4/AnalogIn.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_PX4/Util.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_PX4/RCInput.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_VRBRAIN/GPIO.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_VRBRAIN/UARTDriver.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_VRBRAIN/Storage.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_VRBRAIN/HAL_VRBRAIN_Class.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_VRBRAIN/RCOutput.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_VRBRAIN/Scheduler.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_VRBRAIN/AnalogIn.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_VRBRAIN/Util.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_VRBRAIN/RCInput.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_FLYMAPLE/GPIO.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_FLYMAPLE/Semaphores.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_FLYMAPLE/AnalogSource.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_FLYMAPLE/UARTDriver.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_FLYMAPLE/Storage.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_FLYMAPLE/HAL_FLYMAPLE_Class.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_FLYMAPLE/I2CDriver.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_FLYMAPLE/SPIDriver.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_FLYMAPLE/RCOutput.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_FLYMAPLE/Scheduler.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_FLYMAPLE/AnalogIn.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_FLYMAPLE/RCInput.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/GPIO.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/RCOutput_Bebop.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/Scheduler.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/HAL_Linux_Class.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/Semaphores.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/AnalogIn_Navio.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/sbus.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/TCPServerDevice.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/UARTDriver.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/RCInput_PRU.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/Storage_FRAM.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/RCInput_Navio.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/ConsoleDevice.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/SPIUARTDriver.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/RCOutput_ZYNQ.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/Storage.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/dsm.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/I2CDriver.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/SPIDriver.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/UDPDevice.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/UARTDevice.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/RCInput_ZYNQ.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/RCOutput_PRU.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/RCOutput_Navio.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/GPIO_RPI.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/AnalogIn.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/ToneAlarmDriver.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/RCOutput_AioPRU.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/RCInput_AioPRU.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/GPIO_BBB.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/Util.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Linux/RCInput.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Empty/GPIO.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Empty/Semaphores.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Empty/UARTDriver.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Empty/Storage.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Empty/PrivateMember.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Empty/I2CDriver.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Empty/SPIDriver.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Empty/RCOutput.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Empty/Scheduler.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Empty/AnalogIn.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Empty/RCInput.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_Empty/HAL_Empty_Class.cpp
+CXX:     /home/qing/sw/nap/libraries/GCS_MAVLink/GCS_Common.cpp
+CXX:     /home/qing/sw/nap/libraries/GCS_MAVLink/GCS_serial_control.cpp
+CXX:     /home/qing/sw/nap/libraries/GCS_MAVLink/GCS_Logs.cpp
+CXX:     /home/qing/sw/nap/libraries/GCS_MAVLink/MAVLink_routing.cpp
+CXX:     /home/qing/sw/nap/libraries/GCS_MAVLink/GCS_MAVLink.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_SerialManager/AP_SerialManager.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_GPS/AP_GPS_UBLOX.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_GPS/AP_GPS_NMEA.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_GPS/AP_GPS_SIRF.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_GPS/GPS_Backend.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_GPS/AP_GPS_SBP.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_GPS/AP_GPS.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_GPS/AP_GPS_MTK19.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_GPS/AP_GPS_PX4.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_GPS/AP_GPS_MTK.cpp
+CXX:     /home/qing/sw/nap/libraries/DataFlash/LogFile.cpp
+CXX:     /home/qing/sw/nap/libraries/DataFlash/DataFlash_APM1.cpp
+CXX:     /home/qing/sw/nap/libraries/DataFlash/DataFlash_SITL.cpp
+CXX:     /home/qing/sw/nap/libraries/DataFlash/DataFlash.cpp
+CXX:     /home/qing/sw/nap/libraries/DataFlash/DataFlash_Block.cpp
+CXX:     /home/qing/sw/nap/libraries/DataFlash/DataFlash_Empty.cpp
+CXX:     /home/qing/sw/nap/libraries/DataFlash/DataFlash_File.cpp
+CXX:     /home/qing/sw/nap/libraries/DataFlash/DataFlash_APM2.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_ADC/AP_ADC.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_ADC/AP_ADC_ADS1115.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_ADC/AP_ADC_ADS7844.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_ADC_AnalogSource/AP_ADC_AnalogSource.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Baro/AP_Baro_HIL.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Baro/AP_Baro_PX4.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Baro/AP_Baro_MS5611.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Baro/AP_Baro_Backend.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Baro/AP_Baro.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Baro/AP_Baro_BMP085.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Compass/Compass_learn.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Compass/AP_Compass_HIL.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Compass/AP_Compass_HMC5843.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Compass/AP_Compass_PX4.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Compass/AP_Compass_Backend.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Compass/Compass.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Compass/AP_Compass_AK8963.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Math/quaternion.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Math/vector2.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Math/polygon.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Math/matrix3.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Math/edc.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Math/AP_Math.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Math/vector3.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Math/location.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Curve/AP_Curve.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_InertialSensor/AP_InertialSensor_Oilpan.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_InertialSensor/AP_InertialSensor_Backend.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_InertialSensor/AP_InertialSensor_MPU9250.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_InertialSensor/AP_InertialSensor_MPU6000.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_InertialSensor/AP_InertialSensor_MPU9150.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_InertialSensor/AP_InertialSensor_UserInteract_Stream.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_InertialSensor/AP_InertialSensor_L3G4200D.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_InertialSensor/AP_InertialSensor_HIL.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_InertialSensor/AP_InertialSensor_Flymaple.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_InertialSensor/AP_InertialSensor_UserInteract_MAVLink.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_InertialSensor/AP_InertialSensor_LSM9DS0.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_InertialSensor/AP_InertialSensor_PX4.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_InertialSensor/AP_InertialSensor.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_AHRS/AP_AHRS_DCM.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_AHRS/AP_AHRS.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_AHRS/AP_AHRS_NavEKF.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_NavEKF/AP_NavEKF.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_NavEKF/AP_SmallEKF.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Mission/AP_Mission.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Rally/AP_Rally.cpp
+CXX:     /home/qing/sw/nap/libraries/AC_PID/AC_HELI_PID.cpp
+CXX:     /home/qing/sw/nap/libraries/AC_PID/AC_PI_2D.cpp
+CXX:     /home/qing/sw/nap/libraries/AC_PID/AC_PID.cpp
+CXX:     /home/qing/sw/nap/libraries/AC_PID/AC_P.cpp
+CXX:     /home/qing/sw/nap/libraries/AC_AttitudeControl/AC_AttitudeControl_Multi.cpp
+CXX:     /home/qing/sw/nap/libraries/AC_AttitudeControl/AC_PosControl.cpp
+CXX:     /home/qing/sw/nap/libraries/AC_AttitudeControl/AC_AttitudeControl.cpp
+CXX:     /home/qing/sw/nap/libraries/AC_AttitudeControl/AC_AttitudeControl_Heli.cpp
+CXX:     /home/qing/sw/nap/libraries/RC_Channel/RC_Channel.cpp
+CXX:     /home/qing/sw/nap/libraries/RC_Channel/RC_Channel_aux.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Motors/AP_MotorsY6.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Motors/AP_MotorsTri.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Motors/AP_MotorsMulticopter.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Motors/AP_MotorsHeli_RSC.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Motors/AP_MotorsSingle.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Motors/AP_MotorsOcta.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Motors/AP_MotorsHexa.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Motors/AP_MotorsQuad.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Motors/AP_MotorsMatrix.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Motors/AP_MotorsHeli_Single.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Motors/AP_MotorsCoax.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Motors/AP_Motors_Class.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Motors/AP_MotorsOctaQuad.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Motors/AP_MotorsHeli.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_RangeFinder/RangeFinder.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_RangeFinder/AP_RangeFinder_PX4_PWM.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_RangeFinder/AP_RangeFinder_LightWareI2C.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_RangeFinder/AP_RangeFinder_PulsedLightLRF.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_RangeFinder/AP_RangeFinder_analog.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_RangeFinder/RangeFinder_Backend.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_RangeFinder/AP_RangeFinder_MaxsonarI2CXL.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_RangeFinder/AP_RangeFinder_BBB_PRU.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_RangeFinder/AP_RangeFinder_LightWareSerial.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_RangeFinder/AP_RangeFinder_PX4.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_OpticalFlow/AP_OpticalFlow_HIL.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_OpticalFlow/OpticalFlow_backend.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_OpticalFlow/AP_OpticalFlow_Linux.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_OpticalFlow/OpticalFlow.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_OpticalFlow/AP_OpticalFlow_PX4.cpp
+CXX:     /home/qing/sw/nap/libraries/Filter/DerivativeFilter.cpp
+CXX:     /home/qing/sw/nap/libraries/Filter/LowPassFilter2p.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Relay/AP_Relay.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_ServoRelayEvents/AP_ServoRelayEvents.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Camera/AP_Camera.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Mount/AP_Mount_Backend.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Mount/AP_Gimbal.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Mount/AP_Mount_Alexmos.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Mount/AP_Mount_SToRM32.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Mount/AP_Mount.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Mount/AP_Mount_Servo.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Mount/AP_Mount_MAVLink.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Mount/AP_Mount_SToRM32_serial.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Airspeed/AP_Airspeed_I2C.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Airspeed/Airspeed_Calibration.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Airspeed/AP_Airspeed_analog.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Airspeed/AP_Airspeed.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Airspeed/AP_Airspeed_PX4.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_InertialNav/AP_InertialNav_NavEKF.cpp
+CXX:     /home/qing/sw/nap/libraries/AC_WPNav/AC_WPNav.cpp
+CXX:     /home/qing/sw/nap/libraries/AC_WPNav/AC_Circle.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Declination/AP_Declination.cpp
+CXX:     /home/qing/sw/nap/libraries/AC_Fence/AC_Fence.cpp
+CXX:     /home/qing/sw/nap/libraries/SITL/SIM_Helicopter.cpp
+CXX:     /home/qing/sw/nap/libraries/SITL/SITL.cpp
+CXX:     /home/qing/sw/nap/libraries/SITL/SIM_last_letter.cpp
+CXX:     /home/qing/sw/nap/libraries/SITL/SIM_JSBSim.cpp
+CXX:     /home/qing/sw/nap/libraries/SITL/SIM_Multicopter.cpp
+CXX:     /home/qing/sw/nap/libraries/SITL/SIM_Tracker.cpp
+CXX:     /home/qing/sw/nap/libraries/SITL/SIM_Rover.cpp
+CXX:     /home/qing/sw/nap/libraries/SITL/SIM_Aircraft.cpp
+CXX:     /home/qing/sw/nap/libraries/SITL/SIM_Balloon.cpp
+CXX:     /home/qing/sw/nap/libraries/SITL/SIM_Gimbal.cpp
+CXX:     /home/qing/sw/nap/libraries/SITL/SIM_CRRCSim.cpp
+CXX:     /home/qing/sw/nap/libraries/SITL/SIM_Gazebo.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Scheduler/AP_Scheduler.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_RCMapper/AP_RCMapper.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Notify/ExternalLED.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Notify/NavioLED_I2C.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Notify/ToshibaLED.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Notify/NavioLED.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Notify/OreoLED_PX4.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Notify/ToneAlarm_PX4.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Notify/Buzzer.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Notify/AP_BoardLED.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Notify/ToshibaLED_PX4.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Notify/VRBoard_LED.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Notify/AP_Notify.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Notify/RGBLed.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Notify/ToshibaLED_I2C.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Notify/ToneAlarm_Linux.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_BattMonitor/AP_BattMonitor_Backend.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_BattMonitor/AP_BattMonitor_Bebop.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_BattMonitor/AP_BattMonitor_SMBus_I2C.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_BattMonitor/AP_BattMonitor_Analog.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_BattMonitor/AP_BattMonitor.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_BattMonitor/AP_BattMonitor_SMBus_PX4.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_BoardConfig/AP_BoardConfig.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Frsky_Telem/AP_Frsky_Telem.cpp
+CXX:     /home/qing/sw/nap/libraries/AC_Sprayer/AC_Sprayer.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_EPM/AP_EPM.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Parachute/AP_Parachute.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_LandingGear/AP_LandingGear.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Terrain/TerrainIO.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Terrain/TerrainMission.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Terrain/TerrainGCS.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Terrain/AP_Terrain.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_Terrain/TerrainUtil.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_RPM/RPM_Backend.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_RPM/RPM_PX4_PWM.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_RPM/AP_RPM.cpp
+CXX:     /home/qing/sw/nap/libraries/AC_InputManager/AC_InputManager_Heli.cpp
+CXX:     /home/qing/sw/nap/libraries/AC_InputManager/AC_InputManager.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL/utility/Socket.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL/utility/utoa_invert.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL/utility/Print.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL/utility/print_vprintf.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL/utility/getopt_cpp.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL/utility/ftoa_engine.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/utility/pins_arduino_mega.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_AVR/utility/ISRRegistry.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_FLYMAPLE/utility/flash_stm32.cpp
+CXX:     /home/qing/sw/nap/libraries/AP_HAL_FLYMAPLE/utility/EEPROM.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/module.pre.o
+CMD:     ArduPilot
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/airspeed'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/airspeed/module.mk
+%  MODULE_NAME         = airspeed
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/airspeed/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/airspeed/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/airspeed
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/airspeed/airspeed.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/airspeed/module.pre.o
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/airspeed'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/batt_smbus'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/batt_smbus/module.mk
+%  MODULE_NAME         = batt_smbus
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/batt_smbus/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/batt_smbus/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/batt_smbus
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/batt_smbus/batt_smbus.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/batt_smbus/module.pre.o
+CMD:     batt_smbus
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/batt_smbus'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/boards/px4fmu-niu'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/boards/px4fmu-niu/module.mk
+%  MODULE_NAME         = px4fmu-niu
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/boards/px4fmu-niu/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/boards/px4fmu-niu/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/boards/px4fmu-niu
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/drivers/boards/px4fmu-niu/px4fmu_can.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/drivers/boards/px4fmu-niu/px4fmu2_init.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/drivers/boards/px4fmu-niu/px4fmu_pwm_servo.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/drivers/boards/px4fmu-niu/px4fmu_spi.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/drivers/boards/px4fmu-niu/px4fmu_usb.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/drivers/boards/px4fmu-niu/px4fmu2_led.c
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/boards/px4fmu-niu/module.pre.o
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/boards/px4fmu-niu'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/device'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/device/module.mk
+%  MODULE_NAME         = device
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/device/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/device/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/device
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/device/device_nuttx.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/device/cdev.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/device/i2c_nuttx.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/device/pio.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/device/spi.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/device/ringbuffer.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/device/module.pre.o
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/device'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/ets_airspeed'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/ets_airspeed/module.mk
+%  MODULE_NAME         = ets_airspeed
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/ets_airspeed/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/ets_airspeed/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/ets_airspeed
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/ets_airspeed/ets_airspeed.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/ets_airspeed/module.pre.o
+CMD:     ets_airspeed
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/ets_airspeed'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/hmc5883'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/hmc5883/module.mk
+%  MODULE_NAME         = hmc5883
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/hmc5883/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/hmc5883/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/hmc5883
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/hmc5883/hmc5883_i2c.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/hmc5883/hmc5883_spi.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/hmc5883/hmc5883.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/hmc5883/module.pre.o
+CMD:     hmc5883
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/hmc5883'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/l3gd20'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/l3gd20/module.mk
+%  MODULE_NAME         = l3gd20
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/l3gd20/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/l3gd20/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/l3gd20
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/l3gd20/l3gd20.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/l3gd20/module.pre.o
+CMD:     l3gd20
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/l3gd20'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/led'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/led/module.mk
+%  MODULE_NAME         = led
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/led/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/led/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/led
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/led/led.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/led/module.pre.o
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/led'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/ll40ls'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/ll40ls/module.mk
+%  MODULE_NAME         = ll40ls
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/ll40ls/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/ll40ls/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/ll40ls
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/ll40ls/ll40ls.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/ll40ls/LidarLite.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/ll40ls/LidarLiteI2C.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/ll40ls/LidarLitePWM.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/ll40ls/module.pre.o
+CMD:     ll40ls
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/ll40ls'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/lsm303d'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/lsm303d/module.mk
+%  MODULE_NAME         = lsm303d
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/lsm303d/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/lsm303d/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/lsm303d
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/lsm303d/lsm303d.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/lsm303d/module.pre.o
+CMD:     lsm303d
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/lsm303d'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/mb12xx'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/mb12xx/module.mk
+%  MODULE_NAME         = mb12xx
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/mb12xx/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/mb12xx/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/mb12xx
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/mb12xx/mb12xx.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/mb12xx/module.pre.o
+CMD:     mb12xx
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/mb12xx'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/meas_airspeed'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/meas_airspeed/module.mk
+%  MODULE_NAME         = meas_airspeed
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/meas_airspeed/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/meas_airspeed/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/meas_airspeed
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/meas_airspeed/meas_airspeed.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/meas_airspeed/module.pre.o
+CMD:     meas_airspeed
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/meas_airspeed'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/mkblctrl'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/mkblctrl/module.mk
+%  MODULE_NAME         = mkblctrl
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/mkblctrl/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/mkblctrl/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/mkblctrl
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/mkblctrl/mkblctrl.cpp
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/drivers/mkblctrl/mkblctrl_params.c
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/mkblctrl/module.pre.o
+CMD:     mkblctrl
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/mkblctrl'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/mpu6000'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/mpu6000/module.mk
+%  MODULE_NAME         = mpu6000
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/mpu6000/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/mpu6000/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/mpu6000
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/mpu6000/mpu6000.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/mpu6000/module.pre.o
+CMD:     mpu6000
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/mpu6000'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/mpu9250'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/mpu9250/module.mk
+%  MODULE_NAME         = mpu9250
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/mpu9250/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/mpu9250/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/mpu9250
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/mpu9250/mpu9250.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/mpu9250/module.pre.o
+CMD:     mpu9250
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/mpu9250'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/ms5611'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/ms5611/module.mk
+%  MODULE_NAME         = ms5611
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/ms5611/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/ms5611/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/ms5611
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/ms5611/ms5611_nuttx.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/ms5611/ms5611_spi.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/ms5611/ms5611_i2c.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/ms5611/module.pre.o
+CMD:     ms5611
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/ms5611'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/oreoled'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/oreoled/module.mk
+%  MODULE_NAME         = oreoled
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/oreoled/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/oreoled/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/oreoled
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/oreoled/oreoled.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/oreoled/module.pre.o
+CMD:     oreoled
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/oreoled'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/pwm_input'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/pwm_input/module.mk
+%  MODULE_NAME         = pwm_input
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/pwm_input/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/pwm_input/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/pwm_input
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/pwm_input/pwm_input.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/pwm_input/module.pre.o
+CMD:     pwm_input
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/pwm_input'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4flow'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4flow/module.mk
+%  MODULE_NAME         = px4flow
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4flow/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4flow/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4flow
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4flow/px4flow.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4flow/module.pre.o
+CMD:     px4flow
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4flow'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4fmu'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4fmu/module.mk
+%  MODULE_NAME         = px4fmu
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4fmu/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4fmu/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4fmu
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4fmu/fmu.cpp
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4fmu/px4fmu_params.c
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4fmu/module.pre.o
+CMD:     fmu
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4fmu'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4io'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4io/module.mk
+%  MODULE_NAME         = px4io
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4io/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4io/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4io
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4io/px4io.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4io/px4io_uploader.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4io/px4io_serial.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4io/px4io_i2c.cpp
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4io/px4io_params.c
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4io/module.pre.o
+CMD:     px4io
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/px4io'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/rgbled'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/rgbled/module.mk
+%  MODULE_NAME         = rgbled
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/rgbled/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/rgbled/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/rgbled
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/rgbled/rgbled.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/rgbled/module.pre.o
+CMD:     rgbled
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/rgbled'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/module.mk
+%  MODULE_NAME         = stm32
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/drv_hrt.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/drv_pwm_servo.c
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/module.pre.o
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/adc'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/adc/module.mk
+%  MODULE_NAME         = adc
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/adc/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/adc/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/adc
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/adc/adc.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/adc/module.pre.o
+CMD:     adc
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/adc'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/tone_alarm'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/tone_alarm/module.mk
+%  MODULE_NAME         = tone_alarm
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/tone_alarm/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/tone_alarm/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/tone_alarm
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/tone_alarm/tone_alarm.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/tone_alarm/module.pre.o
+CMD:     tone_alarm
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/stm32/tone_alarm'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/trone'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/trone/module.mk
+%  MODULE_NAME         = trone
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/drivers/trone/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/trone/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/trone
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/drivers/trone/trone.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/drivers/trone/module.pre.o
+CMD:     trone
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/drivers/trone'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/lib/conversion'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/lib/conversion/module.mk
+%  MODULE_NAME         = conversion
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/lib/conversion/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/lib/conversion/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/lib/conversion
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/lib/conversion/rotation.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/lib/conversion/module.pre.o
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/lib/conversion'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/lib/mathlib'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/lib/mathlib/module.mk
+%  MODULE_NAME         = mathlib
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/lib/mathlib/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/lib/mathlib/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/lib/mathlib
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/lib/mathlib/math/test/test.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/lib/mathlib/math/Limits.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/lib/mathlib/module.pre.o
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/lib/mathlib'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/lib/mathlib/math/filter'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/lib/mathlib/math/filter/module.mk
+%  MODULE_NAME         = filter
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/lib/mathlib/math/filter/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/lib/mathlib/math/filter/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/lib/mathlib/math/filter
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/lib/mathlib/math/filter/LowPassFilter2p.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/lib/mathlib/math/filter/module.pre.o
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/lib/mathlib/math/filter'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/module.mk
+%  MODULE_NAME         = systemlib
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/perf_counter.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/conversions.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/cpuload.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/getopt_long.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/pid/pid.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/airspeed.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/mavlink_log.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/rc_check.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/otp.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/board_serial.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/pwm_limit/pwm_limit.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/mcu_version.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/bson/tinybson.c
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/circuit_breaker.cpp
+CC:      /home/qing/sw/nap/modules/PX4Firmware/Build/git_version.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/err.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/up_cxxinitialize.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/hx_stream.c
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/module.pre.o
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/mixer'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/mixer/module.mk
+%  MODULE_NAME         = mixer
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/mixer/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/mixer/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/mixer
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/mixer/mixer.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/mixer/mixer_group.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/mixer/mixer_multirotor.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/mixer/mixer_simple.cpp
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/mixer/mixer_load.c
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/mixer/module.pre.o
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/modules/systemlib/mixer'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/modules/uORB'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/modules/uORB/module.mk
+%  MODULE_NAME         = uORB
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/modules/uORB/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/modules/uORB/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/modules/uORB
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/modules/uORB/uORBDevices_nuttx.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/modules/uORB/uORBTest_UnitTest.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/modules/uORB/uORBManager_nuttx.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/modules/uORB/objects_common.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/modules/uORB/Publication.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/modules/uORB/Subscription.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/modules/uORB/uORBUtils.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/modules/uORB/uORB.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/modules/uORB/uORBMain.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/modules/uORB/module.pre.o
+CMD:     uorb
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/modules/uORB'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/modules/uavcan'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/modules/uavcan/module.mk
+Running from the source directory
+%  MODULE_NAME         = uavcan
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/modules/uavcan/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/modules/uavcan/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/modules/uavcan
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/modules/uavcan/uavcan_main.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/modules/uavcan/uavcan_clock.cpp
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/modules/uavcan/uavcan_params.c
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/modules/uavcan/actuators/esc.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/modules/uavcan/sensors/sensor_bridge.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/modules/uavcan/sensors/gnss.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/modules/uavcan/sensors/mag.cpp
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/modules/uavcan/sensors/baro.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/modules/uavcan/module.pre.o
+CMD:     uavcan
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/modules/uavcan'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/platforms/common'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/platforms/common/module.mk
+%  MODULE_NAME         = common
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/platforms/common/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/platforms/common/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/platforms/common
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/platforms/common/px4_getopt.c
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/platforms/common/module.pre.o
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/platforms/common'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/platforms/nuttx/px4_layer'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/platforms/nuttx/px4_layer/module.mk
+%  MODULE_NAME         = px4_layer
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/platforms/nuttx/px4_layer/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/platforms/nuttx/px4_layer/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/platforms/nuttx/px4_layer
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/platforms/nuttx/px4_layer/px4_nuttx_tasks.c
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/platforms/nuttx/px4_layer/module.pre.o
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/platforms/nuttx/px4_layer'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/bl_update'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/bl_update/module.mk
+%  MODULE_NAME         = bl_update
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/bl_update/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/bl_update/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/bl_update
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/bl_update/bl_update.c
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/bl_update/module.pre.o
+CMD:     bl_update
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/bl_update'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/mixer'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/mixer/module.mk
+%  MODULE_NAME         = mixer
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/mixer/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/mixer/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/mixer
+CXX:     /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/mixer/mixer.cpp
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/mixer/module.pre.o
+CMD:     mixer
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/mixer'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/motor_test'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/motor_test/module.mk
+%  MODULE_NAME         = motor_test
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/motor_test/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/motor_test/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/motor_test
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/motor_test/motor_test.c
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/motor_test/module.pre.o
+CMD:     motor_test
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/motor_test'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/mtd'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/mtd/module.mk
+%  MODULE_NAME         = mtd
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/mtd/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/mtd/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/mtd
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/mtd/mtd.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/mtd/24xxxx_mtd.c
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/mtd/module.pre.o
+CMD:     mtd
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/mtd'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/nshterm'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/nshterm/module.mk
+%  MODULE_NAME         = nshterm
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/nshterm/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/nshterm/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/nshterm
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/nshterm/nshterm.c
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/nshterm/module.pre.o
+CMD:     nshterm
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/nshterm'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/perf'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/perf/module.mk
+%  MODULE_NAME         = perf
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/perf/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/perf/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/perf
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/perf/perf.c
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/perf/module.pre.o
+CMD:     perf
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/perf'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/pwm'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/pwm/module.mk
+%  MODULE_NAME         = pwm
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/pwm/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/pwm/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/pwm
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/pwm/pwm.c
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/pwm/module.pre.o
+CMD:     pwm
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/pwm'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/reboot'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/reboot/module.mk
+%  MODULE_NAME         = reboot
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/reboot/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/reboot/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/reboot
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/reboot/reboot.c
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/reboot/module.pre.o
+CMD:     reboot
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/reboot'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/reflect'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/reflect/module.mk
+%  MODULE_NAME         = reflect
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/reflect/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/reflect/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/reflect
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/reflect/reflect.c
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/reflect/module.pre.o
+CMD:     reflect
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/reflect'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/top'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/top/module.mk
+%  MODULE_NAME         = top
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/top/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/top/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/top
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/top/top.c
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/top/module.pre.o
+CMD:     top
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/top'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/usb_connected'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/usb_connected/module.mk
+%  MODULE_NAME         = usb_connected
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/usb_connected/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/usb_connected/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/usb_connected
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/usb_connected/usb_connected.c
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/usb_connected/module.pre.o
+CMD:     usb_connected
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/usb_connected'
+make[3]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/ver'
+%% MODULE_MK           = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/ver/module.mk
+%  MODULE_NAME         = ver
+%  MODULE_SRC          = /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/ver/
+%  MODULE_OBJ          = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/ver/module.pre.o
+%  MODULE_WORK_DIR     = /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/ver
+CC:      /home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/ver/ver.c
+PRELINK: /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build//home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/ver/module.pre.o
+CMD:     ver
+make[3]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/home/qing/sw/nap/modules/PX4Firmware/src/systemcmds/ver'
+CMDS:    /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/builtin_commands.c
+CC:      /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/builtin_commands.c
+Pruning ROMFS files.
+ROMFS:   romfs.img
+OBJ:     romfs.o
+CC:      romfs.o.c
+CC:      romfs.o.c
+LINK:    /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/firmware.elf
+/home/qing/sw/nap/modules/PX4Firmware/makefiles/firmware.mk:517: recipe for target '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/firmware.elf' failed
+make[2]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build'
+/home/qing/sw/nap/modules/PX4Firmware/Makefile:143: recipe for target '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/firmware.px4' failed
+make[1]: Leaving directory '/home/qing/sw/nap'
+../mk/px4_targets.mk:105: recipe for target 'px4-niu' failed

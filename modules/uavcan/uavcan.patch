@@ -1,0 +1,19 @@
+diff --git a/libuavcan_drivers/stm32/driver/src/internal.hpp b/libuavcan_drivers/stm32/driver/src/internal.hpp
+index 3a63ef5..bc55ec3 100644
+--- a/libuavcan_drivers/stm32/driver/src/internal.hpp
++++ b/libuavcan_drivers/stm32/driver/src/internal.hpp
+@@ -81,12 +81,12 @@ struct CriticalSectionLocker
+     const irqstate_t flags_;
+ 
+     CriticalSectionLocker()
+-        : flags_(irqsave())
++        : flags_(up_irq_save())
+     { }
+ 
+     ~CriticalSectionLocker()
+     {
+-        irqrestore(flags_);
++        up_irq_restore(flags_);
+     }
+ };
+ 

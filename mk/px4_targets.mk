@@ -43,6 +43,7 @@ EXTRAFLAGS += -DUAVCAN=1
 # we have different config files for V1 and V2
 PX4_V1_CONFIG_FILE=$(MK_DIR)/PX4/config_px4fmu-v1_APM.mk
 PX4_V2_CONFIG_FILE=$(MK_DIR)/PX4/config_px4fmu-v2_APM.mk
+PX4_NIU_CONFIG_FILE=$(MK_DIR)/PX4/config_px4fmu-niu_APM.mk
 
 SKETCHFLAGS=$(SKETCHLIBINCLUDES) -DARDUPILOT_BUILD -DTESTS_MATHLIB_DISABLE -DCONFIG_HAL_BOARD=HAL_BOARD_PX4 -DSKETCHNAME="\\\"$(SKETCH)\\\"" -DSKETCH_MAIN=ArduPilot_main -DAPM_BUILD_DIRECTORY=APM_BUILD_$(SKETCH)
 
@@ -99,13 +100,28 @@ px4-v2: $(BUILDROOT)/make.flags CHECK_MODULES $(PX4_ROOT)/Archives/px4fmu-v2.exp
 	$(v) $(SKETCHBOOK)/Tools/scripts/add_git_hashes.py $(HASHADDER_FLAGS) "$(SKETCH)-v2.px4" "$(SKETCH)-v2.px4"
 	$(v) echo "PX4 $(SKETCH) Firmware is in $(SKETCH)-v2.px4"
 
+_px4-niu: $(PX4_ROOT)/Archives/px4fmu-niu.export
+px4-niu: $(BUILDROOT)/make.flags CHECK_MODULES $(PX4_ROOT)/Archives/px4fmu-niu.export $(SKETCHCPP) module_mk
+	$(RULEHDR)
+	$(v) rm -f $(PX4_ROOT)/makefiles/$(PX4_NIU_CONFIG_FILE)
+	$(v) cp $(PX4_NIU_CONFIG_FILE) $(PX4_ROOT)/makefiles/nuttx/
+	$(PX4_MAKE) px4fmu-niu_APM
+	$(v) /bin/rm -f $(SKETCH)-niu.px4
+	$(v) cp $(PX4_ROOT)/Images/px4fmu-niu_APM.px4 $(SKETCH)-niu.px4
+	$(v) $(SKETCHBOOK)/Tools/scripts/add_git_hashes.py $(HASHADDER_FLAGS) "$(SKETCH)-niu.px4" "$(SKETCH)-niu.px4"
+	$(v) echo "PX4 $(SKETCH) Firmware is in $(SKETCH)-niu.px4"
+
 px4: px4-v1 px4-v2
 
 px4-clean: clean CHECK_MODULES px4-archives-clean px4-cleandep
-	$(v) /bin/rm -rf $(PX4_ROOT)/makefiles/build $(PX4_ROOT)/Build
+#	$(v) /bin/rm -rf $(PX4_ROOT)/makefiles/build $(PX4_ROOT)/Build
+	$(v) /bin/rm -rf $(PX4_ROOT)/makefiles/build $(PX4_ROOT)/Build $(PX4_ROOT)/Images/*.px4 $(PX4_ROOT)/Images/*.bin
+	$(v) /bin/rm -rf $(PX4_ROOT)/src/modules/uORB/topics $(PX4_ROOT)/src/platforms/nuttx/px4_messages
 
 px4-cleandep: clean
+	$(v) mkdir -p $(PX4_ROOT)/Build
 	$(v) find $(PX4_ROOT)/Build -type f -name '*.d' | xargs rm -f
+	$(v) find $(UAVCAN_DIRECTORY) -type f -name '*.d' | xargs rm -f
 	$(v) find $(SKETCHBOOK)/$(SKETCH) -type f -name '*.d' | xargs rm -f
 
 px4-v1-upload: px4-v1
@@ -157,6 +173,9 @@ $(PX4_ROOT)/Archives/px4fmu-v1.export:
 
 $(PX4_ROOT)/Archives/px4fmu-v2.export:
 	$(v) $(PX4_MAKE_ARCHIVES) BOARDS="px4fmu-v2"
+
+$(PX4_ROOT)/Archives/px4fmu-niu.export:
+	$(v) $(PX4_MAKE_ARCHIVES) BOARDS="px4fmu-niu"
 
 $(PX4_ROOT)/Archives/px4io-v1.export:
 	$(v) $(PX4_MAKE_ARCHIVES) BOARDS="px4io-v1"
