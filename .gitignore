@@ -84,7 +84,6 @@ LASTLOG.TXT
 Make.dep
 mav.log
 mav.log.raw
-module.mk
 serialsent.raw
 status.txt
 tags

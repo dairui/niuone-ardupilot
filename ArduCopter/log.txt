@@ -1,5 +1,4 @@
-// BUILDROOT=/home/qing/sw/nap/Build.ArduCopter HAL_BOARD=HAL_BOARD_PX4 HAL_BOARD_SUBTYPE= TOOLCHAIN=NATIVE EXTRAFLAGS=-DGIT_VERSION="acf2e10c" -DNUTTX_GIT_VERSION="7c5ef883" -DPX4_GIT_VERSION="34e1d543" -DUAVCAN=1
-Checking modules
+// BUILDROOT=/home/qing/sw/nap/Build.ArduCopter HAL_BOARD=HAL_BOARD_PX4 HAL_BOARD_SUBTYPE= TOOLCHAIN=NATIVE EXTRAFLAGS=-DGIT_VERSION="7d72d5ab" -DNUTTX_GIT_VERSION="7d72d5ab" -DPX4_GIT_VERSION="7d72d5ab" -DUAVCAN=1
 make[1]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware'
 Skipping submodules. NUTTX_SRC is set to /home/qing/sw/nap/modules/PX4NuttX/nuttx/
 %% Configuring NuttX for px4fmu-niu
@@ -726,6 +725,7 @@ AR:   stm32_boot.o stm32_autoleds.o stm32_buttons.o stm32_appinitialize.o
 make[1]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware'
 Building /home/qing/sw/nap/module.mk
 %% module_mk
+/home/qing/sw/nap/module.mk /home/qing/sw/nap/module.mk.new differ: char 145, line 3
 %% px4-niu
 make[1]: Entering directory '/home/qing/sw/nap'
 Skipping submodules. NUTTX_SRC is set to /home/qing/sw/nap/modules/PX4NuttX/nuttx/
@@ -1820,8 +1820,9 @@ OBJ:     romfs.o
 CC:      romfs.o.c
 CC:      romfs.o.c
 LINK:    /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/firmware.elf
-/home/qing/sw/nap/modules/PX4Firmware/makefiles/firmware.mk:517: recipe for target '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/firmware.elf' failed
+BIN:     /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/firmware.bin
+%% Generating /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/firmware.px4
 make[2]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build'
-/home/qing/sw/nap/modules/PX4Firmware/Makefile:143: recipe for target '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/firmware.px4' failed
+%% Copying /home/qing/sw/nap/modules/PX4Firmware/Images/px4fmu-niu_APM.px4
 make[1]: Leaving directory '/home/qing/sw/nap'
-../mk/px4_targets.mk:105: recipe for target 'px4-niu' failed
+PX4 ArduCopter Firmware is in ArduCopter-niu.px4
