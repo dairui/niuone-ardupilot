@@ -92,6 +92,7 @@ ssize_t lib_fread(FAR void *ptr, size_t count, FAR FILE *stream)
   int ret;
 #endif
 
+  //fputs("\nQing libfread 1\n", stdout);
   /* Make sure that reading from this stream is allowed */
 
   if (!stream || (stream->fs_oflags & O_RDOK) == 0)
@@ -142,6 +143,7 @@ ssize_t lib_fread(FAR void *ptr, size_t count, FAR FILE *stream)
       while (count > 0)
         {
           /* Is there readable data in the buffer? */
+  //fputs("\nQing libfread 2\n", stdout);
 
           while ((count > 0) && (stream->fs_bufpos < stream->fs_bufread))
             {
@@ -178,7 +180,9 @@ ssize_t lib_fread(FAR void *ptr, size_t count, FAR FILE *stream)
 
               if (count > buffer_available)
                 {
+  //fputs("\nQing libfread 3\n", stdout);
                   bytes_read = read(stream->fs_fd, dest, count);
+  //fputs("\nQing libfread 4\n", stdout);
                   if (bytes_read < 0)
                     {
                       /* An error occurred on the read.  The error code is
@@ -226,7 +230,9 @@ ssize_t lib_fread(FAR void *ptr, size_t count, FAR FILE *stream)
                    * into the buffer.
                    */
 
+  //fputs("\nQing libfread 5\n", stdout);
                   bytes_read = read(stream->fs_fd, stream->fs_bufread, buffer_available);
+  //fputs("\nQing libfread 6\n", stdout);
                   if (bytes_read < 0)
                     {
                       /* An error occurred on the read.  The error code is
@@ -258,7 +264,9 @@ ssize_t lib_fread(FAR void *ptr, size_t count, FAR FILE *stream)
 
       while (count > 0)
         {
+  //fputs("\nQing libfread 7\n", stdout);
           bytes_read = read(stream->fs_fd, dest, count);
+  //fputs("\nQing libfread 8\n", stdout);
           if (bytes_read < 0)
             {
               /* An error occurred on the read.  The error code is

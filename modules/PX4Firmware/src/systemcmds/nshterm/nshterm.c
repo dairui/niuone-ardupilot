@@ -137,7 +137,7 @@ nshterm_main(int argc, char *argv[])
     dup2(fd, 1);
     dup2(fd, 2);
 
-    nsh_consolemain(0, NULL);
+    //nsh_consolemain(0, NULL);
 
     close(fd);
 

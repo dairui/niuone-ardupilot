@@ -45,6 +45,7 @@
 #include <fcntl.h>
 #include <sched.h>
 #include <errno.h>
+#include <stdio.h>
 
 #include "inode/inode.h"
 
@@ -100,8 +101,10 @@ ssize_t file_read(FAR struct file *filep, FAR void *buf, size_t nbytes)
        * mountpoint, we depend on the read methods being identical in
        * signature and position in the operations vtable.
        */
-
+      //fprintf(stdout, "Qing file_read 1\n");
+      //fprintf(stdout, "Qing/ %s\n", inode->i_name);
       ret = (int)inode->u.i_ops->read(filep, (FAR char *)buf, (size_t)nbytes);
+      //fprintf(stdout, "Qing file_read 2\n");
     }
 
   /* If an error occurred, set errno and return -1 (ERROR) */
@@ -138,10 +141,12 @@ ssize_t read(int fd, FAR void *buf, size_t nbytes)
 {
   /* Did we get a valid file descriptor? */
 
+  //fprintf(stdout, "Qing read 1\n");
 #if CONFIG_NFILE_DESCRIPTORS > 0
   if ((unsigned int)fd >= CONFIG_NFILE_DESCRIPTORS)
 #endif
     {
+  //fprintf(stdout, "Qing read 2\n");
       /* No.. If networking is enabled, read() is the same as recv() with
        * the flags parameter set to zero.
        */
@@ -159,6 +164,7 @@ ssize_t read(int fd, FAR void *buf, size_t nbytes)
 #if CONFIG_NFILE_DESCRIPTORS > 0
   else
     {
+  //fprintf(stdout, "Qing read 3\n");
       FAR struct file *filep;
 
       /* The descriptor is in a valid range to file descriptor... do the
@@ -175,7 +181,9 @@ ssize_t read(int fd, FAR void *buf, size_t nbytes)
 
       /* Then let file_read do all of the work */
 
+  //fprintf(stdout, "Qing read 4\n");
       return file_read(filep, buf, nbytes);
+  //fprintf(stdout, "Qing read 5\n");
     }
 #endif
 }

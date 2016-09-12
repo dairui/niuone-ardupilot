@@ -89,6 +89,7 @@ int fgetc(FAR FILE *stream)
   unsigned char ch;
   ssize_t ret;
 
+  //fputs("\nQing lib_fgetc\n", stdout);
   ret = lib_fread(&ch, 1, stream);
   if (ret > 0)
     {

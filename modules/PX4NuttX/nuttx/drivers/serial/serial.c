@@ -41,6 +41,7 @@
 
 #include <sys/types.h>
 #include <stdint.h>
+#include <stdio.h>
 #include <stdbool.h>
 #include <unistd.h>
 #include <semaphore.h>
@@ -129,9 +130,13 @@ static int sem_reinit(FAR sem_t *sem, int pshared, unsigned int value)
 static int uart_takesem(FAR sem_t *sem, bool errout)
 {
   /* Loop, ignoring interrupts, until we have successfully acquired the semaphore */
-
+  //fprintf(stdout, "Qing begining of uart_takesme");
+  //int16_t pid = sem->holder.htcb->pid;
+  //fprintf(stdout, "Qing pid = %d\n", pid);
+  //fprintf(stdout, "Qing semcount: %d\n", (*sem).semcount);
   while (sem_wait(sem) != OK)
     {
+ // fprintf(stdout, "Qing uart_takesem\n");
       /* The only case that an error should occur here is if the wait was awakened
        * by a signal.
        */
@@ -147,6 +152,7 @@ static int uart_takesem(FAR sem_t *sem, bool errout)
           return -EINTR;
         }
     }
+ // fprintf(stdout, "Qing uart_takesem end\n");
 
   return OK;
 }
@@ -557,6 +563,7 @@ static ssize_t uart_read(FAR struct file *filep, FAR char *buffer, size_t buflen
   FAR struct inode *inode = filep->f_inode;
   FAR uart_dev_t *dev = inode->i_private;
   FAR struct uart_buffer_s *rxbuf = &dev->recv;
+  unsigned char temp_char;
 #ifdef CONFIG_SERIAL_IFLOWCONTROL_WATERMARKS
   unsigned int nbuffered;
   unsigned int watermark;
@@ -568,7 +575,7 @@ static ssize_t uart_read(FAR struct file *filep, FAR char *buffer, size_t buflen
   int ret;
 
   /* Only one user can access rxbuf->tail at a time */
-
+  fprintf(stdout, "Qing uart_read 1\n");
   ret = uart_takesem(&rxbuf->sem, true);
   if (ret < 0)
     {
@@ -585,6 +592,7 @@ static ssize_t uart_read(FAR struct file *filep, FAR char *buffer, size_t buflen
    * data from the end of the buffer.
    */
 
+  fprintf(stdout, "Qing uart_read 2\n");
   while ((size_t)recvd < buflen)
     {
 #ifdef CONFIG_SERIAL_REMOVABLE
@@ -592,6 +600,7 @@ static ssize_t uart_read(FAR struct file *filep, FAR char *buffer, size_t buflen
        * further from the device.
        */
 
+  fprintf(stdout, "Qing uart_read 3\n");
       if (dev->disconnected)
         {
           if (recvd == 0)
@@ -602,6 +611,7 @@ static ssize_t uart_read(FAR struct file *filep, FAR char *buffer, size_t buflen
           break;
         }
 #endif
+  fprintf(stdout, "Qing uart_read 4 recvd = %d\n", recvd);
 
       /* Check if there is more data to return in the circular buffer.
        * NOTE: Rx interrupt handling logic may asynchronously increment
@@ -617,6 +627,7 @@ static ssize_t uart_read(FAR struct file *filep, FAR char *buffer, size_t buflen
       tail = rxbuf->tail;
       if (rxbuf->head != tail)
         {
+  fprintf(stdout, "Qing uart_read 5 recvd = %d\n", recvd);
           /* Take the next character from the tail of the buffer */
 
           ch = rxbuf->buffer[tail];
@@ -681,6 +692,7 @@ static ssize_t uart_read(FAR struct file *filep, FAR char *buffer, size_t buflen
 
       else if ((filep->f_oflags & O_NONBLOCK) != 0)
         {
+  fprintf(stdout, "Qing uart_read 6 recvd = %d\n", recvd);
           /* If nothing was transferred, then return the -EAGAIN
            * error (not zero which means end of file).
            */
@@ -724,6 +736,7 @@ static ssize_t uart_read(FAR struct file *filep, FAR char *buffer, size_t buflen
       else
         {
           /* Disable Rx interrupts and test again... */
+  fprintf(stdout, "Qing uart_read 7 recvd = %d\n", recvd);
 
           uart_disablerxint(dev);
 
@@ -734,6 +747,19 @@ static ssize_t uart_read(FAR struct file *filep, FAR char *buffer, size_t buflen
 
           if (rxbuf->head == rxbuf->tail)
             {
+  fprintf(stdout, "Qing  uuart_read 8 recvd = %d\n", recvd);
+  up_lowputc('A');
+  up_lowputc('B');
+  up_lowputc('\r');
+  up_lowputc('\n');
+  fputc('A', stdout);
+  fputc('C', stdout);
+  fputc('\r', stdout);
+  fputc('\n', stdout);
+  //temp_char = fgetc(stdin);
+  fputc(temp_char, stdout);
+  fputc(temp_char, stdout);
+  fputc(temp_char, stdout);
               /* Yes.. the buffer is still empty.  Wait for some characters
                * to be received into the buffer with the RX interrupt re-
                * enabled.  All interrupts are disabled briefly to assure
@@ -741,6 +767,7 @@ static ssize_t uart_read(FAR struct file *filep, FAR char *buffer, size_t buflen
                */
 
               flags = enter_critical_section();
+  fprintf(stdout, "Qing uart_read 8-1 recvd = %d\n", recvd);
 
 #ifdef CONFIG_SERIAL_DMA
               /* If RX buffer is empty move tail and head to zero position */
@@ -752,10 +779,14 @@ static ssize_t uart_read(FAR struct file *filep, FAR char *buffer, size_t buflen
 
               /* Notify DMA that there is free space in the RX buffer */
 
+  fprintf(stdout, "Qing uart_read 8-2 recvd = %d\n", recvd);
               uart_dmarxfree(dev);
+  fprintf(stdout, "Qing uart_read 8-3 recvd = %d\n", recvd);
 #endif
 
+  fprintf(stdout, "Qing uart_read 8-4 recvd = %d\n", recvd);
               uart_enablerxint(dev);
+  fprintf(stdout, "Qing uart_read 8-5 recvd = %d\n", recvd);
 
 #ifdef CONFIG_SERIAL_REMOVABLE
               /* Check again if the removable device is still connected
@@ -763,13 +794,16 @@ static ssize_t uart_read(FAR struct file *filep, FAR char *buffer, size_t buflen
                * to occur as a race condition before we begin the wait.
                */
 
+  fprintf(stdout, "Qing uart_read 8-6 recvd = %d\n", recvd);
               if (dev->disconnected)
                 {
+  fprintf(stdout, "Qing uart_read 8-7 recvd = %d\n", recvd);
                   ret = -ENOTCONN;
                 }
               else
 #endif
                {
+  fprintf(stdout, "Qing uart_read 8-8 recvd = %d\n", recvd);
                   /* Now wait with the Rx interrupt re-enabled.  NuttX will
                    * automatically re-enable global interrupts when this
                    * thread goes to sleep.
@@ -777,9 +811,12 @@ static ssize_t uart_read(FAR struct file *filep, FAR char *buffer, size_t buflen
 
                   dev->recvwaiting = true;
                   ret = uart_takesem(&dev->recvsem, true);
+  fprintf(stdout, "Qing uart_read 8-9 recvd = %d\n", recvd);
                 }
 
+  fprintf(stdout, "Qing uart_read 8-10 recvd = %d\n", recvd);
               leave_critical_section(flags);
+  fprintf(stdout, "Qing uart_read 8-11 recvd = %d\n", recvd);
 
               /* Was a signal received while waiting for data to be
                * received?  Was a removable device disconnected while
@@ -788,10 +825,13 @@ static ssize_t uart_read(FAR struct file *filep, FAR char *buffer, size_t buflen
 
 #ifdef CONFIG_SERIAL_REMOVABLE
               if (ret < 0 || dev->disconnected)
+  fprintf(stdout, "Qing uart_read 8-12 recvd = %d\n", recvd);
 #else
+  fprintf(stdout, "Qing uart_read 8-13 recvd = %d\n", recvd);
               if (ret < 0)
 #endif
                 {
+  fprintf(stdout, "Qing uart_read 8-14 recvd = %d\n", recvd);
                   /* POSIX requires that we return after a signal is received.
                    * If some bytes were read, we need to return the number of bytes
                    * read; if no bytes were read, we need to return -1 with the
@@ -800,6 +840,7 @@ static ssize_t uart_read(FAR struct file *filep, FAR char *buffer, size_t buflen
 
                   if (recvd == 0)
                     {
+  fprintf(stdout, "Qing uart_read 8-15 recvd = %d\n", recvd);
                       /* No bytes were read, return -EINTR (the VFS layer will
                        * set the errno value appropriately.
                        */
@@ -809,13 +850,17 @@ static ssize_t uart_read(FAR struct file *filep, FAR char *buffer, size_t buflen
 #else
                       recvd = -EINTR;
 #endif
+  fprintf(stdout, "Qing uart_read 8-16 recvd = %d\n", recvd);
                     }
 
+  fprintf(stdout, "Qing uart_read 8-17 recvd = %d\n", recvd);
                   break;
                 }
+  fprintf(stdout, "Qing uart_read 8-18 recvd = %d\n", recvd);
             }
           else
             {
+  fprintf(stdout, "Qing uart_read 9 recvd = %d\n", recvd);
               /* No... the ring buffer is no longer empty.  Just re-enable Rx
                * interrupts and accept the new data on the next time through
                * the loop.
@@ -823,8 +868,11 @@ static ssize_t uart_read(FAR struct file *filep, FAR char *buffer, size_t buflen
 
               uart_enablerxint(dev);
             }
+  fprintf(stdout, "Qing uart_read 10 recvd = %d\n", recvd);
         }
+  fprintf(stdout, "Qing uart_read 11 recvd = %d\n", recvd);
     }
+  fprintf(stdout, "Qing uart_read 12 recvd = %d\n", recvd);
 
 #ifdef CONFIG_SERIAL_DMA
   flags = enter_critical_section();
