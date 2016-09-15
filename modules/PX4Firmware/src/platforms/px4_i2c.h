@@ -86,10 +86,10 @@ typedef struct {
 
 // FIXME - Empty defines for I2C ops
 // Original version commented out
-//#define I2C_SETFREQUENCY(d,f) ((d)->ops->setfrequency(d,f))
-#define I2C_SETFREQUENCY(d,f) 
-//#define SPI_SELECT(d,id,s) ((d)->ops->select(d,id,s))
-#define SPI_SELECT(d,id,s) 
+#define I2C_SETFREQUENCY(d,f) ((d)->ops->setfrequency(d,f))
+//#define I2C_SETFREQUENCY(d,f) 
+#define SPI_SELECT(d,id,s) ((d)->ops->select(d,id,s))
+//#define SPI_SELECT(d,id,s) 
 
 // FIXME - Stub implementation
 // Original version commented out

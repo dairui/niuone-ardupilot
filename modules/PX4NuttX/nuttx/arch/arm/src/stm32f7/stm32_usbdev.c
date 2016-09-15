@@ -65,7 +65,8 @@
 #include "stm32_gpio.h"
 #include "stm32_usbdev.h"
 
-#if defined(CONFIG_USBDEV) && defined(CONFIG_STM32_USB)
+#if defined(CONFIG_USBDEV) && defined(CONFIG_STM32F7_USB)
+#pragma message(Qing in stm32_usbdev.c)
 
 /****************************************************************************
  * Pre-processor Definitions
@@ -3824,6 +3825,7 @@ void up_usbuninitialize(void)
  *
  ****************************************************************************/
 
+#pragma message(Qing in stm32_usbdev.c before usbdev_register)
 int usbdev_register(struct usbdevclass_driver_s *driver)
 {
   /* For now there is only one USB controller, but we will always refer to
@@ -3953,4 +3955,4 @@ int usbdev_unregister(struct usbdevclass_driver_s *driver)
   return OK;
 }
 
-#endif /* CONFIG_USBDEV && CONFIG_STM32_USB */
+#endif /* CONFIG_USBDEV && CONFIG_STM32F7_USB */

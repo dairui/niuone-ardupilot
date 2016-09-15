@@ -1,4 +1,4 @@
-// BUILDROOT=/home/qing/sw/nap/Build.ArduCopter HAL_BOARD=HAL_BOARD_PX4 HAL_BOARD_SUBTYPE= TOOLCHAIN=NATIVE EXTRAFLAGS=-DGIT_VERSION="7d72d5ab" -DNUTTX_GIT_VERSION="7d72d5ab" -DPX4_GIT_VERSION="7d72d5ab" -DUAVCAN=1
+// BUILDROOT=/home/qing/sw/nap/Build.ArduCopter HAL_BOARD=HAL_BOARD_PX4 HAL_BOARD_SUBTYPE= TOOLCHAIN=NATIVE EXTRAFLAGS=-DGIT_VERSION="7ca5e57c" -DNUTTX_GIT_VERSION="7ca5e57c" -DPX4_GIT_VERSION="7ca5e57c" -DUAVCAN=1
 make[1]: Entering directory '/home/qing/sw/nap/modules/PX4Firmware'
 Skipping submodules. NUTTX_SRC is set to /home/qing/sw/nap/modules/PX4NuttX/nuttx/
 %% Configuring NuttX for px4fmu-niu
@@ -12,11 +12,13 @@ LN: arch/arm/src/chip to arch/arm/src/stm32f7
 LN: include/apps to ../apps/include
 make[5]: Nothing to be done for 'context'.
 make[5]: Nothing to be done for 'context'.
+make[5]: Nothing to be done for 'context'.
 make[6]: Nothing to be done for 'context'.
 make[5]: Nothing to be done for 'context'.
 Register: sercon
 Register: serdis
 LN: platform/board to /home/qing/sw/nap/modules/PX4NuttX/apps/platform/dummy
+make[5]: Nothing to be done for 'context'.
 make[5]: Nothing to be done for 'context'.
 make[5]: Nothing to be done for 'context'.
 make[5]: Nothing to be done for 'context'.
@@ -224,7 +226,10 @@ CC:  wqueue/kwork_queue.c
 CC:  wqueue/kwork_process.c
 CC:  wqueue/kwork_cancel.c
 CC:  wqueue/kwork_signal.c
-AR:   clock_initialize.o clock_settime.o clock_gettime.o clock_getres.o clock_time2ticks.o clock_abstime2ticks.o clock_ticks2time.o clock_systimer.o clock_systimespec.o clock_timespec_add.o clock_timespec_subtract.o errno_getptr.o env_getenvironptr.o env_dup.o env_release.o env_findvar.o env_removevar.o env_clearenv.o env_getenv.o env_putenv.o env_setenv.o env_unsetenv.o group_create.o group_join.o group_leave.o group_find.o group_setupstreams.o group_setupidlefiles.o group_setuptaskfiles.o group_foreachchild.o group_killchildren.o group_waiter.o group_signal.o os_start.o os_bringup.o irq_initialize.o irq_attach.o irq_dispatch.o irq_unexpectedisr.o mq_send.o mq_timedsend.o mq_sndinternal.o mq_receive.o mq_timedreceive.o mq_rcvinternal.o mq_initialize.o mq_descreate.o mq_desclose.o mq_msgfree.o mq_msgqalloc.o mq_msgqfree.o mq_release.o mq_recover.o mq_setattr.o mq_getattr.o mq_waitirq.o mq_notify.o pg_miss.o pg_worker.o pthread_create.o pthread_exit.o pthread_join.o pthread_detach.o pthread_yield.o pthread_getschedparam.o pthread_setschedparam.o pthread_mutexinit.o pthread_mutexdestroy.o pthread_mutexlock.o pthread_mutextrylock.o pthread_mutexunlock.o pthread_condinit.o pthread_conddestroy.o pthread_condwait.o pthread_condsignal.o pthread_condbroadcast.o pthread_barrierinit.o pthread_barrierdestroy.o pthread_barrierwait.o pthread_cancel.o pthread_setcancelstate.o pthread_keycreate.o pthread_setspecific.o pthread_getspecific.o pthread_keydelete.o pthread_initialize.o pthread_completejoin.o pthread_findjoininfo.o pthread_once.o pthread_release.o pthread_setschedprio.o pthread_condtimedwait.o pthread_kill.o pthread_sigmask.o sched_garbage.o sched_getfiles.o sched_addreadytorun.o sched_removereadytorun.o sched_addprioritized.o sched_mergeprioritized.o sched_mergepending.o sched_addblocked.o sched_removeblocked.o sched_free.o sched_gettcb.o sched_verifytcb.o sched_releasetcb.o sched_getsockets.o sched_getstreams.o sched_setparam.o sched_setpriority.o sched_getparam.o sched_setscheduler.o sched_getscheduler.o sched_yield.o sched_rrgetinterval.o sched_foreach.o sched_lock.o sched_unlock.o sched_lockcount.o sched_idletask.o sched_self.o sched_reprioritize.o sched_waitpid.o sched_roundrobin.o sched_suspendscheduler.o sched_resumescheduler.o sched_processtimer.o sched_note.o sem_destroy.o sem_wait.o sem_trywait.o sem_tickwait.o sem_timedwait.o sem_timeout.o sem_post.o sem_recover.o sem_reset.o sem_waitirq.o sem_initialize.o sem_holder.o sig_initialize.o sig_action.o sig_procmask.o sig_pending.o sig_suspend.o sig_kill.o sig_queue.o sig_waitinfo.o sig_timedwait.o sig_findaction.o sig_allocatependingsigaction.o sig_releasependingsigaction.o sig_unmaskpendingsignal.o sig_removependingsignal.o sig_releasependingsignal.o sig_lowest.o sig_mqnotempty.o sig_cleanup.o sig_dispatch.o sig_deliver.o sig_pause.o sig_nanosleep.o task_create.o task_init.o task_setup.o task_activate.o task_start.o task_delete.o task_exit.o task_exithook.o task_recover.o task_restart.o task_spawnparms.o task_terminate.o task_getgroup.o task_prctl.o task_getpid.o exit.o task_vfork.o task_spawn.o timer_initialize.o timer_create.o timer_delete.o timer_getoverrun.o timer_gettime.o timer_settime.o timer_release.o wd_initialize.o wd_create.o wd_start.o wd_cancel.o wd_delete.o wd_gettime.o wd_recover.o kwork_queue.o kwork_process.o kwork_cancel.o kwork_signal.o
+CC:  wqueue/kwork_hpthread.c
+CC:  wqueue/kwork_lpthread.c
+CC:  wqueue/kwork_inherit.c
+AR:   clock_initialize.o clock_settime.o clock_gettime.o clock_getres.o clock_time2ticks.o clock_abstime2ticks.o clock_ticks2time.o clock_systimer.o clock_systimespec.o clock_timespec_add.o clock_timespec_subtract.o errno_getptr.o env_getenvironptr.o env_dup.o env_release.o env_findvar.o env_removevar.o env_clearenv.o env_getenv.o env_putenv.o env_setenv.o env_unsetenv.o group_create.o group_join.o group_leave.o group_find.o group_setupstreams.o group_setupidlefiles.o group_setuptaskfiles.o group_foreachchild.o group_killchildren.o group_waiter.o group_signal.o os_start.o os_bringup.o irq_initialize.o irq_attach.o irq_dispatch.o irq_unexpectedisr.o mq_send.o mq_timedsend.o mq_sndinternal.o mq_receive.o mq_timedreceive.o mq_rcvinternal.o mq_initialize.o mq_descreate.o mq_desclose.o mq_msgfree.o mq_msgqalloc.o mq_msgqfree.o mq_release.o mq_recover.o mq_setattr.o mq_getattr.o mq_waitirq.o mq_notify.o pg_miss.o pg_worker.o pthread_create.o pthread_exit.o pthread_join.o pthread_detach.o pthread_yield.o pthread_getschedparam.o pthread_setschedparam.o pthread_mutexinit.o pthread_mutexdestroy.o pthread_mutexlock.o pthread_mutextrylock.o pthread_mutexunlock.o pthread_condinit.o pthread_conddestroy.o pthread_condwait.o pthread_condsignal.o pthread_condbroadcast.o pthread_barrierinit.o pthread_barrierdestroy.o pthread_barrierwait.o pthread_cancel.o pthread_setcancelstate.o pthread_keycreate.o pthread_setspecific.o pthread_getspecific.o pthread_keydelete.o pthread_initialize.o pthread_completejoin.o pthread_findjoininfo.o pthread_once.o pthread_release.o pthread_setschedprio.o pthread_condtimedwait.o pthread_kill.o pthread_sigmask.o sched_garbage.o sched_getfiles.o sched_addreadytorun.o sched_removereadytorun.o sched_addprioritized.o sched_mergeprioritized.o sched_mergepending.o sched_addblocked.o sched_removeblocked.o sched_free.o sched_gettcb.o sched_verifytcb.o sched_releasetcb.o sched_getsockets.o sched_getstreams.o sched_setparam.o sched_setpriority.o sched_getparam.o sched_setscheduler.o sched_getscheduler.o sched_yield.o sched_rrgetinterval.o sched_foreach.o sched_lock.o sched_unlock.o sched_lockcount.o sched_idletask.o sched_self.o sched_reprioritize.o sched_waitpid.o sched_roundrobin.o sched_suspendscheduler.o sched_resumescheduler.o sched_processtimer.o sched_note.o sem_destroy.o sem_wait.o sem_trywait.o sem_tickwait.o sem_timedwait.o sem_timeout.o sem_post.o sem_recover.o sem_reset.o sem_waitirq.o sem_initialize.o sem_holder.o sig_initialize.o sig_action.o sig_procmask.o sig_pending.o sig_suspend.o sig_kill.o sig_queue.o sig_waitinfo.o sig_timedwait.o sig_findaction.o sig_allocatependingsigaction.o sig_releasependingsigaction.o sig_unmaskpendingsignal.o sig_removependingsignal.o sig_releasependingsignal.o sig_lowest.o sig_mqnotempty.o sig_cleanup.o sig_dispatch.o sig_deliver.o sig_pause.o sig_nanosleep.o task_create.o task_init.o task_setup.o task_activate.o task_start.o task_delete.o task_exit.o task_exithook.o task_recover.o task_restart.o task_spawnparms.o task_terminate.o task_getgroup.o task_prctl.o task_getpid.o exit.o task_vfork.o task_spawn.o timer_initialize.o timer_create.o timer_delete.o timer_getoverrun.o timer_gettime.o timer_settime.o timer_release.o wd_initialize.o wd_create.o wd_start.o wd_cancel.o wd_delete.o wd_gettime.o wd_recover.o kwork_queue.o kwork_process.o kwork_cancel.o kwork_signal.o kwork_hpthread.o kwork_lpthread.o kwork_inherit.o
 CC:  dirent/lib_readdirr.c
 CC:  dirent/lib_telldir.c
 CC:  fixedmath/lib_fixedmath.c
@@ -507,7 +512,14 @@ CC:  umm_heap/umm_memalign.c
 CC:  umm_heap/umm_realloc.c
 CC:  umm_heap/umm_zalloc.c
 CC:  umm_heap/umm_globals.c
-AR:    bin/mm_initialize.o  bin/mm_sem.o  bin/mm_addfreechunk.o  bin/mm_size2ndx.o  bin/mm_shrinkchunk.o  bin/mm_brkaddr.o  bin/mm_calloc.o  bin/mm_extend.o  bin/mm_free.o  bin/mm_mallinfo.o  bin/mm_malloc.o  bin/mm_memalign.o  bin/mm_realloc.o  bin/mm_zalloc.o  bin/umm_initialize.o  bin/umm_addregion.o  bin/umm_sem.o  bin/umm_brkaddr.o  bin/umm_calloc.o  bin/umm_extend.o  bin/umm_free.o  bin/umm_mallinfo.o  bin/umm_malloc.o  bin/umm_memalign.o  bin/umm_realloc.o  bin/umm_zalloc.o  bin/umm_globals.o
+CC:  mm_gran/mm_graninit.c
+CC:  mm_gran/mm_granrelease.c
+CC:  mm_gran/mm_granreserve.c
+CC:  mm_gran/mm_granalloc.c
+CC:  mm_gran/mm_granmark.c
+CC:  mm_gran/mm_granfree.c
+CC:  mm_gran/mm_grancritical.c
+AR:    bin/mm_initialize.o  bin/mm_sem.o  bin/mm_addfreechunk.o  bin/mm_size2ndx.o  bin/mm_shrinkchunk.o  bin/mm_brkaddr.o  bin/mm_calloc.o  bin/mm_extend.o  bin/mm_free.o  bin/mm_mallinfo.o  bin/mm_malloc.o  bin/mm_memalign.o  bin/mm_realloc.o  bin/mm_zalloc.o  bin/umm_initialize.o  bin/umm_addregion.o  bin/umm_sem.o  bin/umm_brkaddr.o  bin/umm_calloc.o  bin/umm_extend.o  bin/umm_free.o  bin/umm_mallinfo.o  bin/umm_malloc.o  bin/umm_memalign.o  bin/umm_realloc.o  bin/umm_zalloc.o  bin/umm_globals.o  bin/mm_graninit.o  bin/mm_granrelease.o  bin/mm_granreserve.o  bin/mm_granalloc.o  bin/mm_granmark.o  bin/mm_granfree.o  bin/mm_grancritical.o
 AS:  armv7-m/gnu/up_saveusercontext.S
 AS:  armv7-m/gnu/up_fullcontextrestore.S
 AS:  armv7-m/gnu/up_switchcontext.S
@@ -574,6 +586,9 @@ CXX:  libxx_newa.cxx
 CXX:  libxx_stdthrow.cxx
 CXX:  libxx_cxa_guard.cxx
 AR:    libxx_cxapurevirtual.o libxx_eabi_atexit.o libxx_cxa_atexit.o libxx_delete.o libxx_deletea.o libxx_new.o libxx_newa.o libxx_stdthrow.o libxx_cxa_guard.o
+CC:  ramdisk.c
+CC:  mount_main.c
+AR:   ramdisk.o  mount_main.o
 CC:  nsh_main.c
 AR:     nsh_main.o
 CC:  nsh_init.c
@@ -592,11 +607,12 @@ CC:  nsh_dbgcmds.c
 CC:  nsh_session.c
 CC:  nsh_fsutils.c
 CC:  nsh_builtin.c
+CC:  nsh_romfsetc.c
 CC:  nsh_mntcmds.c
 CC:  nsh_consolemain.c
 CC:  nsh_test.c
 CC:  nsh_usbconsole.c
-AR:   nsh_init.o nsh_parse.o nsh_console.o nsh_script.o nsh_command.o nsh_fscmds.o nsh_ddcmd.o nsh_proccmds.o nsh_mmcmds.o nsh_timcmds.o nsh_envcmds.o nsh_syscmds.o nsh_dbgcmds.o nsh_session.o nsh_fsutils.o nsh_builtin.o nsh_mntcmds.o nsh_consolemain.o nsh_test.o nsh_usbconsole.o
+AR:   nsh_init.o nsh_parse.o nsh_console.o nsh_script.o nsh_command.o nsh_fscmds.o nsh_ddcmd.o nsh_proccmds.o nsh_mmcmds.o nsh_timcmds.o nsh_envcmds.o nsh_syscmds.o nsh_dbgcmds.o nsh_session.o nsh_fsutils.o nsh_builtin.o nsh_romfsetc.o nsh_mntcmds.o nsh_consolemain.o nsh_test.o nsh_usbconsole.o
 CC:  builtin_forindex.c
 CC:  builtin_list.c
 CC:  exec_builtin.c
@@ -663,7 +679,33 @@ CC:  mqueue/mq_unlink.c
 CC:  mount/fs_mount.c
 CC:  mount/fs_umount2.c
 CC:  mount/fs_foreachmountpoint.c
-AR:   fs_initialize.o fs_files.o fs_foreachinode.o fs_inode.o fs_inodeaddref.o fs_inodebasename.o fs_inodefind.o fs_inoderelease.o fs_inoderemove.o fs_inodereserve.o fs_filedetach.o fs_close.o fs_dup.o fs_dup2.o fs_fcntl.o fs_dupfd.o fs_dupfd2.o fs_epoll.o fs_getfilep.o fs_ioctl.o fs_lseek.o fs_mkdir.o fs_open.o fs_poll.o fs_read.o fs_rename.o fs_rmdir.o fs_stat.o fs_statfs.o fs_select.o fs_unlink.o fs_write.o fs_fsync.o fs_pread.o fs_pwrite.o fs_fdopen.o fs_registerdriver.o fs_unregisterdriver.o fs_registerblockdriver.o fs_unregisterblockdriver.o fs_findblockdriver.o fs_openblockdriver.o fs_closeblockdriver.o fs_blockproxy.o fs_closedir.o fs_opendir.o fs_readdir.o fs_rewinddir.o fs_seekdir.o fs_mmap.o mq_open.o mq_close.o mq_unlink.o fs_mount.o fs_umount2.o fs_foreachmountpoint.o
+CC:  fat/fs_fat32.c
+CC:  fat/fs_fat32dirent.c
+CC:  fat/fs_fat32attrib.c
+CC:  fat/fs_fat32util.c
+CC:  fat/fs_mkfatfs.c
+CC:  fat/fs_configfat.c
+CC:  fat/fs_writefat.c
+CC:  romfs/fs_romfs.c
+CC:  romfs/fs_romfsutil.c
+CC:  nxffs/nxffs_block.c
+CC:  nxffs/nxffs_blockstats.c
+CC:  nxffs/nxffs_cache.c
+CC:  nxffs/nxffs_dirent.c
+CC:  nxffs/nxffs_dump.c
+CC:  nxffs/nxffs_initialize.c
+CC:  nxffs/nxffs_inode.c
+CC:  nxffs/nxffs_ioctl.c
+CC:  nxffs/nxffs_open.c
+CC:  nxffs/nxffs_pack.c
+CC:  nxffs/nxffs_read.c
+CC:  nxffs/nxffs_reformat.c
+CC:  nxffs/nxffs_stat.c
+CC:  nxffs/nxffs_unlink.c
+CC:  nxffs/nxffs_util.c
+CC:  nxffs/nxffs_write.c
+CC:  binfs/fs_binfs.c
+AR:   fs_initialize.o fs_files.o fs_foreachinode.o fs_inode.o fs_inodeaddref.o fs_inodebasename.o fs_inodefind.o fs_inoderelease.o fs_inoderemove.o fs_inodereserve.o fs_filedetach.o fs_close.o fs_dup.o fs_dup2.o fs_fcntl.o fs_dupfd.o fs_dupfd2.o fs_epoll.o fs_getfilep.o fs_ioctl.o fs_lseek.o fs_mkdir.o fs_open.o fs_poll.o fs_read.o fs_rename.o fs_rmdir.o fs_stat.o fs_statfs.o fs_select.o fs_unlink.o fs_write.o fs_fsync.o fs_pread.o fs_pwrite.o fs_fdopen.o fs_registerdriver.o fs_unregisterdriver.o fs_registerblockdriver.o fs_unregisterblockdriver.o fs_findblockdriver.o fs_openblockdriver.o fs_closeblockdriver.o fs_blockproxy.o fs_closedir.o fs_opendir.o fs_readdir.o fs_rewinddir.o fs_seekdir.o fs_mmap.o mq_open.o mq_close.o mq_unlink.o fs_mount.o fs_umount2.o fs_foreachmountpoint.o fs_fat32.o fs_fat32dirent.o fs_fat32attrib.o fs_fat32util.o fs_mkfatfs.o fs_configfat.o fs_writefat.o fs_romfs.o fs_romfsutil.o nxffs_block.o nxffs_blockstats.o nxffs_cache.o nxffs_dirent.o nxffs_dump.o nxffs_initialize.o nxffs_inode.o nxffs_ioctl.o nxffs_open.o nxffs_pack.o nxffs_read.o nxffs_reformat.o nxffs_stat.o nxffs_unlink.o nxffs_util.o nxffs_write.o fs_binfs.o
 CC:  bch/bchlib_setup.c
 CC:  bch/bchlib_teardown.c
 CC:  bch/bchlib_read.c
@@ -725,7 +767,6 @@ AR:   stm32_boot.o stm32_autoleds.o stm32_buttons.o stm32_appinitialize.o
 make[1]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware'
 Building /home/qing/sw/nap/module.mk
 %% module_mk
-/home/qing/sw/nap/module.mk /home/qing/sw/nap/module.mk.new differ: char 145, line 3
 %% px4-niu
 make[1]: Entering directory '/home/qing/sw/nap'
 Skipping submodules. NUTTX_SRC is set to /home/qing/sw/nap/modules/PX4NuttX/nuttx/
@@ -1820,9 +1861,8 @@ OBJ:     romfs.o
 CC:      romfs.o.c
 CC:      romfs.o.c
 LINK:    /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/firmware.elf
-BIN:     /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/firmware.bin
-%% Generating /home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/firmware.px4
+/home/qing/sw/nap/modules/PX4Firmware/makefiles/firmware.mk:517: recipe for target '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/firmware.elf' failed
 make[2]: Leaving directory '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build'
-%% Copying /home/qing/sw/nap/modules/PX4Firmware/Images/px4fmu-niu_APM.px4
+/home/qing/sw/nap/modules/PX4Firmware/Makefile:143: recipe for target '/home/qing/sw/nap/modules/PX4Firmware/Build/px4fmu-niu_APM.build/firmware.px4' failed
 make[1]: Leaving directory '/home/qing/sw/nap'
-PX4 ArduCopter Firmware is in ArduCopter-niu.px4
+../mk/px4_targets.mk:105: recipe for target 'px4-niu' failed

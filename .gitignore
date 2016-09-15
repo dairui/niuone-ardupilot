@@ -89,3 +89,5 @@ status.txt
 tags
 test.ArduCopter/*
 Thumbs.db
+/modules/PX4NuttX/apps-old
+/modules/PX4NuttX/nuttx-old

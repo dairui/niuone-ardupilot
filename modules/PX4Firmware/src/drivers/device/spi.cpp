@@ -126,7 +126,7 @@ SPI::init()
 	}
 
 	/* tell the workd where we are */
-	log("on SPI bus %d at %d (%u KHz)", _bus, _device, _frequency / 1000);
+	log("Qing on SPI bus %d at %d (%u KHz), _dev=%d", _bus, _device, _frequency / 1000, _dev);
 
 out:
 	return ret;

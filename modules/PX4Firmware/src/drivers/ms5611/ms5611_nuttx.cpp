@@ -728,6 +728,8 @@ MS5611::collect()
 		/* measured pressure in kPa */
 		double p = P / 1000.0;
 
+		fprintf(stdout, "P=%d\n", P);
+
 		/*
 		 * Solve:
 		 *
@@ -738,11 +740,12 @@ MS5611::collect()
 		 *                   a
 		 */
 		report.altitude = (((pow((p / p1), (-(a * R) / g))) * T1) - T1) / a;
+		fprintf(stdout, "altitute=%d\n", (int32_t)report.altitude);
 
 		/* publish it */
 		if (!(_pub_blocked)) {
 			/* publish it */
-			orb_publish(ORB_ID(sensor_baro), _baro_topic, &report);
+		//	orb_publish(ORB_ID(sensor_baro), _baro_topic, &report);// Qing to debug
 		}
 
 		if (_reports->force(&report)) {

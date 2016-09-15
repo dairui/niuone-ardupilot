@@ -296,6 +296,7 @@ __EXPORT int nsh_archinitialize(void)
 	}
 
 	/* Default SPI1 to 1MHz and de-assert the known chip selects. */
+	fprintf(stdout, "Qing in px4fmu2_init.c\n");
 	SPI_SETFREQUENCY(spi1, 10000000);
 	SPI_SETBITS(spi1, 8);
 	SPI_SETMODE(spi1, SPIDEV_MODE3);

@@ -53,11 +53,11 @@
 /* Configuration ********************************************************************/
 /* Up to 2 CAN interfaces are supported */
 
-#if STM32_NCAN < 2
+#if STM32F7_NCAN < 2
 #  undef CONFIG_STM32_CAN2
 #endif
 
-#if STM32_NCAN < 1
+#if STM32F7_NCAN < 1
 #  undef CONFIG_STM32_CAN1
 #endif
 

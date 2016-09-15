@@ -143,7 +143,7 @@
 
 /* Register Addresses ***************************************************************/
 
-#if STM32_NCAN > 0
+#if STM32F7_NCAN > 0
 #  define STM32_CAN1_MCR          (STM32_CAN1_BASE+STM32_CAN_MCR_OFFSET)
 #  define STM32_CAN1_MSR          (STM32_CAN1_BASE+STM32_CAN_MSR_OFFSET)
 #  define STM32_CAN1_TSR          (STM32_CAN1_BASE+STM32_CAN_TSR_OFFSET)
@@ -197,7 +197,7 @@
 #  define STM32_CAN1_FIR(b,i)     (STM32_CAN1_BASE+STM32_CAN_FIR_OFFSET(b,i))
 #endif
 
-#if STM32_NCAN > 1
+#if STM32F7_NCAN > 1
 #  define STM32_CAN2_MCR          (STM32_CAN2_BASE+STM32_CAN_MCR_OFFSET)
 #  define STM32_CAN2_MSR          (STM32_CAN2_BASE+STM32_CAN_MSR_OFFSET)
 #  define STM32_CAN2_TSR          (STM32_CAN2_BASE+STM32_CAN_TSR_OFFSET)

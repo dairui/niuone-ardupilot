@@ -8,7 +8,8 @@
 # To enable mkblctrl_x startup add a /fs/microsd/APM/mkblctrl_x file
 # To enable PWM on FMUv1 on ttyS1 add a /fs/microsd/APM/AUXPWM.en file
 
-set deviceA /dev/ttyACM0
+#set deviceA /dev/ttyACM0
+set deviceA /dev/ttyS0
 
 # check for an old file called APM, caused by 
 # a bug in an earlier firmware release
@@ -114,30 +115,30 @@ echo "Trying PX4IO board"
 # try the px4io start twice. Some FMUv2 board don't
 # come up the first time
 set HAVE_PX4IO false
-if px4io start norc
-then
-    set HAVE_PX4IO true
-else
-    # it may be in bootloader mode
-    echo Loading /etc/px4io/px4io.bin
-    tone_alarm MBABGP
-    if px4io update /etc/px4io/px4io.bin
-    then
-	echo "upgraded PX4IO firmware OK"
-        tone_alarm MSPAA
-    else
-	echo "Failed to upgrade PX4IO firmware"
-        tone_alarm MNGGG
-    fi
-    sleep 1
-    if px4io start norc
-    then
-        set HAVE_PX4IO true
-        # play happy tune again
-	tone_alarm 1
-    fi
-fi
-
+#if px4io start norc
+#then
+#    set HAVE_PX4IO true
+#else
+#    # it may be in bootloader mode
+#    echo Loading /etc/px4io/px4io.bin
+#    tone_alarm MBABGP
+#    if px4io update /etc/px4io/px4io.bin
+#    then
+#	echo "upgraded PX4IO firmware OK"
+#        tone_alarm MSPAA
+#    else
+#	echo "Failed to upgrade PX4IO firmware"
+#        tone_alarm MNGGG
+#    fi
+#    sleep 1
+#    if px4io start norc
+#    then
+#        set HAVE_PX4IO true
+#        # play happy tune again
+#	tone_alarm 1
+#    fi
+#fi
+#
 if [ $HAVE_PX4IO == true ]
 then
     echo "PX4IO board OK"
@@ -180,12 +181,12 @@ then
     fi
 else
     echo "No PX4IO board found"
-    echo "No PX4IO board found" >> $logfile
-
-    if [ $BOARD == FMUv2 ]
-    then
-       sh /etc/init.d/rc.error
-    fi
+#    echo "No PX4IO board found" >> $logfile
+#
+#    if [ $BOARD == FMUv2 ]
+#    then
+#       sh /etc/init.d/rc.error
+#    fi
 fi
 
 if [ $BOARD == FMUv1 -a $deviceD == /dev/ttyS1 ]
