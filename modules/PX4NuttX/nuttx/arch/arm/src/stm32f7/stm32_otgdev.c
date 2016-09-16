@@ -5519,7 +5519,7 @@ void up_usbinitialize(void)
 
   stm32_configgpio(GPIO_OTG_DM);
   stm32_configgpio(GPIO_OTG_DP);
-  stm32_configgpio(GPIO_OTG_ID);    /* Only needed for OTG */
+  //stm32_configgpio(GPIO_OTG_ID);    /* Only needed for OTG */
 
   /* SOF output pin configuration is configurable. */
 

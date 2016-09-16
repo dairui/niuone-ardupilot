@@ -484,7 +484,7 @@ ssize_t readline_common(FAR struct rl_common_s *vtbl, FAR char *buf, int buflen)
 
   /* <esc>[K is the VT100 command that erases to the end of the line. */
 
-  fputs("\nreadline_common 1\n", stdout);
+  //fputs("\nreadline_common 1\n", stdout);
 #ifdef CONFIG_READLINE_ECHO
   RL_WRITE(vtbl, g_erasetoeol, sizeof(g_erasetoeol));
 #endif
@@ -503,18 +503,18 @@ ssize_t readline_common(FAR struct rl_common_s *vtbl, FAR char *buf, int buflen)
        * errors or at the end of file.
        */
 
-      fputs("\nreadline_common 2\n", stdout);
+      //fputs("\nQing readline_common 2\n", stdout);
       //int ch = RL_GETC(vtbl);
 	int ch = fgetc(stdin);
-	fputs(ch,stdout); 
+	fputc(ch,stdout); 
 
-      fputs("\nreadline_common 3\n", stdout);
+      //fputs("\nQing readline_common 3\n", stdout);
       /* Check for end-of-file or read error */
 
       if (ch == EOF)
         {
           /* Did we already received some data? */
-      fputs("\nreadline_common 4\n", stdout);
+      //fputs("\nreadline_common 4\n", stdout);
 
           if (nch > 0)
             {
@@ -534,7 +534,7 @@ ssize_t readline_common(FAR struct rl_common_s *vtbl, FAR char *buf, int buflen)
 
       else if (escape)
         {
-      fputs("\nreadline_common 5\n", stdout);
+      //fputs("\nreadline_common 5\n", stdout);
           /* Yes, is it an <esc>[, 3 byte sequence */
 
           if (ch != ASCII_LBRACKET || escape == 2)

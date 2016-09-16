@@ -127,29 +127,29 @@ int nsh_session(FAR struct console_stdio_s *pstate)
     {
       /* For the case of debugging the USB console... dump collected USB trace data */
 
-      fprintf(pstate->cn_outstream, "1\n");
+      //fprintf(pstate->cn_outstream, "1\n");
 #ifdef CONFIG_NSH_USBDEV_TRACE
-      fprintf(pstate->cn_outstream, "2\n");
+      //fprintf(pstate->cn_outstream, "2\n");
       nsh_usbtrace();
 #endif
 
       /* Display the prompt string */
 
-      fprintf(pstate->cn_outstream, "3\n");
+      //fprintf(pstate->cn_outstream, "3\n");
       fputs(g_nshprompt, pstate->cn_outstream);
       fflush(pstate->cn_outstream);
 
-      fprintf(pstate->cn_outstream, "4\n");
+      //fprintf(pstate->cn_outstream, "4\n");
       /* Get the next line of input. readline() returns EOF on end-of-file
        * or any read failure.
        */
 
 #ifdef CONFIG_NSH_CLE
-      fprintf(pstate->cn_outstream, "5\n");
+      //fprintf(pstate->cn_outstream, "5\n");
       ret = cle(pstate->cn_line, CONFIG_NSH_LINELEN,
                 INSTREAM(pstate), OUTSTREAM(pstate));
 #else
-      fprintf(pstate->cn_outstream, "6\n");
+      //fprintf(pstate->cn_outstream, "6\n");
       ret = readline(pstate->cn_line, CONFIG_NSH_LINELEN,
                      INSTREAM(pstate), OUTSTREAM(pstate));
 #endif
@@ -157,7 +157,7 @@ int nsh_session(FAR struct console_stdio_s *pstate)
         {
           /* Parse process the command */
 
-      fprintf(pstate->cn_outstream, "7\n");
+      //fprintf(pstate->cn_outstream, "7\n");
           (void)nsh_parse(vtbl, pstate->cn_line);
           fflush(pstate->cn_outstream);
         }
@@ -169,7 +169,7 @@ int nsh_session(FAR struct console_stdio_s *pstate)
 
       else
         {
-      fprintf(pstate->cn_outstream, "8\n");
+      //fprintf(pstate->cn_outstream, "8\n");
           fprintf(pstate->cn_outstream, g_fmtcmdfailed, "nsh_session",
                   "readline", NSH_ERRNO_OF(-ret));
           return ret == 0 ? EXIT_SUCCESS : EXIT_FAILURE;
@@ -180,6 +180,6 @@ int nsh_session(FAR struct console_stdio_s *pstate)
    * But others will complain that this code is not reachable.
    */
 
-      fprintf(pstate->cn_outstream, "9\n");
+      //fprintf(pstate->cn_outstream, "9\n");
   return EXIT_SUCCESS;
 }
