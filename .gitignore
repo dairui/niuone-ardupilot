@@ -77,6 +77,7 @@ cmake_install.cmake
 CMakeCache.txt
 CMakeFiles
 config.mk
+module.mk
 dataflash.bin
 eeprom.bin
 index.html
@@ -91,3 +92,17 @@ test.ArduCopter/*
 Thumbs.db
 /modules/PX4NuttX/apps-old
 /modules/PX4NuttX/nuttx-old
+modules/PX4NuttX/apps/platform/board
+modules/PX4NuttX/nuttx/.config
+modules/PX4NuttX/nuttx/arch/arm/include/board
+modules/PX4NuttX/nuttx/arch/arm/include/chip
+modules/PX4NuttX/nuttx/arch/arm/src/board
+modules/PX4NuttX/nuttx/arch/arm/src/chip
+modules/PX4NuttX/nuttx/include/apps
+modules/PX4NuttX/nuttx/include/arch
+modules/PX4NuttX/nuttx/include/nuttx/config.h
+modules/PX4NuttX/nuttx/libc/Make_bin.dep
+modules/PX4NuttX/nuttx/mm/Make_bin.dep
+modules/PX4NuttX/nuttx/tools/mkconfig
+modules/PX4NuttX/nuttx/tools/mkdeps
+modules/PX4NuttX/nuttx/tools/mkversion

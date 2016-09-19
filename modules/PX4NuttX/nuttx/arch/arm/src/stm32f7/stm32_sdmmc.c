@@ -113,8 +113,10 @@
 #endif
 
 #ifdef CONFIG_STM32F7_SDMMC1
+#ifdef CONFIG_ARCH_IRQPRIO
 #  ifndef CONFIG_SDMMC1_PRI
 #    define CONFIG_SDMMC1_PRI        NVIC_SYSH_PRIORITY_DEFAULT
+#  endif
 #  endif
 
 #  ifdef CONFIG_SDIO_DMA

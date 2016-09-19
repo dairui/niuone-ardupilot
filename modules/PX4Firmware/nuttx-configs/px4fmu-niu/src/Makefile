@@ -49,6 +49,10 @@ ifeq ($(CONFIG_ARCH_BUTTONS),y)
 CSRCS +=  stm32_buttons.c
 endif
 
+ifeq ($(CONFIG_MMCSD_SDIO),y)
+CSRCS += stm32_sdio.c
+endif
+
 ifeq ($(CONFIG_LIB_BOARDCTL),y)
 CSRCS += stm32_appinitialize.c
 endif

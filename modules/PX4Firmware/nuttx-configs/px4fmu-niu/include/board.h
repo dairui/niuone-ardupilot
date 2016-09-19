@@ -244,6 +244,61 @@
 #define STM32_APB2_TIM10_CLKIN  (2*STM32_PCLK2_FREQUENCY)
 #define STM32_APB2_TIM11_CLKIN  (2*STM32_PCLK2_FREQUENCY)
 
+/* SDMMC dividers.  Note that slower clocking is required when DMA is disabled
+ * in order to avoid RX overrun/TX underrun errors due to delayed responses
+ * to service FIFOs in interrupt driven mode.  These values have not been
+ * tuned!!!
+ *
+ * SDMMCCLK=48MHz, SDMMC_CK=SDMMCCLK/(118+2)=400 KHz
+ */
+
+#define STM32_SDMMC_INIT_CLKDIV         (118 << STM32_SDMMC_CLKCR_CLKDIV_SHIFT)
+
+/* DMA ON:  SDMMCCLK=48MHz, SDMMC_CK=SDMMCCLK/(1+2)=16 MHz
+ * DMA OFF: SDMMCCLK=48MHz, SDMMC_CK=SDMMCCLK/(2+2)=12 MHz
+ */
+
+#ifdef CONFIG_SDIO_DMA
+#  define STM32_SDMMC_MMCXFR_CLKDIV     (1 << STM32_SDMMC_CLKCR_CLKDIV_SHIFT)
+#else
+#  define STM32_SDMMC_MMCXFR_CLKDIV     (2 << STM32_SDMMC_CLKCR_CLKDIV_SHIFT)
+#endif
+
+/* DMA ON:  SDMMCCLK=48MHz, SDMMC_CK=SDMMCCLK/(1+2)=16 MHz
+ * DMA OFF: SDMMCCLK=48MHz, SDMMC_CK=SDMMCCLK/(2+2)=12 MHz
+ */
+
+#ifdef CONFIG_SDIO_DMA
+#  define STM32_SDMMC_SDXFR_CLKDIV      (1 << STM32_SDMMC_CLKCR_CLKDIV_SHIFT)
+#else
+#  define STM32_SDMMC_SDXFR_CLKDIV      (2 << STM32_SDMMC_CLKCR_CLKDIV_SHIFT)
+#endif
+
+#if defined(CONFIG_STM32F7_SDMMC2)
+#  define GPIO_SDMMC2_D0 GPIO_SDMMC2_D0_1
+#  define GPIO_SDMMC2_D1 GPIO_SDMMC2_D1_1
+#  define GPIO_SDMMC2_D2 GPIO_SDMMC2_D2_1
+#  define GPIO_SDMMC2_D3 GPIO_SDMMC2_D3_1
+#endif
+/* DMA Channl/Stream Selections *****************************************************/
+/* Stream selections are arbitrary for now but might become important in the future
+ * if we set aside more DMA channels/streams.
+ *
+ * SDMMC DMA is on DMA2
+ *
+ * SDMMC1 DMA
+ *   DMAMAP_SDMMC1_1 = Channel 4, Stream 3
+ *   DMAMAP_SDMMC1_2 = Channel 4, Stream 6
+ *
+ * SDMMC2 DMA
+ *   DMAMAP_SDMMC2_1 = Channel 11, Stream 0
+ *   DMAMAP_SDMMC3_2 = Channel 11, Stream 5
+ */
+
+#define DMAMAP_SDMMC1  DMAMAP_SDMMC1_1
+#define DMAMAP_SDMMC2  DMAMAP_SDMMC2_1
+
+
 /* FLASH wait states
  *
  *  --------- ---------- -----------

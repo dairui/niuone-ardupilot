@@ -47,6 +47,15 @@
 /****************************************************************************************************
  * Pre-processor Definitions
  ****************************************************************************************************/
+
+
+/* Can't support MMC/SD features if mountpoints are disabled or if SDIO support
+ * is not enabled.
+ */
+#define  SDIO_MINOR 0   /* Any minor number, default 0 */
+#define SDIO_SLOTNO 0  /* Only one slot */
+
+
 /* procfs File System */
 
 #ifdef CONFIG_FS_PROCFS
@@ -109,6 +118,18 @@
  ****************************************************************************************************/
 
 void weak_function stm32_spidev_initialize(void);
+
+/****************************************************************************
+ * Name: stm32_sdio_initialize
+ *
+ * Description:
+ *   Initialize SDIO-based MMC/SD card support
+ *
+ ****************************************************************************/
+
+#if !defined(CONFIG_DISABLE_MOUNTPOINT) && defined(CONFIG_MMCSD_SDIO)
+int stm32_sdio_initialize(void);
+#endif
 
 /****************************************************************************************************
  * Name: arch_sporadic_initialize

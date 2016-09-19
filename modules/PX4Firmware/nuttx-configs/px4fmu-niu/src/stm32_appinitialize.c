@@ -73,8 +73,8 @@
 
 int board_app_initialize(uintptr_t arg)
 {
-#ifdef CONFIG_FS_PROCFS
   int ret;
+#ifdef CONFIG_FS_PROCFS
 
 #ifdef CONFIG_STM32_CCM_PROCFS
   /* Register the CCM procfs entry.  This must be done before the procfs is
@@ -94,5 +94,29 @@ int board_app_initialize(uintptr_t arg)
     }
 #endif
 
+#if defined(CONFIG_NUCLEO_SPI_TEST)
+  /* Create SPI interfaces */
+
+  ret = stm32_spidev_bus_test();
+  if (ret != OK)
+    {
+      syslog(LOG_ERR, "ERROR: Failed to initialize SPI interfaces: %d\n", ret);
+      return ret;
+    }
+#endif
+
+#if defined(CONFIG_MMCSD)
+  /* Configure SDIO */
+  /* Initialize the SDIO block driver */
+
+  ret = stm32_sdio_initialize();
+  if (ret != OK)
+    {
+      //syslog(LOG_ERR, "ERROR: Failed to initialize MMC/SD driver: %d\n", ret);
+      return ret;
+    }
+#endif
+
+  UNUSED(ret);
   return OK;
 }
