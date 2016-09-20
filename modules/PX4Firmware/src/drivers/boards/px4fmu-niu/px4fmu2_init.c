@@ -137,8 +137,8 @@ static GRAN_HANDLE dma_allocator;
 static uint8_t g_dma_heap[8192] __attribute__((aligned(64)));
 static perf_counter_t g_dma_perf;
 
-static void
-dma_alloc_init(void)
+__EXPORT void dma_alloc_init(void);
+void dma_alloc_init(void)
 {
 	dma_allocator = gran_initialize(g_dma_heap,
 					sizeof(g_dma_heap),

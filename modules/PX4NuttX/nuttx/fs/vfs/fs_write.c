@@ -44,7 +44,6 @@
 #include <sched.h>
 #include <errno.h>
 #include <assert.h>
-#include <stdio.h>
 
 #if defined(CONFIG_NET) && CONFIG_NSOCKET_DESCRIPTORS > 0
 # include <sys/socket.h>
@@ -75,7 +74,7 @@ ssize_t file_write(FAR struct file *filep, FAR const void *buf, size_t nbytes)
   FAR struct inode *inode;
   int ret;
   int errcode;
-  //fprintf(stdout, "Qing in file_write");
+
   /* Was this file opened for write access? */
 
   if ((filep->f_oflags & O_WROK) == 0)

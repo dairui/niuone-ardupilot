@@ -74,8 +74,11 @@
 int board_app_initialize(uintptr_t arg)
 {
   int ret;
-#ifdef CONFIG_FS_PROCFS
 
+  /* configure the DMA allocator */
+  dma_alloc_init();
+
+#ifdef CONFIG_FS_PROCFS
 #ifdef CONFIG_STM32_CCM_PROCFS
   /* Register the CCM procfs entry.  This must be done before the procfs is
    * mounted.
