@@ -483,7 +483,7 @@ L3GD20::init()
 
 	reset();
 
-	measure();
+	//measure();
 
 	/* advertise sensor topic, measure manually to initialize valid report */
 	struct gyro_report grp;

@@ -285,6 +285,19 @@ MS5611::init()
 	_measure_phase = 0;
 	_reports->flush();
 
+	/* state machine will have generated a report, copy it out */
+	_reports->get(&brp);
+
+	ret = OK;
+
+	_baro_topic = orb_advertise_multi(ORB_ID(sensor_baro), &brp,
+			&_orb_class_instance, (is_external()) ? ORB_PRIO_HIGH : ORB_PRIO_DEFAULT);
+
+
+	if (_baro_topic == nullptr) {
+		warnx("failed to create sensor_baro publication");
+	}
+
 	/* this do..while is goto without goto */
 	do {
 		/* do temperature first */
@@ -313,18 +326,6 @@ MS5611::init()
 			break;
 		}
 
-		/* state machine will have generated a report, copy it out */
-		_reports->get(&brp);
-
-		ret = OK;
-
-		_baro_topic = orb_advertise_multi(ORB_ID(sensor_baro), &brp,
-				&_orb_class_instance, (is_external()) ? ORB_PRIO_HIGH : ORB_PRIO_DEFAULT);
-
-
-		if (_baro_topic == nullptr) {
-			warnx("failed to create sensor_baro publication");
-		}
 
 	} while (0);
 
@@ -745,7 +746,7 @@ MS5611::collect()
 		/* publish it */
 		if (!(_pub_blocked)) {
 			/* publish it */
-		//	orb_publish(ORB_ID(sensor_baro), _baro_topic, &report);// Qing to debug
+			orb_publish(ORB_ID(sensor_baro), _baro_topic, &report);
 		}
 
 		if (_reports->force(&report)) {

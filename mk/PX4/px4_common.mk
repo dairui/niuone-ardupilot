@@ -51,6 +51,7 @@ MODULES		+= systemcmds/top
 MODULES		+= systemcmds/nshterm
 MODULES         += systemcmds/mtd
 MODULES         += systemcmds/ver
+MODULES         += systemcmds/config
 
 ifneq ($(wildcard $(PX4_ROOT)/src/systemcmds/reflect),)  
 MODULES         += systemcmds/reflect

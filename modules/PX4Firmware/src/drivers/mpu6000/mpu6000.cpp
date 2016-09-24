@@ -653,7 +653,7 @@ MPU6000::init()
 
 	_accel_class_instance = register_class_devname(ACCEL_BASE_DEVICE_PATH);
 
-	measure();
+	//measure();
 
 	/* advertise sensor topic, measure manually to initialize valid report */
 	struct accel_report arp;
