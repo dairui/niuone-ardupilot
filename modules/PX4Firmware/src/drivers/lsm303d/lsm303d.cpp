@@ -666,7 +666,7 @@ LSM303D::init()
 	}
 
 	/* fill report structures */
-	measure();
+	//measure();
 
 	/* advertise sensor topic, measure manually to initialize valid report */
 	struct mag_report mrp;
@@ -774,7 +774,8 @@ LSM303D::read(struct file *filp, char *buffer, size_t buflen)
 		return -ENOSPC;
 
 	/* if automatic measurement is enabled */
-	if (_call_accel_interval > 0) {
+	//if (_call_accel_interval > 0) {
+	if (false) {
 		/*
 		 * While there is space in the caller's buffer, and reports, copy them.
 		 */
@@ -786,6 +787,7 @@ LSM303D::read(struct file *filp, char *buffer, size_t buflen)
 		}
 
 		/* if there was no data, warn the caller */
+//		fprintf(stdout, "Qing 1 ret = %d\n", ret);
 		return ret ? ret : -EAGAIN;
 	}
 
@@ -796,6 +798,7 @@ LSM303D::read(struct file *filp, char *buffer, size_t buflen)
 	if (_accel_reports->get(arb))
 		ret = sizeof(*arb);
 
+//	fprintf(stdout, "Qing 2 ret = %d\n", ret);
 	return ret;
 }
 
@@ -811,7 +814,8 @@ LSM303D::mag_read(struct file *filp, char *buffer, size_t buflen)
 		return -ENOSPC;
 
 	/* if automatic measurement is enabled */
-	if (_call_mag_interval > 0) {
+	//if (_call_mag_interval > 0) {
+	if (false) {
 
 		/*
 		 * While there is space in the caller's buffer, and reports, copy them.
@@ -1404,6 +1408,7 @@ LSM303D::start()
 	/* reset the report ring */
 	_accel_reports->flush();
 	_mag_reports->flush();
+//	fprintf(stdout, "Qing start before hrt call\n");
 
 	/* start polling at the specified rate */
 	hrt_call_every(&_accel_call,
@@ -1424,6 +1429,7 @@ void
 LSM303D::measure_trampoline(void *arg)
 {
 	LSM303D *dev = (LSM303D *)arg;
+//	fprintf(stdout, "Qing measure_trampoline\n");
 
 	/* make another measurement */
 	dev->measure();
@@ -1941,6 +1947,7 @@ test()
 
 	/* do a simple demand read */
 	sz = read(fd_accel, &accel_report, sizeof(accel_report));
+//	fprintf(stdout, "Qing sz = %d\n", (int32_t)sz);	
 
 	if (sz != sizeof(accel_report))
 		err(1, "immediate read failed");
