@@ -409,6 +409,7 @@ test(void)
 int
 adc_main(int argc, char *argv[])
 {
+	fprintf(stdout, "Qing in adc_main\n");
 	if (g_adc == nullptr) {
 #ifdef CONFIG_ARCH_BOARD_PX4FMU_V1
 		/* XXX this hardcodes the default channel set for PX4FMUv1 - should be configurable */

@@ -212,13 +212,13 @@ else
    sh /etc/init.d/rc.error
 fi
 
-if adc start
-then
-   echo "adc started OK"
-else
-   echo "No adc" >> $logfile
-   sh /etc/init.d/rc.error
-fi
+#if adc start
+#then
+#   echo "adc started OK"
+#else
+#   echo "No adc" >> $logfile
+#   sh /etc/init.d/rc.error
+#fi
 
 if [ $BOARD == FMUv1 ]
 then

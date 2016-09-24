@@ -44,12 +44,12 @@ static PX4Util utilInstance;
 static PX4GPIO gpioDriver;
 
 #if defined(CONFIG_ARCH_BOARD_PX4FMU_V2)
-#define UARTA_DEFAULT_DEVICE "/dev/ttyACM0"
-//#define UARTA_DEFAULT_DEVICE "/dev/ttyS0"
-#define UARTB_DEFAULT_DEVICE "/dev/ttyS3"
-#define UARTC_DEFAULT_DEVICE "/dev/ttyS1"
-#define UARTD_DEFAULT_DEVICE "/dev/ttyS2"
-#define UARTE_DEFAULT_DEVICE "/dev/ttyS6"
+//#define UARTA_DEFAULT_DEVICE "/dev/ttyACM0"
+#define UARTA_DEFAULT_DEVICE "/dev/ttyS0"
+#define UARTB_DEFAULT_DEVICE "/dev/ttyS1"
+#define UARTC_DEFAULT_DEVICE "/dev/ttyS2"
+#define UARTD_DEFAULT_DEVICE "/dev/ttyS3"
+#define UARTE_DEFAULT_DEVICE "/dev/ttyS4"
 #else
 #define UARTA_DEFAULT_DEVICE "/dev/ttyACM0"
 #define UARTB_DEFAULT_DEVICE "/dev/ttyS3"
@@ -120,17 +120,27 @@ static int main_loop(int argc, char **argv)
     extern void setup(void);
     extern void loop(void);
 
-
+    fprintf(stdout, "Qing in main_loop 1\n");
     hal.uartA->begin(115200);
+    fprintf(stdout, "Qing in main_loop 2\n");
     hal.uartB->begin(38400);
+    fprintf(stdout, "Qing in main_loop 3\n");
     hal.uartC->begin(57600);
+    fprintf(stdout, "Qing in main_loop 4\n");
     hal.uartD->begin(57600);
+    fprintf(stdout, "Qing in main_loop 5\n");
     hal.uartE->begin(57600);
+    fprintf(stdout, "Qing in main_loop 6\n");
     hal.scheduler->init(NULL);
+    fprintf(stdout, "Qing in main_loop 7\n");
     hal.rcin->init(NULL);
+    fprintf(stdout, "Qing in main_loop 8\n");
     hal.rcout->init(NULL);
+    fprintf(stdout, "Qing in main_loop 9\n");
     hal.analogin->init(NULL);
+    fprintf(stdout, "Qing in main_loop 10\n");
     hal.gpio->init();
+    fprintf(stdout, "Qing in main_loop 11\n");
 
 
     /*
