@@ -41,6 +41,7 @@
 
 #include <sched.h>
 #include <debug.h>
+#include <stdio.h>
 
 #include <nuttx/irq.h>
 #include <nuttx/arch.h>

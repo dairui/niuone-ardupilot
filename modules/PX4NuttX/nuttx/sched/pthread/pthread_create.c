@@ -48,6 +48,7 @@
 #include <assert.h>
 #include <errno.h>
 #include <queue.h>
+#include <stdio.h>
 
 #include <nuttx/kmalloc.h>
 #include <nuttx/pthread.h>
@@ -239,6 +240,7 @@ int pthread_create(FAR pthread_t *thread, FAR const pthread_attr_t *attr,
 
   /* If attributes were not supplied, use the default attributes */
 
+
   if (!attr)
     {
       attr = &g_default_pthread_attr;
@@ -291,6 +293,7 @@ int pthread_create(FAR pthread_t *thread, FAR const pthread_attr_t *attr,
 
   ret = up_create_stack((FAR struct tcb_s *)ptcb, attr->stacksize,
                         TCB_FLAG_TTYPE_PTHREAD);
+
   if (ret != OK)
     {
       errcode = ENOMEM;
@@ -398,6 +401,7 @@ int pthread_create(FAR pthread_t *thread, FAR const pthread_attr_t *attr,
 
   ret = pthread_schedsetup(ptcb, param.sched_priority, pthread_start,
                            start_routine);
+
   if (ret != OK)
     {
       errcode = EBUSY;
@@ -489,13 +493,11 @@ int pthread_create(FAR pthread_t *thread, FAR const pthread_attr_t *attr,
     }
 
   /* Activate the task */
-
   sched_lock();
   if (ret == OK)
     {
       ret = task_activate((FAR struct tcb_s *)ptcb);
     }
-
   if (ret == OK)
     {
       /* Wait for the task to actually get running and to register
@@ -545,7 +547,8 @@ errout_with_tcb:
       ptcb->cmn.group = NULL;
     }
 #endif
-
+  fprintf(stdout, "Qing PC 12\n");
   sched_releasetcb((FAR struct tcb_s *)ptcb, TCB_FLAG_TTYPE_PTHREAD);
+  fprintf(stdout, "Qing PC 13\n");
   return errcode;
 }

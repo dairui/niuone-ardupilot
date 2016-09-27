@@ -94,6 +94,7 @@ private:
     pthread_t _uart_thread_ctx;
 
     void *_timer_thread(void);
+    void *_timer_try(void);
     void *_io_thread(void);
     void *_storage_thread(void);
     void *_uart_thread(void);

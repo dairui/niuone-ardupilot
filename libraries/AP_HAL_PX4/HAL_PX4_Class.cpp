@@ -120,27 +120,28 @@ static int main_loop(int argc, char **argv)
     extern void setup(void);
     extern void loop(void);
 
-    fprintf(stdout, "Qing in main_loop 1\n");
+
     hal.uartA->begin(115200);
-    fprintf(stdout, "Qing in main_loop 2\n");
+
     hal.uartB->begin(38400);
-    fprintf(stdout, "Qing in main_loop 3\n");
+
     hal.uartC->begin(57600);
-    fprintf(stdout, "Qing in main_loop 4\n");
+
     hal.uartD->begin(57600);
-    fprintf(stdout, "Qing in main_loop 5\n");
+
     hal.uartE->begin(57600);
-    fprintf(stdout, "Qing in main_loop 6\n");
+
+    schedulerInstance.hal_initialized();
     hal.scheduler->init(NULL);
-    fprintf(stdout, "Qing in main_loop 7\n");
+    fprintf(stdout, "Qing ML 1");
     hal.rcin->init(NULL);
-    fprintf(stdout, "Qing in main_loop 8\n");
+    fprintf(stdout, "Qing ML 2");
     hal.rcout->init(NULL);
-    fprintf(stdout, "Qing in main_loop 9\n");
+    fprintf(stdout, "Qing ML 3");
     hal.analogin->init(NULL);
-    fprintf(stdout, "Qing in main_loop 10\n");
+    fprintf(stdout, "Qing ML 4");
     hal.gpio->init();
-    fprintf(stdout, "Qing in main_loop 11\n");
+
 
 
     /*
