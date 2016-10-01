@@ -126,7 +126,7 @@ void PX4Storage::_storage_open(void)
 
         // PX4 should always have /fs/mtd_params
         if (!_have_mtd) {
-            hal.scheduler->panic("Failed to find " MTD_PARAMS_FILE);
+            hal.scheduler->panic("Qing Failed to find " MTD_PARAMS_FILE);
         }
 
         /*

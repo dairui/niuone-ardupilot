@@ -121,26 +121,26 @@ static int main_loop(int argc, char **argv)
     extern void loop(void);
 
 
-    hal.uartA->begin(115200);
+//    hal.uartA->begin(115200);
 
-    hal.uartB->begin(38400);
+//   hal.uartB->begin(38400);
 
-    hal.uartC->begin(57600);
+//    hal.uartC->begin(57600);
 
-    hal.uartD->begin(57600);
+//    hal.uartD->begin(57600);
 
-    hal.uartE->begin(57600);
-
+//    hal.uartE->begin(57600);
+    fprintf(stdout, "Qing ML 0\n");
     schedulerInstance.hal_initialized();
     hal.scheduler->init(NULL);
-    fprintf(stdout, "Qing ML 1");
-    hal.rcin->init(NULL);
-    fprintf(stdout, "Qing ML 2");
-    hal.rcout->init(NULL);
-    fprintf(stdout, "Qing ML 3");
-    hal.analogin->init(NULL);
-    fprintf(stdout, "Qing ML 4");
-    hal.gpio->init();
+    fprintf(stdout, "Qing ML 1\n");
+    //hal.rcin->init(NULL);
+    fprintf(stdout, "Qing ML 2\n");
+    //hal.rcout->init(NULL);
+    fprintf(stdout, "Qing ML 3\n");
+    //hal.analogin->init(NULL);
+    fprintf(stdout, "Qing ML 4\n");
+    //hal.gpio->init();
 
 
 
@@ -152,7 +152,7 @@ static int main_loop(int argc, char **argv)
 
     schedulerInstance.hal_initialized();
 
-    setup();
+    //setup();
     hal.scheduler->system_initialized();
 
     perf_counter_t perf_loop = perf_alloc(PC_ELAPSED, "APM_loop");
@@ -177,7 +177,8 @@ static int main_loop(int argc, char **argv)
          */
         hrt_call_after(&loop_overtime_call, 100000, (hrt_callout)loop_overtime, NULL);
 
-        loop();
+        //loop();
+        fprintf(stdout, "Qing in main loop\n");
 
         if (px4_ran_overtime) {
             /*
@@ -196,7 +197,7 @@ static int main_loop(int argc, char **argv)
           chance to run. This relies on the accurate semaphore wait
           using hrt in semaphore.cpp
          */
-        hal.scheduler->delay_microseconds(250);
+       hal.scheduler->delay_microseconds(250);
     }
     thread_running = false;
     return 0;

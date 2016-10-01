@@ -78,8 +78,8 @@ void PX4Scheduler::init(void *unused)
     pthread_attr_setschedpolicy(&thread_attr, SCHED_FIFO);
 
 	fprintf(stdout, "Qing PX4S 12\n");
-    pthread_create(&_storage_thread_ctx, &thread_attr, (pthread_startroutine_t)&PX4::PX4Scheduler::_storage_thread, this);
-	fprintf(stdout, "Qing PX4S inited");
+    //pthread_create(&_storage_thread_ctx, &thread_attr, (pthread_startroutine_t)&PX4::PX4Scheduler::_storage_thread, this);
+	fprintf(stdout, "Qing PX4S inited\n");
 }
 
 uint64_t PX4Scheduler::micros64() 
@@ -281,6 +281,7 @@ void *PX4Scheduler::_timer_thread(void)
     }
     while (!_px4_thread_should_exit) {
         delay_microseconds_semaphore(1000);
+	//fprintf(stdout, "Qing in _timer_thread\n");
 
         // run registered timers
         perf_begin(_perf_timers);
@@ -310,19 +311,23 @@ void *PX4Scheduler::_timer_try(void)
 
 void PX4Scheduler::_run_io(void)
 {
+	fprintf(stdout, "Qing in _run_io 1\n");
     if (_in_io_proc) {
         return;
     }
     _in_io_proc = true;
 
+	//fprintf(stdout, "Qing in _run_io 2\n");
     if (!_timer_suspended) {
         // now call the IO based drivers
+	//fprintf(stdout, "Qing in _run_io 2-1\n");
         for (int i = 0; i < _num_io_procs; i++) {
             if (_io_proc[i]) {
-                _io_proc[i]();
+               // _io_proc[i]();
             }
         }
     }
+	//fprintf(stdout, "Qing in _run_io 3\n");
 
     _in_io_proc = false;
 }
@@ -334,6 +339,7 @@ void *PX4Scheduler::_uart_thread(void)
     }
     while (!_px4_thread_should_exit) {
         delay_microseconds_semaphore(1000);
+	//fprintf(stdout, "Qing in _uart_thread\n");
 
         // process any pending serial bytes
         ((PX4UARTDriver *)hal.uartA)->_timer_tick();
@@ -351,7 +357,9 @@ void *PX4Scheduler::_io_thread(void)
         poll(NULL, 0, 1);        
     }
     while (!_px4_thread_should_exit) {
-        poll(NULL, 0, 1);
+	fprintf(stdout, "Qing in _io_thread\n");
+        //delay_microseconds_semaphore(1000);
+        //poll(NULL, 0, 1);
 
         // run registered IO processes
         perf_begin(_perf_io_timers);

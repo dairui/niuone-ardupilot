@@ -231,6 +231,12 @@ __EXPORT int matherr(struct exception *e)
 
 __EXPORT int nsh_archinitialize(void)
 {
+	hrt_init();
+	return OK;
+}
+#ifdef Qing_debug
+__EXPORT int nsh_archinitialize1(void)
+{
 
 	/* configure ADC pins */
 	stm32_configgpio(GPIO_ADC1_IN2);	/* BATT_VOLTAGE_SENS */
@@ -359,3 +365,4 @@ __EXPORT int nsh_archinitialize(void)
 
 	return OK;
 }
+#endif

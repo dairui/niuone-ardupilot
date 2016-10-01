@@ -202,7 +202,7 @@ void PX4AnalogIn::init(void* machtnichts)
 {
 	_adc_fd = open(ADC0_DEVICE_PATH, O_RDONLY | O_NONBLOCK);
     if (_adc_fd == -1) {
-        hal.scheduler->panic("Unable to open " ADC0_DEVICE_PATH);
+        hal.scheduler->panic("Qing Unable to open " ADC0_DEVICE_PATH);
 	}
     _battery_handle   = orb_subscribe(ORB_ID(battery_status));
     _servorail_handle = orb_subscribe(ORB_ID(servorail_status));

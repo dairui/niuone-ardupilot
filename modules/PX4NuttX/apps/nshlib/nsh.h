@@ -1363,4 +1363,11 @@ void nsh_trimdir(FAR char *dirpath);
 FAR char *nsh_trimspaces(FAR char *str);
 #endif
 
+#ifdef CONFIG_NSH_ARCHINIT
+int nsh_archinitialize(void);
+#else
+#  define nsh_archinitialize() (-ENOSYS)
+#endif
+
+
 #endif /* __APPS_NSHLIB_NSH_H */

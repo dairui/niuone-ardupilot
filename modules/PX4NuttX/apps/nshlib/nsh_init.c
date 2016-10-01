@@ -123,6 +123,10 @@ void nsh_initialize(void)
   (void)boardctl(BOARDIOC_INIT, 0);
 #endif
 
+  /* Perform architecture-specific initialization (if available) */
+
+  (void)nsh_archinitialize();
+
   /* Bring up the network */
 
   (void)nsh_netinit();
