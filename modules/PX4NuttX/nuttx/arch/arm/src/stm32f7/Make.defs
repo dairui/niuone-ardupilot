@@ -201,3 +201,7 @@ endif
 ifeq ($(CONFIG_STM32F7_BBSRAM),y)
 CHIP_CSRCS += stm32_bbsram.c
 endif
+
+ifeq ($(CONFIG_STM32F7_QSPI),y)
+CHIP_CSRCS += stm32f7_qspi.c
+endif

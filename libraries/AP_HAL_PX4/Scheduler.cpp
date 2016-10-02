@@ -66,7 +66,7 @@ void PX4Scheduler::init(void *unused)
     pthread_attr_setschedpolicy(&thread_attr, SCHED_FIFO);
 
 	fprintf(stdout, "Qing PX4S 10\n");
-	pthread_create(&_io_thread_ctx, &thread_attr, (pthread_startroutine_t)&PX4::PX4Scheduler::_io_thread, this);
+	//pthread_create(&_io_thread_ctx, &thread_attr, (pthread_startroutine_t)&PX4::PX4Scheduler::_io_thread, this);
 	fprintf(stdout, "Qing PX4S 11\n");
 
     // the storage thread runs at just above IO priority
@@ -281,7 +281,7 @@ void *PX4Scheduler::_timer_thread(void)
     }
     while (!_px4_thread_should_exit) {
         delay_microseconds_semaphore(1000);
-	//fprintf(stdout, "Qing in _timer_thread\n");
+	fprintf(stdout, "Qing in _timer_thread\n");
 
         // run registered timers
         perf_begin(_perf_timers);

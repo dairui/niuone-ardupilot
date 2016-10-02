@@ -75,9 +75,10 @@ int mtd_main(int argc, char *argv[])
 }
 
 #else
-
 #ifdef CONFIG_MTD_RAMTRON
 static void	ramtron_attach(void);
+#elif defined CONFIG_MTD_N25Q
+static void     n25qxxx_attach(void);
 #else
 
 #ifndef PX4_I2C_BUS_ONBOARD
@@ -162,6 +163,7 @@ int mtd_main(int argc, char *argv[])
 }
 
 struct mtd_dev_s *ramtron_initialize(FAR struct spi_dev_s *dev);
+struct mtd_dev_s *n25qxxx_initialize(FAR struct qspi_dev_s *dev, bool unprotect);
 struct mtd_dev_s *mtd_partition(FAR struct mtd_dev_s *mtd,
                                     off_t firstblock, off_t nblocks);
 
@@ -213,6 +215,18 @@ ramtron_attach(void)
 
 	attached = true;
 }
+#elif defined CONFIG_MTD_N25Q
+static void
+n25qxxx_attach(void)
+{
+	struct qspi_dev_s *qspi = stm32f7_qspi_initialize(1);
+
+	mtd_dev = n25qxxx_initialize(qspi,true);
+	fprintf(stdout, "Qing in n25qxxx\n");
+
+	attached = true;
+
+}
 #else
 
 static void
@@ -257,8 +271,10 @@ mtd_start(char *partition_names[], unsigned n_partitions)
 	if (!attached) {
 		#ifdef CONFIG_ARCH_BOARD_PX4FMU_V1
 		at24xxx_attach();
-		#else
+		#elif defined CONFIG_MTD_RAMTRON
 		ramtron_attach();
+		#else
+		n25qxxx_attach();
 		#endif
 	}
 

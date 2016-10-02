@@ -77,6 +77,7 @@
 #include "stm32_wdg.h"
 #include "stm32_lowputc.h"
 #include "stm32_ethernet.h"
+#include "stm32f7_qspi.h"
 
 #endif /* __ARCH_ARM_SRC_STM32_STM32_H */
 

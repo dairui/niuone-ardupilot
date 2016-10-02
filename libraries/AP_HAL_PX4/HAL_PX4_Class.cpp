@@ -152,7 +152,7 @@ static int main_loop(int argc, char **argv)
 
     schedulerInstance.hal_initialized();
 
-    //setup();
+    setup();
     hal.scheduler->system_initialized();
 
     perf_counter_t perf_loop = perf_alloc(PC_ELAPSED, "APM_loop");
@@ -177,7 +177,7 @@ static int main_loop(int argc, char **argv)
          */
         hrt_call_after(&loop_overtime_call, 100000, (hrt_callout)loop_overtime, NULL);
 
-        //loop();
+        loop();
         fprintf(stdout, "Qing in main loop\n");
 
         if (px4_ran_overtime) {
