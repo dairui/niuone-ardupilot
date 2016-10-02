@@ -219,10 +219,17 @@ ramtron_attach(void)
 static void
 n25qxxx_attach(void)
 {
-	struct qspi_dev_s *qspi = stm32f7_qspi_initialize(1);
+	struct qspi_dev_s *qspi = stm32f7_qspi_initialize(0);
+	if (!qspi)
+	{
+		fprintf(stdout, "Qing stm32f7 qspi init failed\n");
+	}
 
 	mtd_dev = n25qxxx_initialize(qspi,true);
-	fprintf(stdout, "Qing in n25qxxx\n");
+	if (!mtd_dev)
+	{
+		fprintf(stdout, "Qing n25qxxx init failed\n");
+	}
 
 	attached = true;
 
