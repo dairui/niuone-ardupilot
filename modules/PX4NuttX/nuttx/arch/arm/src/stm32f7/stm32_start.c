@@ -395,10 +395,10 @@ void __start(void)
   go_os_start((FAR void *)&_ebss, CONFIG_IDLETHREAD_STACKSIZE);
 #else
   /* Call os_start() */
-  up_lowputc('A');
-  up_lowputc('B');
-  up_lowputc('\r');
-  up_lowputc('\n');
+  //up_lowputc('A');
+  //up_lowputc('B');
+  //up_lowputc('\r');
+  //up_lowputc('\n');
 
   os_start();
 
