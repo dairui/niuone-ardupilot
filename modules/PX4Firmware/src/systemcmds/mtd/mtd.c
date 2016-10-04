@@ -490,7 +490,9 @@ mtd_rwtest(char *partition_names[], unsigned n_partitions)
 		if (fd == -1) {
 			errx(1, "Failed to open partition");
 		}
+		fprintf(stdout, "Qing in flash rwtest %7x/%7x", count, expected_size);
 		while (read(fd, v, sizeof(v)) == sizeof(v)) {
+			fprintf(stdout, "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b%7x/%7x", count, expected_size);
 			count += sizeof(v);
                         if (lseek(fd, offset, SEEK_SET) != offset) {
                             errx(1, "seek failed");                            
