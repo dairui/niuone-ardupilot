@@ -88,7 +88,7 @@ static void     n25qxxx_attach(void);
 static void	at24xxx_attach(void);
 #endif
 static void	mtd_start(char *partition_names[], unsigned n_partitions);
-static void	mtd_test(void);
+static void     mtd_test(char *partition_names);
 static void	mtd_erase(char *partition_names[], unsigned n_partitions);
 static void	mtd_readtest(char *partition_names[], unsigned n_partitions);
 static void	mtd_rwtest(char *partition_names[], unsigned n_partitions);
@@ -129,7 +129,7 @@ int mtd_main(int argc, char *argv[])
 		}
 
 		if (!strcmp(argv[1], "test"))
-			mtd_test();
+			mtd_test(argv[2]);
 
 		if (!strcmp(argv[1], "readtest")) {
 			if (argc >= 3) {
