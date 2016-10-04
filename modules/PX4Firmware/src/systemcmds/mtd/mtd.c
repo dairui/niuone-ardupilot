@@ -413,10 +413,37 @@ void mtd_print_info(void)
 }
 
 void
-mtd_test(void)
+mtd_test(char *partition_names)
 {
-	warnx("This test routine does not test anything yet!");
-	exit(1);
+	uint8_t v[128], v2[128];
+	
+
+	memset(v, 0xaa, sizeof(v));
+	memset(v2, 0x00, sizeof(v2));
+	
+        off_t offset = 0;
+	int fd = open(partition_names, O_RDWR);
+	if (fd == -1) {
+		errx(1, "Failed to open partition");
+	}
+	if (lseek(fd, offset, SEEK_SET) != offset) {
+		errx(1, "seek failed");                            
+	}
+	if (write(fd, v, sizeof(v)) != sizeof(v)) {
+		errx(1, "write failed");
+	}
+	if (lseek(fd, offset, SEEK_SET) != offset) {
+		errx(1, "seek failed");                            
+	}
+	if (read(fd, v2, sizeof(v2)) != sizeof(v2)) {
+		errx(1, "read failed");
+	}
+	if (memcmp(v, v2, sizeof(v2)) != 0) {
+		errx(1, "memcmp failed");
+	}
+	close(fd);
+	printf("rwtest OK\n");
+	exit(0);
 }
 
 void
