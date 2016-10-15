@@ -44,30 +44,35 @@ void PX4Scheduler::init(void *unused)
     // setup the timer thread - this will call tasks at 1kHz
 	pthread_attr_t thread_attr;
 	struct sched_param param;
+
 	pthread_attr_init(&thread_attr);
 	pthread_attr_setstacksize(&thread_attr, 2048);
+
 	param.sched_priority = APM_TIMER_PRIORITY;
 	(void)pthread_attr_setschedparam(&thread_attr, &param);
     pthread_attr_setschedpolicy(&thread_attr, SCHED_FIFO);
+
 	pthread_create(&_timer_thread_ctx, &thread_attr, (pthread_startroutine_t)&PX4::PX4Scheduler::_timer_thread, this);
-	//pthread_create(&_timer_thread_ctx, &thread_attr, (pthread_startroutine_t)&PX4::PX4Scheduler::_timer_try, this);
+
     // the UART thread runs at a medium priority
 	pthread_attr_init(&thread_attr);
 	pthread_attr_setstacksize(&thread_attr, 2048);
+
 	param.sched_priority = APM_UART_PRIORITY;
 	(void)pthread_attr_setschedparam(&thread_attr, &param);
     pthread_attr_setschedpolicy(&thread_attr, SCHED_FIFO);
+
 	pthread_create(&_uart_thread_ctx, &thread_attr, (pthread_startroutine_t)&PX4::PX4Scheduler::_uart_thread, this);
+
     // the IO thread runs at lower priority
 	pthread_attr_init(&thread_attr);
 	pthread_attr_setstacksize(&thread_attr, 2048);
+
 	param.sched_priority = APM_IO_PRIORITY;
 	(void)pthread_attr_setschedparam(&thread_attr, &param);
     pthread_attr_setschedpolicy(&thread_attr, SCHED_FIFO);
 
-	fprintf(stdout, "Qing PX4S 10\n");
-	//pthread_create(&_io_thread_ctx, &thread_attr, (pthread_startroutine_t)&PX4::PX4Scheduler::_io_thread, this);
-	fprintf(stdout, "Qing PX4S 11\n");
+	pthread_create(&_io_thread_ctx, &thread_attr, (pthread_startroutine_t)&PX4::PX4Scheduler::_io_thread, this);
 
     // the storage thread runs at just above IO priority
     pthread_attr_init(&thread_attr);
@@ -77,9 +82,7 @@ void PX4Scheduler::init(void *unused)
     (void)pthread_attr_setschedparam(&thread_attr, &param);
     pthread_attr_setschedpolicy(&thread_attr, SCHED_FIFO);
 
-	fprintf(stdout, "Qing PX4S 12\n");
-    //pthread_create(&_storage_thread_ctx, &thread_attr, (pthread_startroutine_t)&PX4::PX4Scheduler::_storage_thread, this);
-	fprintf(stdout, "Qing PX4S inited\n");
+    pthread_create(&_storage_thread_ctx, &thread_attr, (pthread_startroutine_t)&PX4::PX4Scheduler::_storage_thread, this);
 }
 
 uint64_t PX4Scheduler::micros64() 
@@ -281,7 +284,6 @@ void *PX4Scheduler::_timer_thread(void)
     }
     while (!_px4_thread_should_exit) {
         delay_microseconds_semaphore(1000);
-	fprintf(stdout, "Qing in _timer_thread\n");
 
         // run registered timers
         perf_begin(_perf_timers);
@@ -303,31 +305,21 @@ void *PX4Scheduler::_timer_thread(void)
     return NULL;
 }
 
-void *PX4Scheduler::_timer_try(void)
-{
-
-    return NULL;
-}
-
 void PX4Scheduler::_run_io(void)
 {
-	fprintf(stdout, "Qing in _run_io 1\n");
     if (_in_io_proc) {
         return;
     }
     _in_io_proc = true;
 
-	//fprintf(stdout, "Qing in _run_io 2\n");
     if (!_timer_suspended) {
         // now call the IO based drivers
-	//fprintf(stdout, "Qing in _run_io 2-1\n");
         for (int i = 0; i < _num_io_procs; i++) {
             if (_io_proc[i]) {
-               // _io_proc[i]();
+                _io_proc[i]();
             }
         }
     }
-	//fprintf(stdout, "Qing in _run_io 3\n");
 
     _in_io_proc = false;
 }
@@ -339,7 +331,6 @@ void *PX4Scheduler::_uart_thread(void)
     }
     while (!_px4_thread_should_exit) {
         delay_microseconds_semaphore(1000);
-	//fprintf(stdout, "Qing in _uart_thread\n");
 
         // process any pending serial bytes
         ((PX4UARTDriver *)hal.uartA)->_timer_tick();
@@ -357,9 +348,7 @@ void *PX4Scheduler::_io_thread(void)
         poll(NULL, 0, 1);        
     }
     while (!_px4_thread_should_exit) {
-	fprintf(stdout, "Qing in _io_thread\n");
-        //delay_microseconds_semaphore(1000);
-        //poll(NULL, 0, 1);
+        poll(NULL, 0, 1);
 
         // run registered IO processes
         perf_begin(_perf_io_timers);

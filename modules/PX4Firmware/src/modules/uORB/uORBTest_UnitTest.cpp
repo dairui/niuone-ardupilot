@@ -105,18 +105,19 @@ int uORBTest::UnitTest::pubsublatency_main(void)
   if (pubsubtest_print) {
     char fname[32];
     //sprintf(fname, "/fs/microsd/timings%u.txt", timingsgroup);
-    sprintf(fname, "/tmp/timings%u.txt", timingsgroup);
+    fprintf(stdout, "timingsgroup: %u\r\n", timingsgroup);
+    /*sprintf(fname, "/tmp/timings%u.txt", timingsgroup);
     FILE *f = fopen(fname, "w");
     if (f == NULL) {
       warnx("Error opening file!\n");
       return uORB::ERROR;
         }
-
+*/
     for (unsigned i = 0; i < maxruns; i++) {
-      fprintf(f, "%u\n", timings[i]);
+      fprintf(stdout, "%u\n", timings[i]);
     }
 
-    fclose(f);
+//    fclose(f);
   }
 
   delete[] timings;

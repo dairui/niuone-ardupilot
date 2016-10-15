@@ -44,8 +44,8 @@ static PX4Util utilInstance;
 static PX4GPIO gpioDriver;
 
 #if defined(CONFIG_ARCH_BOARD_PX4FMU_V2)
-//#define UARTA_DEFAULT_DEVICE "/dev/ttyACM0"
 #define UARTA_DEFAULT_DEVICE "/dev/ttyS0"
+//#define UARTA_DEFAULT_DEVICE "/dev/ttyS0"
 #define UARTB_DEFAULT_DEVICE "/dev/ttyS1"
 #define UARTC_DEFAULT_DEVICE "/dev/ttyS2"
 #define UARTD_DEFAULT_DEVICE "/dev/ttyS3"
@@ -121,27 +121,16 @@ static int main_loop(int argc, char **argv)
     extern void loop(void);
 
 
-//    hal.uartA->begin(115200);
-
-//   hal.uartB->begin(38400);
-
-//    hal.uartC->begin(57600);
-
-//    hal.uartD->begin(57600);
-
-//    hal.uartE->begin(57600);
-    fprintf(stdout, "Qing ML 0\n");
-    schedulerInstance.hal_initialized();
+    hal.uartA->begin(115200);
+    hal.uartB->begin(38400);
+    hal.uartC->begin(57600);
+    hal.uartD->begin(57600);
+    hal.uartE->begin(57600);
     hal.scheduler->init(NULL);
-    fprintf(stdout, "Qing ML 1\n");
-    //hal.rcin->init(NULL);
-    fprintf(stdout, "Qing ML 2\n");
-    //hal.rcout->init(NULL);
-    fprintf(stdout, "Qing ML 3\n");
-    //hal.analogin->init(NULL);
-    fprintf(stdout, "Qing ML 4\n");
-    //hal.gpio->init();
-
+    hal.rcin->init(NULL);
+    hal.rcout->init(NULL);
+    hal.analogin->init(NULL);
+    hal.gpio->init();
 
 
     /*
@@ -178,7 +167,6 @@ static int main_loop(int argc, char **argv)
         hrt_call_after(&loop_overtime_call, 100000, (hrt_callout)loop_overtime, NULL);
 
         loop();
-        fprintf(stdout, "Qing in main loop\n");
 
         if (px4_ran_overtime) {
             /*
@@ -197,7 +185,7 @@ static int main_loop(int argc, char **argv)
           chance to run. This relies on the accurate semaphore wait
           using hrt in semaphore.cpp
          */
-       hal.scheduler->delay_microseconds(250);
+        hal.scheduler->delay_microseconds(250);
     }
     thread_running = false;
     return 0;
