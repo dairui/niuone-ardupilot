@@ -242,7 +242,7 @@ MS5611_SPI::_read_prom()
 	 * Wait for PROM contents to be in the device (2.8 ms) in the case we are
 	 * called immediately after reset.
 	 */
-	usleep(3000);
+	usleep(30000);
 
 	/* read and convert PROM words */
         bool all_zero = true;
