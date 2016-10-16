@@ -409,18 +409,15 @@ test(void)
 int
 adc_main(int argc, char *argv[])
 {
-	fprintf(stdout, "Qing in adc_main\n");
 	if (g_adc == nullptr) {
 #ifdef CONFIG_ARCH_BOARD_PX4FMU_V1
 		/* XXX this hardcodes the default channel set for PX4FMUv1 - should be configurable */
 		g_adc = new ADC((1 << 10) | (1 << 11) | (1 << 12) | (1 << 13));
 #endif
 #ifdef CONFIG_ARCH_BOARD_PX4FMU_V2
-	fprintf(stdout, "Qing in adc_main 1\n");
 		/* XXX this hardcodes the default channel set for PX4FMUv2 - should be configurable */
 		g_adc = new ADC((1 << 2) | (1 << 3) | (1 << 4) | 
 			(1 << 10) | (1 << 11) | (1 << 12) | (1 << 13) | (1 << 14) | (1 << 15));
-	fprintf(stdout, "Qing in adc_main 2\n");
 #endif
 #ifdef CONFIG_ARCH_BOARD_AEROCORE
 		/* XXX this hardcodes the default channel set for AeroCore - should be configurable */
@@ -435,12 +432,11 @@ adc_main(int argc, char *argv[])
 			errx(1, "ADC init failed");
 		}
 	}
-	fprintf(stdout, "Qing in adc_main 3\n");
+
 	if (argc > 1) {
 		if (!strcmp(argv[1], "test"))
 			test();
 	}
 
-	fprintf(stdout, "Qing in adc_main 4\n");
 	exit(0);
 }
