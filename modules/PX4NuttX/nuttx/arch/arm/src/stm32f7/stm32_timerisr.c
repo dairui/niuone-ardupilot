@@ -150,8 +150,8 @@ void up_timer_initialize(void)
    *   NVIC_SYSTICK_CTRL_TICKINT=1   : Generate interrupts
    *   NVIC_SYSTICK_CTRL_ENABLE      : Enable the counter
    */
-  //regval = (NVIC_SYSTICK_CTRL_TICKINT | NVIC_SYSTICK_CTRL_ENABLE);
-  regval = (NVIC_SYSTICK_CTRL_TICKINT | NVIC_SYSTICK_CTRL_ENABLE | NVIC_SYSTICK_CTRL_CLKSOURCE); //change to processor clock by Qing
+
+  regval = (NVIC_SYSTICK_CTRL_TICKINT | NVIC_SYSTICK_CTRL_ENABLE);
   putreg32(regval, NVIC_SYSTICK_CTRL);
 
   /* And enable the timer interrupt */
