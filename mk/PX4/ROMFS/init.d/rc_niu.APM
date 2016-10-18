@@ -1,0 +1,9 @@
+uorb start
+l3gd20 start
+lsm303d start
+mpu6000 start
+ms5611 start
+adc
+mtd start /fs/mtd
+fmu mode_pwm4
+ArduPilot start
