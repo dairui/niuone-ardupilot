@@ -44,7 +44,7 @@ static PX4Util utilInstance;
 static PX4GPIO gpioDriver;
 
 #if defined(CONFIG_ARCH_BOARD_PX4FMU_V2)
-#define UARTA_DEFAULT_DEVICE "/dev/ttyS0"
+#define UARTA_DEFAULT_DEVICE "/dev/ttyACM0"
 //#define UARTA_DEFAULT_DEVICE "/dev/ttyS0"
 #define UARTB_DEFAULT_DEVICE "/dev/ttyS1"
 #define UARTC_DEFAULT_DEVICE "/dev/ttyS2"
