@@ -63,8 +63,9 @@ if [ -e "${link}" ]; then
 			# It is something else (like a file) or directory that does
 			# not contain the "fake link" mark
 
-			echo "${link} already exists but is not a symbolic link"
-			exit 1
+			#echo "${link} already exists but is not a symbolic link"
+			#exit 1
+			rm -rf "${link}"
 		fi
 	fi
 fi
