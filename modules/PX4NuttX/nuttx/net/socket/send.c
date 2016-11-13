@@ -43,6 +43,8 @@
 #include <sys/socket.h>
 #include <errno.h>
 
+#include <nuttx/net/net.h>
+
 #include "tcp/tcp.h"
 #include "udp/udp.h"
 #include "pkt/pkt.h"
@@ -116,7 +118,8 @@
  * Assumptions:
  *
  ****************************************************************************/
-
+struct socketaddr;
+struct socket;
 ssize_t psock_send(FAR struct socket *psock, FAR const void *buf, size_t len,
                    int flags)
 {
