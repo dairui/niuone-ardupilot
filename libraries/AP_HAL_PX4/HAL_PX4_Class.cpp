@@ -49,7 +49,7 @@ static PX4GPIO gpioDriver;
 #define UARTB_DEFAULT_DEVICE "/dev/ttyS1"
 #define UARTC_DEFAULT_DEVICE "/dev/ttyS2"
 #define UARTD_DEFAULT_DEVICE "/dev/ttyS3"
-#define UARTE_DEFAULT_DEVICE "/dev/ttyS4"
+#define UARTE_DEFAULT_DEVICE "/dev/ttyS5"
 #else
 #define UARTA_DEFAULT_DEVICE "/dev/ttyACM0"
 #define UARTB_DEFAULT_DEVICE "/dev/ttyS3"
