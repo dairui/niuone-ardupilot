@@ -58,6 +58,7 @@
 #include <nuttx/wireless/wireless.h>
 #include <nuttx/wireless/cc3000.h>
 #include <nuttx/wireless/cc3000/cc3000_common.h>
+#include <nuttx/wireless/cc3000/include/cc3000_upif.h>
 
 /****************************************************************************
  * Pre-processor Definitions
