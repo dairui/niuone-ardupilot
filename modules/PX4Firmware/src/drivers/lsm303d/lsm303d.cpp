@@ -774,8 +774,7 @@ LSM303D::read(struct file *filp, char *buffer, size_t buflen)
 		return -ENOSPC;
 
 	/* if automatic measurement is enabled */
-	//if (_call_accel_interval > 0) {
-	if (false) {
+	if (_call_accel_interval > 0) {
 		/*
 		 * While there is space in the caller's buffer, and reports, copy them.
 		 */
