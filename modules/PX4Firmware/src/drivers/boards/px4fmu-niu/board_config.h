@@ -223,9 +223,9 @@ __BEGIN_DECLS
 
 /* High-resolution timer */
 #define HRT_TIMER		8	/* use timer8 for the HRT */
-#define HRT_TIMER_CHANNEL	1	/* use capture/compare channel */
-#define HRT_PPM_CHANNEL		3	/* use capture/compare channel 3 */
-#define GPIO_PPM_IN		(GPIO_TIM8_CH3IN_1|GPIO_PULLUP)
+#define HRT_TIMER_CHANNEL	3	/* use capture/compare channel */
+#define HRT_PPM_CHANNEL		1	/* use capture/compare channel 3 */
+#define GPIO_PPM_IN		(GPIO_TIM8_CH1IN_1|GPIO_PULLUP)
 
 /* PWM input driver. Use FMU AUX5 pins attached to timer4 channel 2 */
 #define PWMIN_TIMER		4
