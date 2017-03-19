@@ -125,6 +125,7 @@ if [ -f /etc/init.d/rc.APM -a $HAVE_MICROSD == 1 -a ! -f /fs/microsd/APM/nostart
 then
 	echo Running rc.APM
 	# if APM startup is successful then nsh will exit
+	mount -t procfs /proc
 	sh /etc/init.d/rc_niu.APM
         nshterm /dev/console &
 else

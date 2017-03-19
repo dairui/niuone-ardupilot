@@ -89,12 +89,12 @@ int board_app_initialize(uintptr_t arg)
 
   /* Mount the procfs file system */
 
-  ret = mount(NULL, SAMV71_PROCFS_MOUNTPOINT, "procfs", 0, NULL);
-  if (ret < 0)
-    {
-      SYSLOG("ERROR: Failed to mount procfs at %s: %d\n",
-             SAMV71_PROCFS_MOUNTPOINT, ret);
-    }
+//  ret = mount(NULL, SAMV71_PROCFS_MOUNTPOINT, "procfs", 0, NULL);
+//  if (ret < 0)
+//    {
+//      SYSLOG("ERROR: Failed to mount procfs at %s: %d\n",
+//             SAMV71_PROCFS_MOUNTPOINT, ret);
+//    }
 #endif
 
 #if defined(CONFIG_NUCLEO_SPI_TEST)
